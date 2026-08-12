@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-08 14:00",
+  "updated_at": "2026-08-12 14:00",
   "month": 8,
   "year": 2026,
   "marketing_plan": {
@@ -2797,12 +2797,221 @@
           "performance_new": 128318.1,
           "performance_old": 351361.46
         }
+      },
+      {
+        "month": "26.08",
+        "daily": [
+          {
+            "date": "2026-08-01",
+            "leads": 3,
+            "cost": 65.34,
+            "spend": 196.01
+          },
+          {
+            "date": "2026-08-02",
+            "leads": 2,
+            "cost": 141.45,
+            "spend": 282.9
+          },
+          {
+            "date": "2026-08-03",
+            "leads": 6,
+            "cost": 43.49,
+            "spend": 260.95
+          },
+          {
+            "date": "2026-08-04",
+            "leads": 3,
+            "cost": 82.85,
+            "spend": 248.55
+          },
+          {
+            "date": "2026-08-05",
+            "leads": 5,
+            "cost": 53.98,
+            "spend": 269.89
+          },
+          {
+            "date": "2026-08-06",
+            "leads": 6,
+            "cost": 115.28,
+            "spend": 691.69
+          },
+          {
+            "date": "2026-08-07",
+            "leads": 2,
+            "cost": 73.75,
+            "spend": 147.51
+          },
+          {
+            "date": "2026-08-08",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.01
+          },
+          {
+            "date": "2026-08-09",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-10",
+            "leads": 1,
+            "cost": 0.0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-11",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-12",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-13",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-14",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-15",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-16",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-17",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-18",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-19",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-20",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-21",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-22",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-23",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-24",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-25",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-26",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-27",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-28",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-29",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-30",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-08-31",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          }
+        ],
+        "channels": {
+          "腾讯广告": 649.08,
+          "红书代工": 1448.43
+        },
+        "channel_leads": {
+          "抖音大号": 7,
+          "腾讯广告": 2,
+          "红书代工": 19,
+          "海外": 42
+        },
+        "kpi": {
+          "total_leads": 28,
+          "avg_cost": 74.91,
+          "total_spend": 2097.51,
+          "recharge": 0.0,
+          "performance_new": 85197.06,
+          "performance_old": 173047.25
+        }
       }
     ],
     "yearly_total": {
-      "total_leads": 6340,
-      "total_spend": 253441.68,
-      "avg_cost": 39.98
+      "total_leads": 6368,
+      "total_spend": 255539.19,
+      "avg_cost": 40.13
     }
   },
   "overseas": {
@@ -3036,17 +3245,18 @@
       {
         "month": 8,
         "kpi": {
-          "total_inquiries": 35,
+          "total_inquiries": 48,
           "distributed": 0,
           "distribution_rate": 0.0
         },
         "regions": {
-          "北美洲": 5,
-          "中东": 10,
-          "欧洲": 6,
+          "北美洲": 10,
+          "中东": 12,
+          "欧洲": 9,
           "非洲": 1,
-          "未知": 7,
-          "亚洲": 6
+          "未知": 9,
+          "亚洲": 6,
+          "大洋洲": 1
         },
         "daily_trend": [
           {
@@ -3072,22 +3282,31 @@
           {
             "date": "2026-08-07",
             "count": 5
+          },
+          {
+            "date": "2026-08-10",
+            "count": 8
+          },
+          {
+            "date": "2026-08-11",
+            "count": 5
           }
         ]
       }
     ],
     "kpi": {
-      "total_inquiries": 35,
-      "distributed": 35,
+      "total_inquiries": 48,
+      "distributed": 48,
       "distribution_rate": 100.0
     },
     "regions": {
-      "北美洲": 5,
-      "中东": 10,
-      "欧洲": 6,
+      "北美洲": 10,
+      "中东": 12,
+      "欧洲": 9,
       "非洲": 1,
-      "未知": 7,
-      "亚洲": 6
+      "未知": 9,
+      "亚洲": 6,
+      "大洋洲": 1
     },
     "daily_trend": [
       {
@@ -3112,6 +3331,14 @@
       },
       {
         "date": "2026-08-07",
+        "count": 5
+      },
+      {
+        "date": "2026-08-10",
+        "count": 8
+      },
+      {
+        "date": "2026-08-11",
         "count": 5
       }
     ],
@@ -5231,8 +5458,8 @@
             "name": "@敬健浩",
             "team": "蓝队",
             "assigned": 13,
-            "added": 3,
-            "add_rate": 23.1,
+            "added": 5,
+            "add_rate": 38.5,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5420,7 +5647,7 @@
         ],
         "funnel": {
           "assigned": 115,
-          "added": 44,
+          "added": 46,
           "crm": 6,
           "conversion_amount": 0.0
         }
@@ -5431,9 +5658,9 @@
           {
             "name": "@刘晓霞",
             "team": "蓝队",
-            "assigned": 2,
-            "added": 0,
-            "add_rate": 0.0,
+            "assigned": 3,
+            "added": 1,
+            "add_rate": 33.3,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5441,9 +5668,9 @@
           {
             "name": "@敬健浩",
             "team": "蓝队",
-            "assigned": 2,
-            "added": 2,
-            "add_rate": 100.0,
+            "assigned": 5,
+            "added": 4,
+            "add_rate": 80.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5461,7 +5688,7 @@
           {
             "name": "@刘胜楠",
             "team": "蓝队",
-            "assigned": 0,
+            "assigned": 1,
             "added": 0,
             "add_rate": 0.0,
             "crm_count": 0,
@@ -5491,9 +5718,9 @@
           {
             "name": "@潘嘉瑜(大俞)",
             "team": "蓝队",
-            "assigned": 2,
-            "added": 0,
-            "add_rate": 0.0,
+            "assigned": 4,
+            "added": 2,
+            "add_rate": 50.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5511,11 +5738,11 @@
           {
             "name": "@刘江滔",
             "team": "蓝队",
-            "assigned": 4,
-            "added": 3,
-            "add_rate": 75.0,
+            "assigned": 7,
+            "added": 4,
+            "add_rate": 57.1,
             "crm_count": 2,
-            "crm_rate": 50.0,
+            "crm_rate": 28.6,
             "conversion_amount": 0
           },
           {
@@ -5531,9 +5758,9 @@
           {
             "name": "@朱家豪",
             "team": "蓝队",
-            "assigned": 1,
-            "added": 0,
-            "add_rate": 0.0,
+            "assigned": 5,
+            "added": 1,
+            "add_rate": 20.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5630,16 +5857,16 @@
           }
         ],
         "funnel": {
-          "assigned": 11,
-          "added": 5,
+          "assigned": 25,
+          "added": 12,
           "crm": 2,
           "conversion_amount": 0.0
         }
       }
     ],
     "yearly_total": {
-      "assigned": 5593,
-      "added": 4387,
+      "assigned": 5607,
+      "added": 4396,
       "crm": 1352,
       "conversion_amount": 174501.33
     }
