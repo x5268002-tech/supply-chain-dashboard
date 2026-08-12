@@ -1,1 +1,245 @@
-{"updated_at": "2026-08-12 14:39", "current_week": 2, "time_progress": 38.7, "days_passed": 12, "days_total": 31, "months": {"7": {"members": [{"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 2000000, "actual": 3716142.92, "rate": 185.807146, "week_target": 500000, "week_actual": 133850.0, "week_rate": 26.77}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 846875, "actual": 1415221.4, "rate": 167.1110140221402, "week_target": 136718, "week_actual": 407392.0, "week_rate": 297.97978320338217}, {"name": "林梓仪", "team": "蓝队", "group": "深藏Blue", "target": 150000, "actual": 129375.95, "rate": 86.25063333333333, "week_target": 30000, "week_actual": 2485.1, "week_rate": 8.283666666666667}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 500000, "actual": 352165.52, "rate": 70.433104, "week_target": 100000, "week_actual": 19267.87, "week_rate": 19.26787}, {"name": "梁铭恩", "team": "金队", "group": "美少女战士", "target": 105012, "actual": 72357.18900000001, "rate": 68.90373385898756, "week_target": 21002, "week_actual": 18784.57, "week_rate": 89.44181506523188}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 914625, "actual": 549028.5599999999, "rate": 60.02772283722837, "week_target": 182925, "week_actual": 31521.62, "week_rate": 17.231991253245866}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 495000, "actual": 292501.95, "rate": 59.09130303030303, "week_target": 99000, "week_actual": 67367.84, "week_rate": 68.04832323232323}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 450000, "actual": 240834.16, "rate": 53.518702222222224, "week_target": 112500, "week_actual": 59935.25, "week_rate": 53.275777777777776}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 440375, "actual": 164906.23500000002, "rate": 37.44677490774908, "week_target": 88075, "week_actual": 31680.67, "week_rate": 35.970105024127164}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 400000, "actual": 124742.68, "rate": 31.18567, "week_target": 80000, "week_actual": 14840.0, "week_rate": 18.55}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 600000, "actual": 183692.14, "rate": 30.61535666666667, "week_target": 120000, "week_actual": 3600.0, "week_rate": 3.0}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 250000, "actual": 61845.27, "rate": 24.738107999999997, "week_target": 75000, "week_actual": 1940.14, "week_rate": 2.5868533333333334}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 780000, "actual": 142572.39, "rate": 18.27851153846154, "week_target": 156000, "week_actual": 25490.92, "week_rate": 16.34033333333333}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 500000, "actual": 86679.27, "rate": 17.335854, "week_target": 100000, "week_actual": 25667.77, "week_rate": 25.66777}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 500000, "actual": 72180.2, "rate": 14.43604, "week_target": 125000, "week_actual": 0.0, "week_rate": 0.0}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 460000, "actual": 60507.13, "rate": 13.153723913043477, "week_target": 92000, "week_actual": 969.6, "week_rate": 1.0539130434782609}], "teams": {"蓝队": {"target": 4850000, "actual": 4880978.84, "rate": 100.63873896907216}, "橙队": {"target": 2235000, "actual": 584565.74, "rate": 26.155066666666666}, "金队": {"target": 2306887, "actual": 2201513.3839999996, "rate": 95.43221596896595}, "紫队": {"target": 1450000, "actual": 1294018.34, "rate": 89.24264413793104}}, "grand_target": 10841887, "grand_actual": 8961076.304, "grand_rate": 82.6523676551877}}}
+{
+  "updated_at": "2026-08-12 19:32",
+  "current_week": 2,
+  "time_progress": 38.7,
+  "days_passed": 12,
+  "days_total": 31,
+  "months": {
+    "8": {
+      "members": [
+        {
+          "name": "彭培强",
+          "team": "蓝队",
+          "group": "保蓝",
+          "target": 1900000,
+          "actual": 1447195.92,
+          "rate": 76.17,
+          "week_target": 429032,
+          "week_actual": 133850.0,
+          "week_rate": 31.2
+        },
+        {
+          "name": "莫紫珊",
+          "team": "金队",
+          "group": "开单狂魔",
+          "target": 914625,
+          "actual": 576935.6,
+          "rate": 63.08,
+          "week_target": 206528,
+          "week_actual": 501572.0,
+          "week_rate": 242.86
+        },
+        {
+          "name": "阿宇",
+          "team": "紫队",
+          "group": "紫队",
+          "target": 900000,
+          "actual": 371271.78,
+          "rate": 41.25,
+          "week_target": 203225,
+          "week_actual": 75448.93,
+          "week_rate": 37.13
+        },
+        {
+          "name": "刘胜楠",
+          "team": "蓝队",
+          "group": "钱多多",
+          "target": 800000,
+          "actual": 350793.07,
+          "rate": 43.85,
+          "week_target": 180645,
+          "week_actual": 19686.77,
+          "week_rate": 10.9
+        },
+        {
+          "name": "朱雪榕",
+          "team": "金队",
+          "group": "美少女战士",
+          "target": 914625,
+          "actual": 308437.29,
+          "rate": 33.72,
+          "week_target": 206528,
+          "week_actual": 206437.64,
+          "week_rate": 99.96
+        },
+        {
+          "name": "张玉珠",
+          "team": "橙队",
+          "group": "橙队",
+          "target": 440000,
+          "actual": 292375.87,
+          "rate": 66.45,
+          "week_target": 99354,
+          "week_actual": 67619.73,
+          "week_rate": 68.06
+        },
+        {
+          "name": "刘江滔",
+          "team": "蓝队",
+          "group": "钱多多",
+          "target": 300000,
+          "actual": 239137.25,
+          "rate": 79.71,
+          "week_target": 67741,
+          "week_actual": 59935.25,
+          "week_rate": 88.48
+        },
+        {
+          "name": "黄杨永",
+          "team": "紫队",
+          "group": "紫队",
+          "target": 500000,
+          "actual": 203615.56,
+          "rate": 40.72,
+          "week_target": 112903,
+          "week_actual": 27366.41,
+          "week_rate": 24.24
+        },
+        {
+          "name": "刘晓霞",
+          "team": "蓝队",
+          "group": "深藏Blue",
+          "target": 550000,
+          "actual": 182550.0,
+          "rate": 33.19,
+          "week_target": 124193,
+          "week_actual": 2400.0,
+          "week_rate": 1.93
+        },
+        {
+          "name": "冯佩珊",
+          "team": "橙队",
+          "group": "橙队",
+          "target": 450000,
+          "actual": 153939.41,
+          "rate": 34.21,
+          "week_target": 101612,
+          "week_actual": 24360.83,
+          "week_rate": 23.97
+        },
+        {
+          "name": "林梓仪",
+          "team": "蓝队",
+          "group": "深藏Blue",
+          "target": 200000,
+          "actual": 137824.0,
+          "rate": 68.91,
+          "week_target": 45161,
+          "week_actual": 12000.0,
+          "week_rate": 26.57
+        },
+        {
+          "name": "敬健浩",
+          "team": "蓝队",
+          "group": "深藏Blue",
+          "target": 400000,
+          "actual": 125373.68,
+          "rate": 31.34,
+          "week_target": 90322,
+          "week_actual": 14840.0,
+          "week_rate": 16.43
+        },
+        {
+          "name": "罗伟仪",
+          "team": "金队",
+          "group": "开单狂魔",
+          "target": 440375,
+          "actual": 82067.25,
+          "rate": 18.64,
+          "week_target": 99439,
+          "week_actual": 0.0,
+          "week_rate": 0.0
+        },
+        {
+          "name": "邓正瑶",
+          "team": "橙队",
+          "group": "橙队",
+          "target": 450000,
+          "actual": 77716.9,
+          "rate": 17.27,
+          "week_target": 101612,
+          "week_actual": 16119.77,
+          "week_rate": 15.86
+        },
+        {
+          "name": "潘嘉瑜",
+          "team": "蓝队",
+          "group": "钱多多",
+          "target": 400000,
+          "actual": 72180.2,
+          "rate": 18.05,
+          "week_target": 90322,
+          "week_actual": 0.0,
+          "week_rate": 0.0
+        },
+        {
+          "name": "周乐",
+          "team": "橙队",
+          "group": "橙队",
+          "target": 365000,
+          "actual": 72136.72,
+          "rate": 19.76,
+          "week_target": 82419,
+          "week_actual": 2999.6,
+          "week_rate": 3.64
+        },
+        {
+          "name": "朱家豪",
+          "team": "蓝队",
+          "group": "深藏Blue",
+          "target": 350000,
+          "actual": 46203.3,
+          "rate": 13.2,
+          "week_target": 79032,
+          "week_actual": 1940.0,
+          "week_rate": 2.45
+        },
+        {
+          "name": "梁铭恩Evelyn",
+          "team": "蓝队",
+          "group": "钱多多",
+          "target": 115175,
+          "actual": 24891.27,
+          "rate": 21.61,
+          "week_target": 26007,
+          "week_actual": 1731.41,
+          "week_rate": 6.66
+        }
+      ],
+      "teams": {
+        "橙队": {
+          "target": 1705000,
+          "actual": 596168.9,
+          "week_target": 384997,
+          "week_actual": 111099.93,
+          "rate": 35.0,
+          "week_rate": 28.9
+        },
+        "蓝队": {
+          "target": 5015175,
+          "actual": 2626148.69,
+          "week_target": 1132455,
+          "week_actual": 246383.43,
+          "rate": 52.4,
+          "week_rate": 21.8
+        },
+        "紫队": {
+          "target": 1400000,
+          "actual": 574887.3400000001,
+          "week_target": 316128,
+          "week_actual": 102815.34,
+          "rate": 41.1,
+          "week_rate": 32.5
+        },
+        "金队": {
+          "target": 2269625,
+          "actual": 967440.1399999999,
+          "week_target": 512495,
+          "week_actual": 708009.64,
+          "rate": 42.6,
+          "week_rate": 138.1
+        }
+      }
+    }
+  }
+}
