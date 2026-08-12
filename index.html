@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>捷展供应链业务总看板</title>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--text:#1e293b;--sub:#64748b;--border:#e2e8f0;--accent:#dc2626;--blue:#2563eb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5}
+.header{background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;padding:20px 24px;text-align:center;position:relative}
+.header h1{font-size:20px;font-weight:700;letter-spacing:1px}.header h1 span{color:#f97316}
+.header .sub{font-size:12px;opacity:.6;margin-top:4px}
+.container{max-width:1200px;margin:0 auto;padding:16px}
+.month-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.month-tab{padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--card);cursor:pointer;font-size:12px;font-weight:500;transition:all .2s}
+.month-tab:hover{border-color:var(--blue);color:var(--blue)}
+.month-tab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px}
+.kpi-card{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border);text-align:center}
+.kpi-card .label{font-size:12px;color:var(--sub);margin-bottom:4px}
+.kpi-card .value{font-size:22px;font-weight:800;color:var(--blue)}
+.kpi-card .sub{font-size:11px;color:var(--sub);margin-top:4px}
+.kpi{background:var(--card);border-radius:12px;padding:16px;text-align:center;border:1px solid var(--border)}
+.kpi .label{font-size:11px;color:var(--sub);margin-bottom:4px;font-weight:600}
+.kpi .value{font-size:32px;font-weight:800}
+.kpi .detail{font-size:11px;color:var(--sub);margin-top:4px}
+.progress{height:6px;background:var(--border);border-radius:3px;margin-top:8px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px;transition:width .5s}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:16px}
+.team-card{border-radius:12px;padding:16px;border:2px solid}
+.team-card h3{font-size:16px;font-weight:800;margin-bottom:10px}
+.team-card .metric{display:flex;justify-content:space-between;align-items:baseline;padding:4px 0}
+.team-card .metric .k{font-size:12px;color:#555}.team-card .metric .v{font-size:14px;font-weight:700}
+.team-card .rate{font-size:22px;font-weight:800;margin-top:6px}
+.rank-section{margin-bottom:16px}
+.rank-section h2{font-size:15px;font-weight:700;margin-bottom:10px}
+.rank-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.rank-table th{text-align:left;padding:8px 10px;font-size:11px;color:var(--sub);background:#f8fafc;border-bottom:1px solid var(--border)}
+.rank-table td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:12px;vertical-align:middle}
+.rank-table tr:last-child td{border-bottom:none}
+.rank-table .num{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.medal{font-size:16px}
+.badge{display:inline-block;padding:2px 6px;border-radius:4px;font-size:9px;color:#fff;margin-left:4px}
+.rate-bar{position:relative;height:22px;background:#f0f0f0;border-radius:4px;min-width:100px}
+.rate-fill{height:100%;border-radius:4px;max-width:100%}
+.rate-text{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:700;color:#333}
+.footer{text-align:center;color:var(--sub);font-size:11px;padding:16px}
+.countdown{font-size:28px;font-weight:800;color:var(--accent)}
+#week-rank{display:none}
+.refresh-btn{position:absolute;right:20px;top:50%;transform:translateY(-50%);background:#f97316;color:#fff;border:none;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s}
+.refresh-btn:hover{background:#ea580c;transform:translateY(-50%) scale(1.02)}
+.refresh-btn:disabled{opacity:.7;cursor:not-allowed}
+.spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:1024px){.vip-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .container{padding:10px}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .kpi .value{font-size:22px}
+  .team-grid{grid-template-columns:1fr}
+  .rank-table th,.rank-table td{padding:6px 6px;font-size:11px}
+  .rate-bar{min-width:70px}
+  .countdown{font-size:22px}
+  .refresh-btn{padding:6px 10px;font-size:10px;right:10px}
+}
+
+.top-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:2px solid #e2e8f0;padding-bottom:0}
+.top-tab{padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;color:#94a3b8}
+.top-tab:hover{color:#1e293b}
+.top-tab.active{color:#3b82f6;border-bottom-color:#3b82f6}
+.vip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.vip-card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.08);transition:transform .2s,box-shadow .2s}
+.vip-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.vip-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.vip-name{font-size:16px;font-weight:700}
+.vip-status{font-size:11px;color:#fff;padding:3px 8px;border-radius:4px;font-weight:600}
+.vip-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.vip-metric-label{display:block;font-size:11px;color:#94a3b8}
+.vip-metric-val{display:block;font-size:14px;font-weight:600;margin-top:2px}
+.vip-card-footer{display:flex;justify-content:space-between;font-size:12px;color:#64748b;padding-top:8px;border-top:1px solid #f1f5f9}
+.vip-card-follow{font-size:11px;color:#94a3b8;margin-top:6px}
+.vip-todo-section{margin-top:24px;background:#fff;border-radius:10px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.vip-todo-section h3{margin:0 0 12px;font-size:16px}
+.todo-controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.todo-input{padding:8px 12px;border:1px solid #e2e8f0;border-radius:6px;font-size:13px;flex:1;min-width:150px}
+.todo-select{padding:8px 10px;border:1px solid #e2e8f0;border-radius:6px;font-size:13px}
+.todo-add-btn{padding:8px 16px;background:#3b82f6;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer}
+.todo-add-btn:hover{background:#2563eb}
+.todo-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:12px;table-layout:auto}
+.todo-table th{background:#f8fafc;padding:8px 6px;text-align:left;font-weight:600;border-bottom:2px solid #e2e8f0;white-space:nowrap;font-size:11px}
+.todo-table td{padding:8px 6px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+.todo-table tr:hover{background:#fafbfc}
+.time-bar{height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden;min-width:60px}
+.time-fill{height:100%;border-radius:3px}
+.status-chip{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap}
+.progress-input{width:100%;padding:4px 6px;border:1px solid #e2e8f0;border-radius:4px;font-size:11px}
+.todo-del{border:none;background:none;cursor:pointer;color:#cbd5e1;font-size:18px}.todo-del:hover{color:#ef4444}
+.todo-done-btn{border:none;background:#10b981;color:#fff;cursor:pointer;border-radius:4px;width:24px;height:24px;font-size:14px;font-weight:700;margin-right:4px}.todo-done-btn:hover{background:#059669}
+.inline-edit{border:none;background:transparent;padding:2px 4px;font-size:12px;width:100%;min-width:50px;outline:none;color:#1e293b;box-sizing:border-box}.inline-edit:focus{background:#f1f5f9;border-radius:4px;box-shadow:0 0 0 1px #3b82f6}
+input[type="date"].inline-edit{width:110px;min-width:110px;font-size:11px;padding:2px 2px}
+input[type="text"].inline-edit{min-width:60px}
+select.inline-edit{cursor:pointer;padding:2px 0;font-size:11px}
+.todo-undo{border:none;background:#94a3b8;color:#fff;cursor:pointer;border-radius:4px;width:24px;height:24px;font-size:12px;margin-right:4px}.todo-undo:hover{background:#64748b}
+.vip-monthly{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:8px;margin-top:8px}
+.vip-month-item{text-align:center;padding:8px 4px;background:#f8fafc;border-radius:6px}
+.vip-month-label{display:block;font-size:11px;color:#64748b;margin-bottom:4px}
+.vip-month-val{font-size:13px;font-weight:600;color:#1e293b}
+.vip-detail-info{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;padding:12px 16px;background:#f8fafc;border-radius:8px;margin:12px 0}
+.info-row{display:flex;align-items:center;gap:8px}
+.info-label{font-size:12px;color:#64748b;min-width:60px}
+.info-val{font-size:13px;color:#1e293b}
+.vip-website-input{border:1px solid #e2e8f0;border-radius:4px;padding:4px 8px;font-size:12px;width:200px;outline:none}.vip-website-input:focus{border-color:#3b82f6}
+.todo-stats{margin-bottom:14px}
+.ts-overview{display:flex;align-items:center;gap:16px;padding:12px 16px;background:#f8fafc;border-radius:8px;flex-wrap:wrap}
+.ts-nums{display:flex;gap:16px}
+.ts-item{text-align:center}
+.ts-num{display:block;font-size:20px;font-weight:800}
+.ts-label{font-size:10px;color:#94a3b8}
+.ts-bar{flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;display:flex;min-width:80px}
+.ts-bar>div{height:100%}
+.ts-persons{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.ts-person{display:flex;align-items:center;gap:5px;padding:5px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:11px}
+.ts-pname{font-weight:600;margin-right:4px}
+.ts-pbadge{min-width:16px;height:16px;line-height:16px;text-align:center;border-radius:8px;font-size:10px;font-weight:600;color:#fff}
+
+.todo-list{display:flex;flex-direction:column;gap:6px}
+.todo-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#f8fafc;border-radius:6px;border-left:3px solid #94a3b8}
+.todo-item.priority-high{border-left-color:#ef4444}
+.todo-item.priority-mid{border-left-color:#f59e0b}
+.todo-item.priority-low{border-left-color:#10b981}
+.todo-item.done{opacity:.5;text-decoration:line-through}
+.todo-item input[type=checkbox]{width:16px;height:16px;cursor:pointer}
+.todo-item .todo-text{flex:1;font-size:13px}
+.todo-item .todo-customer{font-size:11px;color:#3b82f6;background:#eff6ff;padding:2px 6px;border-radius:3px}
+.todo-item .todo-priority{font-size:11px;padding:2px 6px;border-radius:3px;font-weight:600}
+.todo-item .todo-priority.p-high{color:#ef4444;background:#fef2f2}
+.todo-item .todo-priority.p-mid{color:#f59e0b;background:#fffbeb}
+.todo-item .todo-priority.p-low{color:#10b981;background:#ecfdf5}
+.todo-item .todo-date{font-size:11px;color:#94a3b8}
+.todo-item .todo-delete{cursor:pointer;color:#94a3b8;font-size:16px;padding:0 4px}
+.todo-item .todo-delete:hover{color:#ef4444}
+.vip-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1000;display:flex;align-items:center;justify-content:center}
+.vip-modal-content{background:#fff;border-radius:12px;padding:24px;max-width:500px;width:90%;max-height:85vh;overflow-y:auto;position:relative}
+.vip-modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#94a3b8}
+.vip-modal-close:hover{color:#1e293b}
+.vip-detail-header{margin-bottom:16px}
+.vip-detail-header h2{margin:0;font-size:20px}
+.vip-detail-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;padding:12px;background:#f8fafc;border-radius:8px}
+.vip-detail-metrics div{text-align:center}
+.vip-detail-metrics .dm-label{font-size:11px;color:#94a3b8}
+.vip-detail-metrics .dm-val{font-size:18px;font-weight:700;margin-top:2px}
+.vip-detail-section{margin-top:16px}
+.vip-detail-section h4{font-size:14px;margin:0 0 8px;color:#475569}
+.vip-follow-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:13px}
+.vip-follow-item .follow-date{color:#64748b;min-width:80px}
+.vip-follow-item .follow-content{color:#1e293b;flex:1}
+@media(max-width:768px){.vip-grid{grid-template-columns:1fr}.vip-metrics{grid-template-columns:repeat(3,1fr)}.todo-controls{flex-direction:column}.vip-modal-content{max-width:95%;padding:16px}}
+/* === Marketing Tab === */
+.mkt-section{margin-bottom:24px}
+.mkt-section h2{font-size:16px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.mkt-calendar{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px}
+.mkt-cal-card{min-width:200px;max-width:240px;background:var(--card);border-radius:10px;padding:14px;border:1px solid var(--border);flex-shrink:0}
+.mkt-cal-card .cal-date{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:6px}
+.mkt-cal-card .cal-subject{font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.4;outline:none;border-bottom:1px dashed transparent;min-height:20px}
+.mkt-cal-card .cal-subject:focus{border-bottom-color:#2563eb;background:#f8fafc}
+.mkt-cal-card .cal-direction{font-size:12px;color:var(--sub);margin-bottom:8px;outline:none;border-bottom:1px dashed transparent;min-height:16px}
+.mkt-cal-card .cal-direction:focus{border-bottom-color:#2563eb;background:#f8fafc}
+.mkt-cal-card .cal-tags{display:flex;flex-wrap:wrap;gap:4px}
+.mkt-tag{font-size:10px;padding:2px 6px;border-radius:3px;font-weight:600}
+.mkt-tag.done{background:#dcfce7;color:#16a34a}
+.mkt-tag.pending{background:#f1f5f9;color:#94a3b8}
+.mkt-kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:16px}
+.mkt-kpi{background:var(--card);border-radius:10px;padding:16px 12px;text-align:center;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:90px}
+.mkt-kpi .mk-label{font-size:11px;color:var(--sub);font-weight:600;white-space:nowrap}
+.mkt-kpi .mk-value{font-size:22px;font-weight:800;margin:6px 0 2px}
+.mkt-kpi .mk-sub{font-size:11px;color:var(--sub)}
+.mkt-chart-row{display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-bottom:16px}
+.mkt-chart-box{background:var(--card);border-radius:10px;padding:16px;border:1px solid var(--border);min-height:260px}
+.mkt-funnel-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.mkt-funnel-table th{text-align:left;padding:8px 10px;font-size:11px;color:var(--sub);background:#f8fafc;border-bottom:1px solid var(--border)}
+.mkt-funnel-table td{padding:8px 10px;border-bottom:1px solid var(--border);font-size:12px}
+.mkt-funnel-table tr:last-child td{border-bottom:none}
+.mkt-funnel-table .warn{color:#ef4444;font-weight:700}
+.mkt-funnel-visual{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:16px}
+.funnel-bar{height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;transition:width .5s}
+@media(max-width:768px){
+  .mkt-chart-row{grid-template-columns:1fr}
+  .mkt-calendar{flex-direction:column}
+  .mkt-cal-card{min-width:auto;max-width:none}
+  .mkt-kpi-row{grid-template-columns:repeat(2,1fr)}
+  .mkt-kpi .mk-value{font-size:18px}
+  .mkt-kpi{min-height:70px;padding:12px 8px}
+  .gantt-chart{overflow-x:auto}
+  .gantt-cells{grid-template-columns:repeat(31,1fr)}
+  .mkt-chart-row{grid-template-columns:1fr}
+}
+.mkt-month-btn{padding:4px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);font-size:12px;cursor:pointer;font-weight:600;color:var(--sub);transition:all .2s}
+.mkt-month-btn.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.mkt-month-btn:hover:not(.active){background:#f1f5f9}
+.mkt-add-btn{padding:4px 12px;border:1px dashed #2563eb;border-radius:6px;background:transparent;font-size:12px;cursor:pointer;color:#2563eb;font-weight:600}
+.mkt-add-btn:hover{background:#eff6ff}
+.mkt-edit-btn,.mkt-del-btn{border:none;background:none;cursor:pointer;font-size:14px;padding:2px 4px;border-radius:4px;opacity:.6}
+.mkt-edit-btn:hover{opacity:1;color:#2563eb}.mkt-del-btn:hover{opacity:1;color:#ef4444}
+.gantt-chart{margin-bottom:16px;border:1px solid var(--border);border-radius:10px;overflow-x:auto;background:var(--card)}
+.gantt-row{display:flex;align-items:stretch;border-bottom:1px solid #f1f5f9}
+.gantt-row:last-child{border-bottom:none}
+.gantt-header-row{background:#f8fafc;position:sticky;top:0}
+.gantt-label{width:120px;min-width:120px;padding:6px 8px;font-size:11px;font-weight:600;border-right:1px solid var(--border);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center}
+.gantt-cells{display:grid;grid-template-columns:repeat(31,minmax(18px,1fr));flex:1}
+.gantt-cell{padding:4px 0;text-align:center;font-size:9px;border-right:1px solid #f8fafc;min-height:24px;display:flex;align-items:center;justify-content:center}
+.gantt-cell.gantt-header{font-weight:700;font-size:10px;color:var(--sub)}
+.gantt-cell.weekend{color:#94a3b8;background:#fafafa}
+.gantt-cell.gantt-active{background:#3b82f6;border-radius:2px;margin:3px 0}
+.gantt-cell.gantt-active-kll{background:#ea580c;border-radius:2px;margin:3px 0}
+.mkt-theme-card{background:linear-gradient(135deg,#f0f9ff,#eff6ff);border:1px solid #bfdbfe;border-radius:10px;padding:12px 16px;margin-bottom:12px;cursor:pointer;transition:all .2s}
+.mkt-theme-card:hover{border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,.1)}
+.theme-label{font-size:11px;color:#64748b;margin-bottom:4px;font-weight:600}
+.theme-text{font-size:14px;font-weight:700;color:#1e293b;outline:none;border-bottom:1px dashed transparent;min-height:20px;padding:2px 4px}
+.theme-text:focus{border-bottom-color:#2563eb;background:#f0f7ff}
+.theme-text:empty:before{content:'点击设置本月主题';color:#94a3b8;font-weight:400}
+.event-modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px}
+.event-modal{background:#fff;border-radius:12px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.event-modal h3{margin-bottom:16px;font-size:18px}
+.event-modal label{display:block;font-size:12px;color:#64748b;margin:12px 0 4px;font-weight:600}
+.event-modal input,.event-modal textarea{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px}
+.event-modal textarea{min-height:80px;resize:vertical}
+.event-modal .btn-row{display:flex;gap:8px;margin-top:16px;justify-content:flex-end}
+.event-modal .btn-primary{background:#2563eb;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px}
+.event-modal .btn-secondary{background:#e2e8f0;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px}
+.attachment-list{margin-top:8px}
+.attachment-item{display:flex;align-items:center;gap:8px;padding:6px 8px;background:#f8fafc;border-radius:6px;margin-bottom:4px;font-size:12px}
+.attachment-item a{color:#2563eb;text-decoration:none;word-break:break-all}
+.mkt-cal-card.expanded{padding:16px}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.card-actions{display:flex;gap:4px}
+.inline-date-input{border:none;background:transparent;color:var(--blue);font-size:12px;font-weight:600;padding:2px 4px;border-radius:4px;cursor:pointer}
+.inline-date-input:focus{background:#f0f7ff;outline:1px solid var(--blue)}
+.card-materials{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.mat-label{font-size:11px;color:#64748b;margin-bottom:6px;font-weight:600}
+.mat-list{display:flex;flex-wrap:wrap;gap:6px}
+.mat-check{display:flex;align-items:center;gap:3px;cursor:pointer;font-size:12px}
+.mat-check input{width:14px;height:14px;accent-color:#2563eb}
+.mat-name{color:#475569}
+.mat-name.checked{color:#2563eb;font-weight:600}
+.card-attachments{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.attach-item{display:flex;flex-direction:column;align-items:center;gap:4px;width:72px}
+.attach-thumb{width:64px;height:64px;border-radius:6px;object-fit:cover;background:#f1f5f9;display:flex;align-items:center;justify-content:center;font-size:20px;border:1px solid var(--border)}
+.video-thumb{background:#1e293b;color:#fff;font-size:24px}
+.file-thumb{background:#f8fafc}
+.attach-name{font-size:10px;color:#64748b;text-align:center;max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;cursor:pointer}
+.attach-name:hover{color:#2563eb}
+.attach-thumb{cursor:pointer}
+.attach-del{border:none;background:none;color:#ef4444;font-size:11px;cursor:pointer;padding:0}
+.card-upload{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.upload-row{display:flex;gap:4px;align-items:center;flex-wrap:nowrap;max-width:100%;overflow:hidden}
+.attach-url-input{flex:1;min-width:0;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:12px}
+.upload-btn{border:none;background:#f1f5f9;padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;white-space:nowrap;flex-shrink:0}
+.kll-cards-grid{display:flex;flex-wrap:wrap;gap:12px}
+.kll-card{width:calc(20% - 10px);min-width:200px;max-width:240px;background:var(--card);border-radius:10px;padding:14px;border:1px solid #fed7aa;border-left:3px solid #ea580c;flex-shrink:0}
+.kll-card .cal-subject{font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.4;outline:none;border-bottom:1px dashed transparent;min-height:20px}
+.kll-card .cal-subject:focus{border-bottom-color:#ea580c;background:#fff7ed}
+.kll-card .cal-direction{font-size:12px;color:var(--sub);margin-bottom:8px;outline:none;border-bottom:1px dashed transparent;min-height:16px}
+.kll-card .cal-direction:focus{border-bottom-color:#ea580c;background:#fff7ed}
+.kll-card.kll-published{opacity:0.7;border-left-color:#22c55e}
+.kll-publish{margin:8px 0 4px;font-size:12px}
+.kll-publish .mat-check{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.kll-publish .mat-name.checked{color:#22c55e;text-decoration:line-through}
+</style>
+
+</head>
+<body>
+
+
+<div class="header">
+  <h1>捷展供应链业务总看板</h1>
+  <p id="update-time">加载中...</p>
+</div>
+<div class="container">
+  <div class="top-tabs">
+    <div class="top-tab active" onclick="switchPanel('sales')">📊 业绩看板</div>
+    <div class="top-tab" onclick="switchPanel('vip')">👑 大客户</div>
+    <div class="top-tab" onclick="switchPanel('marketing')">📣 内容营销</div>
+    <div class="top-tab" onclick="switchPanel('acquisition')">🎯 客拉拉获客</div>
+    <div class="top-tab" onclick="switchPanel('store1688')">📦 1688店铺</div>
+  </div>
+  <div id="panel-sales" class="panel">
+    
+  <div class="month-tabs" id="tabs"></div>
+  <div class="kpi-grid" id="kpis"></div>
+  <div class="team-grid" id="teams"></div>
+  <div class="rank-section" id="month-rank"></div>
+  <div class="rank-section" id="week-rank"></div>
+
+  </div>
+  <div id="panel-vip" class="panel" style="display:none">
+  <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr)" id="vipKpis"></div>
+  <h3 style="margin:20px 0 12px">👑 重点客户概览 <span style="font-size:12px;color:#94a3b8;font-weight:400">（点击卡片查看详情）</span></h3>
+  <div class="vip-grid" id="vipCards"></div>
+  <div class="vip-todo-section">
+<h3>📋 重点事项</h3>
+<div class="todo-controls">
+<input type="date" id="todoStartDate" class="todo-input" style="width:130px" title="开始时间">
+<select id="todoCustomer" class="todo-select"><option value="">选择客户</option><option value="影视飓风">影视飓风</option><option value="FPA">FPA</option><option value="Karma8a">Karma8a</option><option value="1701">1701</option><option value="品创-Dickies">品创-Dickies</option><option value="品创-供应链">品创-供应链</option><option value="品创-Clottee">品创-Clottee</option><option value="品创-Iceconquer">品创-Iceconquer</option><option value="CLOT">CLOT</option></select>
+<select id="todoPerson" class="todo-select"><option value="">跟进人</option><option value="冯佩珊">冯佩珊</option><option value="张玉珠">张玉珠</option><option value="彭培强">彭培强</option><option value="敬健浩">敬健浩</option><option value="林梓仪">林梓仪</option><option value="王娟">王娟</option></select>
+<input type="text" id="todoInput" placeholder="重点事项..." class="todo-input" style="flex:1">
+<input type="text" id="todoGoal" placeholder="目标结果..." class="todo-input" style="width:130px">
+<input type="date" id="todoDeadline" class="todo-input" style="width:130px" title="截止时间">
+<select id="todoPriority" class="todo-select"><option value="高">高</option><option value="中" selected>中</option><option value="低">低</option></select>
+<button onclick="addTodo()" class="todo-add-btn">+ 添加</button>
+</div>
+<div id="todoStats"></div>
+<table class="todo-table" id="todoTable">
+<thead><tr><th>开始</th><th>客户</th><th>跟进人</th><th>重点事项</th><th>目标结果</th><th>截止</th><th style="width:80px">时间进度</th><th>优先级</th><th style="width:100px">完成情况</th><th>状态</th><th>操作</th></tr></thead>
+<tbody id="todoBody"></tbody>
+</table>
+<p id="todoEmpty" style="color:#94a3b8;text-align:center;padding:20px;display:none">暂无跟进事项</p>
+</div>
+
+<div id="vipDetailModal" class="vip-modal" style="display:none" onclick="if(event.target===this)closeVipDetail()">
+  <div class="vip-modal-content">
+    <button class="vip-modal-close" onclick="closeVipDetail()">&times;</button>
+    <div id="vipDetailBody"></div>
+  </div>
+</div>
+</div>
+  <div id="panel-marketing" class="panel" style="display:none">
+    <div id="marketing-content">
+      <div style="text-align:center;padding:40px;color:#94a3b8">加载中...</div>
+    </div>
+  </div>
+  <div id="panel-acquisition" class="panel" style="display:none">
+    <div id="acquisition-content">
+      <div style="text-align:center;padding:40px;color:#94a3b8">加载中...</div>
+    </div>
+    <div class="vip-todo-section">
+<h3>📋 重点事项</h3>
+<div class="todo-controls">
+<input type="date" id="kelalaTodoStartDate" class="todo-input" style="width:130px" title="开始时间">
+<input type="text" id="kelalaTodoPerson" placeholder="负责人..." class="todo-input" style="width:100px">
+<input type="text" id="kelalaTodoInput" placeholder="事项内容..." class="todo-input" style="flex:1">
+<input type="text" id="kelalaTodoGoal" placeholder="目标结果..." class="todo-input" style="width:130px">
+<input type="date" id="kelalaTodoDeadline" class="todo-input" style="width:130px" title="截止时间">
+<select id="kelalaTodoPriority" class="todo-select"><option value="高">高</option><option value="中" selected>中</option><option value="低">低</option></select>
+<button onclick="addKelalaTodo()" class="todo-add-btn">+ 添加</button>
+</div>
+<div id="kelalaTodoStats"></div>
+<table class="todo-table" id="kelalaTodoTable">
+<thead><tr><th>开始</th><th>负责人</th><th>重点事项</th><th>目标结果</th><th>截止</th><th style="width:80px">时间进度</th><th>优先级</th><th style="width:100px">完成情况</th><th>状态</th><th>操作</th></tr></thead>
+<tbody id="kelalaTodoBody"></tbody>
+</table>
+<p id="kelalaTodoEmpty" style="color:#94a3b8;text-align:center;padding:20px;display:none">暂无待办事项</p>
+</div>
+  </div>
+  <div id="panel-store1688" class="panel" style="display:none">
+    <div id="store1688-content">
+      <div style="text-align:center;padding:40px;color:#94a3b8">加载中...</div>
+    </div>
+    <div class="vip-todo-section">
+<h3>📋 重点事项</h3>
+<div class="todo-controls">
+<input type="date" id="s1688TodoStartDate" class="todo-input" style="width:130px" title="开始时间">
+<input type="text" id="s1688TodoPerson" placeholder="负责人..." class="todo-input" style="width:100px">
+<input type="text" id="s1688TodoInput" placeholder="事项内容..." class="todo-input" style="flex:1">
+<input type="text" id="s1688TodoGoal" placeholder="目标结果..." class="todo-input" style="width:130px">
+<input type="date" id="s1688TodoDeadline" class="todo-input" style="width:130px" title="截止时间">
+<select id="s1688TodoPriority" class="todo-select"><option value="高">高</option><option value="中" selected>中</option><option value="低">低</option></select>
+<button onclick="addS1688Todo()" class="todo-add-btn">+ 添加</button>
+</div>
+<div id="s1688TodoStats"></div>
+<table class="todo-table" id="s1688TodoTable">
+<thead><tr><th>开始</th><th>负责人</th><th>重点事项</th><th>目标结果</th><th>截止</th><th style="width:80px">时间进度</th><th>优先级</th><th style="width:100px">完成情况</th><th>状态</th><th>操作</th></tr></thead>
+<tbody id="s1688TodoBody"></tbody>
+</table>
+<p id="s1688TodoEmpty" style="color:#94a3b8;text-align:center;padding:20px;display:none">暂无待办事项</p>
+</div>
+  </div>
+</div>
+<div class="footer">捷展供应链业务总看板 · 内部管理</div>
+<script>
+const STATIC_DATA={"1": {"members": [{"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 302500.0, "actual": 711806.32, "rate": 235.30787438016526}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 150000.0, "actual": 264321.27, "rate": 176.21418000000003}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 578510.0, "actual": 786301.13, "rate": 135.91832984736652}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 450000.0, "actual": 611316.2, "rate": 135.84804444444444}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 350000.0, "actual": 446685.0, "rate": 127.62428571428572}, {"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 800000.0, "actual": 967508.08, "rate": 120.93851}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 150000.0, "actual": 178087.68, "rate": 118.72511999999999}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 1300000.0, "actual": 1494715.12, "rate": 114.97808615384616}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 950000.0, "actual": 1041463.91, "rate": 109.62778}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 200000.0, "actual": 205450.5, "rate": 102.72524999999999}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 400000.0, "actual": 410060.0, "rate": 102.515}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 250000.0, "actual": 191036.38, "rate": 76.414552}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 250000.0, "actual": 163802.71, "rate": 65.521084}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 592450.0, "actual": 320294.12, "rate": 54.06264157312853}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 223040.0, "actual": 112245.35, "rate": 50.32521072453372}], "teams": {"蓝队": {"target": 2600000.0, "actual": 2982910.17, "rate": 114.72731423076922}, "橙队": {"target": 2952500.0, "actual": 3703343.0, "rate": 125.43075359864521}, "金队": {"target": 1394000.0, "actual": 1218840.6, "rate": 87.43476327116213}, "紫队": {"target": 3780000, "actual": 1139313.82, "rate": 30.140577248677253}}, "grand_target": 10726500.0, "grand_actual": 9044407.59, "grand_rate": 84.31834792336737}, "2": {"members": [{"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 150000.0, "actual": 289634.95, "rate": 193.08996666666667}, {"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 300000.0, "actual": 432013.09, "rate": 144.00436333333334}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 104550.0, "actual": 141678.0, "rate": 135.51219512195124}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 150000.0, "actual": 202462.84, "rate": 134.97522666666666}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 100000.0, "actual": 123947.18, "rate": 123.94718}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 150000.0, "actual": 184730.4, "rate": 123.1536}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 150000.0, "actual": 152104.66, "rate": 101.40310666666667}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 800000.0, "actual": 809322.87, "rate": 101.16535875}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 60000.0, "actual": 43126.39, "rate": 71.87731666666667}, {"name": "许凤婷", "team": "蓝队", "group": "蓝队", "target": 50000.0, "actual": 26357.09, "rate": 52.71418}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 200000.0, "actual": 101097.13, "rate": 50.548565}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 600000.0, "actual": 251329.52, "rate": 41.88825333333333}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 264860.0, "actual": 99883.19, "rate": 37.711692969870874}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 150000.0, "actual": 43264.28, "rate": 28.842853333333334}, {"name": "庄晓玲", "team": "蓝队", "group": "蓝队", "target": 50000.0, "actual": 11015.0, "rate": 22.03}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 334560.0, "actual": 53548.33, "rate": 16.005598397895746}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 100000.0, "actual": 14789.6, "rate": 14.7896}], "teams": {"蓝队": {"target": 1300000.0, "actual": 1305364.3800000001, "rate": 100.41264461538462}, "橙队": {"target": 1710000.0, "actual": 1379830.6199999999, "rate": 80.69184912280701}, "金队": {"target": 703970.0, "actual": 295109.52, "rate": 41.92075230478572}, "紫队": {"target": 2210000, "actual": 657785.32, "rate": 29.764041628959276}}, "grand_target": 5923970.0, "grand_actual": 3638089.84, "grand_rate": 61.41303619025754}, "3": {"members": [{"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 480000.0, "actual": 1054375.91, "rate": 219.66164791666665}, {"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 1500000.0, "actual": 2427404.3, "rate": 161.82695333333334}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 350000.0, "actual": 509530.81, "rate": 145.58023142857144}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 350000.0, "actual": 484963.8, "rate": 138.56108571428572}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 195160.0, "actual": 265796.0, "rate": 136.19389219102277}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 300000.0, "actual": 376431.22, "rate": 125.47707333333334}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 1350000.0, "actual": 1502720.87, "rate": 111.31265703703706}, {"name": "许凤婷", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 109510.99, "rate": 109.51098999999999}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 697000.0, "actual": 738631.08, "rate": 105.97289526542323}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 450000.0, "actual": 465555.7, "rate": 103.45682222222223}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 200000.0, "actual": 206626.44, "rate": 103.31322}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 200000.0, "actual": 173225.55, "rate": 86.612775}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 600000.0, "actual": 513953.2, "rate": 85.65886666666667}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 588965.0, "actual": 378757.73, "rate": 64.3090387374462}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 1470000.0, "actual": 512451.84, "rate": 34.8606693877551}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 600000.0, "actual": 121669.58, "rate": 20.27826333333333}, {"name": "谢鼎鑫", "team": "橙队", "group": "橙队", "target": 100000.0, "actual": 9040.3, "rate": 9.0403}, {"name": "庄晓玲", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 7604.69, "rate": 7.60469}], "teams": {"蓝队": {"target": 4100000.0, "actual": 4757695.03, "rate": 116.04134219512197}, "橙队": {"target": 4050000.0, "actual": 3717370.17, "rate": 91.78691777777777}, "金队": {"target": 1481125.0, "actual": 1383184.81, "rate": 93.38744602920079}, "紫队": {"target": 3970000, "actual": 1188126.75, "rate": 29.927625944584385}}, "grand_target": 13601125.0, "grand_actual": 11046376.76, "grand_rate": 81.21664024115653}, "4": {"members": [{"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 1100000.0, "actual": 3000571.0, "rate": 272.7791818181818}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 300000.0, "actual": 588337.53, "rate": 196.11251000000001}, {"name": "许凤婷", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 187378.67, "rate": 187.37867}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 1250000.0, "actual": 1945001.5, "rate": 155.60012}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 300000.0, "actual": 454674.25, "rate": 151.55808333333334}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 736160.0, "actual": 1063132.68, "rate": 144.41598022169094}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 500000.0, "actual": 630279.3, "rate": 126.05586000000002}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 522500.0, "actual": 632236.76, "rate": 121.00225071770335}, {"name": "苏芷萱", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 108138.33, "rate": 108.13833}, {"name": "曹志行", "team": "橙队", "group": "橙队", "target": 50000.0, "actual": 53686.47, "rate": 107.37294}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 410000.0, "actual": 426247.06, "rate": 103.9626975609756}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 500000.0, "actual": 432736.0, "rate": 86.5472}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 1750000.0, "actual": 1434451.33, "rate": 81.96864742857143}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 350000.0, "actual": 282313.25, "rate": 80.66092857142857}, {"name": "潘洁", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 67839.7, "rate": 67.8397}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 800000.0, "actual": 407970.0, "rate": 50.996249999999996}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 770560.0, "actual": 354158.56, "rate": 45.961191860465114}, {"name": "邱雨轩", "team": "橙队", "group": "橙队", "target": 50000.0, "actual": 22833.0, "rate": 45.666000000000004}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 300000.0, "actual": 120350.12, "rate": 40.116706666666666}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 392160.0, "actual": 114936.6, "rate": 29.30859853121175}, {"name": "李永泼", "team": "橙队", "group": "橙队", "target": 50000.0, "actual": 58.0, "rate": 0.116}], "teams": {"蓝队": {"target": 4150000.0, "actual": 6160238.03, "rate": 148.43947060240964}, "橙队": {"target": 4382500.0, "actual": 4634864.24, "rate": 105.75845385054193}, "金队": {"target": 1898880.0, "actual": 1532227.8399999999, "rate": 80.69113582743512}, "紫队": {"target": 4900000, "actual": 1416258.54, "rate": 28.903235510204084}}, "grand_target": 15331380.0, "grand_actual": 13743588.649999999, "grand_rate": 89.64351969620476}, "5": {"members": [{"name": "林梓仪", "team": "蓝队", "group": "深藏Blue", "target": 100000.0, "actual": 216029.76, "rate": 216.02976000000004}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 400000.0, "actual": 715548.54, "rate": 178.88713500000003}, {"name": "彭成龙", "team": "金队", "group": "金队", "target": 34400.0, "actual": 44244.5, "rate": 128.61773255813952}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 550000.0, "actual": 683728.22, "rate": 124.3142218181818}, {"name": "梁铭恩", "team": "金队", "group": "美少女战士", "target": 34400.0, "actual": 41802.4, "rate": 121.5186046511628}, {"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 2200000.0, "actual": 2639945.5, "rate": 119.99752272727274}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 839360.0, "actual": 987794.96, "rate": 117.68430232558138}, {"name": "苏芷萱", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 113983.02, "rate": 113.98302}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 450000.0, "actual": 480140.78, "rate": 106.69795111111111}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 700000.0, "actual": 704144.0, "rate": 100.592}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 500000.0, "actual": 502762.0, "rate": 100.5524}, {"name": "许凤婷", "team": "蓝队", "group": "蓝队", "target": 50000.0, "actual": 50118.11, "rate": 100.23622}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 350000.0, "actual": 294058.63, "rate": 84.01675142857144}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 1590000.0, "actual": 1159373.05, "rate": 72.91654402515724}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 460000.0, "actual": 295019.2, "rate": 64.13460869565218}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 385280.0, "actual": 211466.48, "rate": 54.88644102990033}, {"name": "曹志行", "team": "橙队", "group": "橙队", "target": 100000.0, "actual": 53107.13, "rate": 53.107130000000005}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 350000.0, "actual": 182157.06, "rate": 52.04487428571428}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 200000.0, "actual": 88184.34, "rate": 44.092169999999996}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 701760.0, "actual": 282444.24, "rate": 40.24798221614227}, {"name": "邱雨轩", "team": "橙队", "group": "橙队", "target": 100000.0, "actual": 39216.68, "rate": 39.21668}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 1400000.0, "actual": 533922.25, "rate": 38.137303571428575}], "teams": {"蓝队": {"target": 5200000.0, "actual": 5898887.4, "rate": 113.4401423076923}, "橙队": {"target": 4400000.0, "actual": 2852550.8699999996, "rate": 64.83070159090907}, "金队": {"target": 1995200.0, "actual": 1567752.5799999998, "rate": 78.57621190858059}, "紫队": {"target": 3690000, "actual": 1313252.82, "rate": 35.58950731707317}}, "grand_target": 15285200.0, "grand_actual": 11632443.67, "grand_rate": 76.10265923900243}, "6": {"members": [{"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 300000.0, "actual": 583935.92, "rate": 194.64530666666667}, {"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 1800000.0, "actual": 2600963.77, "rate": 144.49798722222224}, {"name": "林梓仪", "team": "蓝队", "group": "深藏Blue", "target": 150000.0, "actual": 210135.09, "rate": 140.09006}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 825600.0, "actual": 1141795.4, "rate": 138.29886143410852}, {"name": "梁铭恩", "team": "金队", "group": "美少女战士", "target": 58480.0, "actual": 62887.74, "rate": 107.53717510259916}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 750000.0, "actual": 769741.0, "rate": 102.63213333333334}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 550000.0, "actual": 558529.94, "rate": 101.55089818181817}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 200000.0, "actual": 173574.58, "rate": 86.78729}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 399040.0, "actual": 327754.9, "rate": 82.13585104250201}, {"name": "苏芷萱", "team": "蓝队", "group": "蓝队", "target": 60000.0, "actual": 49223.29, "rate": 82.03881666666668}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 500000.0, "actual": 346803.0, "rate": 69.36059999999999}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 300000.0, "actual": 188571.0, "rate": 62.857}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 1066400.0, "actual": 663839.11, "rate": 62.25047918229557}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 350000.0, "actual": 194267.1, "rate": 55.50488571428571}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 500000.0, "actual": 274135.1, "rate": 54.82701999999999}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 300000.0, "actual": 123571.85, "rate": 41.19061666666667}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 460000.0, "actual": 187007.26, "rate": 40.65375217391304}, {"name": "曹志行", "team": "橙队", "group": "橙队", "target": 150000.0, "actual": 51210.34, "rate": 34.14022666666666}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 600000.0, "actual": 204210.0, "rate": 34.035}], "teams": {"蓝队": {"target": 4710000.0, "actual": 5217775.27, "rate": 110.78079129511676}, "橙队": {"target": 2260000.0, "actual": 1298103.97, "rate": 57.43822876106195}, "金队": {"target": 2349520.0, "actual": 2196277.15, "rate": 93.47769544417582}, "紫队": {"target": 3060000, "actual": 1198995.1600000001, "rate": 39.182848366013076}}, "grand_target": 12379520.0, "grand_actual": 9911151.549999999, "grand_rate": 80.06087110001033}, "7": {"members": [{"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 2000000, "actual": 2398724.9, "rate": 119.936245, "week_target": 500000, "week_actual": 1898162.1, "week_rate": 379.63242}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 846875, "actual": 838498.2999999999, "rate": 99.01086937269372, "week_target": 136718, "week_actual": 0, "week_rate": 0.0}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 400000, "actual": 182945.2, "rate": 45.7363, "week_target": 80000, "week_actual": 0.0, "week_rate": 0.0}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 250000, "actual": 56385.15, "rate": 22.55406, "week_target": 75000, "week_actual": 20870.32, "week_rate": 27.82709333333333}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 500000, "actual": 97418.91, "rate": 19.483781999999998, "week_target": 100000, "week_actual": 6687.58, "week_rate": 6.68758}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 495000, "actual": 83109.88, "rate": 16.789874747474748, "week_target": 99000, "week_actual": 34439.02, "week_rate": 34.78688888888888}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 440375, "actual": 69970.265, "rate": 15.888791370990631, "week_target": 88075, "week_actual": 25941.0, "week_rate": 29.453306840760717}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 500000, "actual": 68492.74, "rate": 13.698548000000002, "week_target": 100000, "week_actual": 1051.5, "week_rate": 1.0515}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 914625, "actual": 84213.76999999999, "rate": 9.207464261309278, "week_target": 182925, "week_actual": 0, "week_rate": 0.0}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 780000, "actual": 70029.74, "rate": 8.978171794871797, "week_target": 156000, "week_actual": 10002.12, "week_rate": 6.411615384615385}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 450000, "actual": 16483.8, "rate": 3.6630666666666665, "week_target": 112500, "week_actual": 12288.0, "week_rate": 10.922666666666666}, {"name": "梁铭恩", "team": "金队", "group": "美少女战士", "target": 105012, "actual": 3602.44, "rate": 3.430503180588885, "week_target": 21002, "week_actual": 0, "week_rate": 0.0}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 460000, "actual": 9764.58, "rate": 2.1227347826086955, "week_target": 92000, "week_actual": 743.5, "week_rate": 0.8081521739130435}, {"name": "林梓仪", "team": "蓝队", "group": "深藏Blue", "target": 150000, "actual": 2278.04, "rate": 1.5186933333333332, "week_target": 30000, "week_actual": 36.0, "week_rate": 0.12}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 600000, "actual": 3716.5, "rate": 0.6194166666666666, "week_target": 120000, "week_actual": 0.0, "week_rate": 0.0}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 500000, "actual": 0.0, "rate": 0.0, "week_target": 125000, "week_actual": 0.0, "week_rate": 0.0}], "teams": {"蓝队": {"target": 4850000, "actual": 2729026.33, "rate": 56.26858412371134}, "橙队": {"target": 2235000, "actual": 260323.11, "rate": 11.64756644295302}, "金队": {"target": 2306887, "actual": 996284.7749999999, "rate": 43.18741121693433}, "紫队": {"target": 1450000, "actual": 202631.91, "rate": 13.974614482758621}}, "grand_target": 10841887, "grand_actual": 4188266.125, "grand_rate": 38.63041668853401}, "cum": {"members": [{"name": "彭培强", "team": "蓝队", "group": "保蓝", "target": 9700000.0, "actual": 14467130.639999999, "rate": 149.1456767010309}, {"name": "敬健浩", "team": "蓝队", "group": "深藏Blue", "target": 2000000.0, "actual": 2597168.0100000002, "rate": 129.85840050000002}, {"name": "彭成龙", "team": "金队", "group": "金队", "target": 34400.0, "actual": 44244.5, "rate": 128.61773255813952}, {"name": "张玉珠", "team": "橙队", "group": "橙队", "target": 3000000.0, "actual": 3847734.2099999995, "rate": 128.25780699999999}, {"name": "许凤婷", "team": "蓝队", "group": "蓝队", "target": 300000.0, "actual": 373364.86, "rate": 124.45495333333332}, {"name": "林梓仪", "team": "蓝队", "group": "深藏Blue", "target": 400000.0, "actual": 428442.88999999996, "rate": 107.1107225}, {"name": "莫紫珊", "team": "金队", "group": "开单狂魔", "target": 4872005.0, "actual": 5143694.87, "rate": 105.57655154294791}, {"name": "苏芷萱", "team": "蓝队", "group": "蓝队", "target": 260000.0, "actual": 271344.64, "rate": 104.36332307692308}, {"name": "朱家豪", "team": "蓝队", "group": "深藏Blue", "target": 1900000.0, "actual": 1752029.61, "rate": 92.21208473684212}, {"name": "潘嘉瑜", "team": "蓝队", "group": "钱多多", "target": 2800000.0, "actual": 2500934.3800000004, "rate": 89.31908500000002}, {"name": "冯佩珊", "team": "橙队", "group": "橙队", "target": 7870000.0, "actual": 6594184.83, "rate": 83.78887966963151}, {"name": "刘胜楠", "team": "蓝队", "group": "钱多多", "target": 3900000.0, "actual": 3076823.7800000003, "rate": 78.89291743589744}, {"name": "余昊芯", "team": "橙队", "group": "橙队", "target": 1110000.0, "actual": 862782.25, "rate": 77.72813063063063}, {"name": "潘洁", "team": "蓝队", "group": "蓝队", "target": 100000.0, "actual": 67839.7, "rate": 67.8397}, {"name": "邓正瑶", "team": "橙队", "group": "橙队", "target": 6770000.0, "actual": 4585797.93, "rate": 67.73704475627768}, {"name": "刘江滔", "team": "蓝队", "group": "钱多多", "target": 2050000.0, "actual": 1378098.0, "rate": 67.22429268292683}, {"name": "周乐", "team": "橙队", "group": "橙队", "target": 2640000.0, "actual": 1726734.84, "rate": 65.40662272727273}, {"name": "刘晓霞", "team": "蓝队", "group": "深藏Blue", "target": 3350000.0, "actual": 2120100.41, "rate": 63.286579402985076}, {"name": "罗伟仪", "team": "金队", "group": "开单狂魔", "target": 2139605.0, "actual": 1243847.595, "rate": 58.13444981667176}, {"name": "梁铭恩", "team": "金队", "group": "美少女战士", "target": 197892.0, "actual": 108292.58, "rate": 54.72307117013321}, {"name": "朱雪榕", "team": "金队", "group": "美少女战士", "target": 4885680.0, "actual": 2649597.73, "rate": 54.23191306020861}, {"name": "曹志行", "team": "橙队", "group": "橙队", "target": 300000.0, "actual": 158003.94, "rate": 52.66798}, {"name": "邱雨轩", "team": "橙队", "group": "橙队", "target": 150000.0, "actual": 62049.68, "rate": 41.36645333333334}, {"name": "庄晓玲", "team": "蓝队", "group": "蓝队", "target": 150000.0, "actual": 18619.69, "rate": 12.413126666666665}, {"name": "谢鼎鑫", "team": "橙队", "group": "橙队", "target": 100000.0, "actual": 9040.3, "rate": 9.0403}, {"name": "李永泼", "team": "橙队", "group": "橙队", "target": 50000.0, "actual": 58.0, "rate": 0.116}], "teams": {"蓝队": {"target": 26910000.0, "actual": 29051896.61, "rate": 107.95948201412114}, "橙队": {"target": 21990000.0, "actual": 17846385.979999997, "rate": 81.15682573897224}, "金队": {"target": 12129582.0, "actual": 9189677.275, "rate": 75.76252236062216}, "紫队": {"target": 23060000, "actual": 7116364.32, "rate": 30.860209540329574}}, "grand_target": 84089582.0, "grand_actual": 63204324.184999995, "grand_rate": 75.16308522618176}};
+const COLORS={"\u84dd\u961f": "#2563EB", "\u6a59\u961f": "#EA580C", "\u91d1\u961f": "#CA8A04", "\u7d2b\u961f": "#7C3AED"};
+const BG={"\u84dd\u961f": "#EFF6FF", "\u6a59\u961f": "#FFF7ED", "\u91d1\u961f": "#FEFCE8", "\u7d2b\u961f": "#F5F3FF"};
+let WEEK_NUM=2;
+let TIME_PROGRESS=22.6;
+let DAYS_PASSED=7;
+const DAYS_TOTAL=31;
+let DATA=STATIC_DATA;
+let currentTab='7';
+
+function fmt(v){if(Math.abs(v)>=10000)return'¥'+(v/10000).toFixed(1)+'万';return'¥'+v.toLocaleString('zh-CN',{maximumFractionDigits:0})}
+function barHtml(pct,color){const w=Math.min(pct,100);return'<div class="rate-bar"><div class="rate-fill" style="width:'+w.toFixed(0)+'%;background:'+color+'"></div><span class="rate-text">'+pct.toFixed(1)+'%</span></div>'}
+function medal(i){return i<3?['🥇','🥈','🥉'][i]:''+(i+1)}
+
+function renderTabs(){const tabs=document.getElementById('tabs');let html='<div class="month-tab'+(currentTab==='cum'?' active':'')+'" data-m="cum">累计</div>';for(let i=1;i<=12;i++){const has=DATA[String(i)];const cls=currentTab===String(i)?' active':'';const dis=!has?' style="opacity:0.4;pointer-events:none"':'';html+='<div class="month-tab'+cls+'" data-m="'+i+'"'+dis+'>'+i+'月</div>'}tabs.innerHTML=html;tabs.querySelectorAll('.month-tab').forEach(t=>{t.addEventListener('click',()=>{currentTab=t.dataset.m;render()})})}
+
+function renderKpis(d){const kpis=document.getElementById('kpis');const rate=d.grand_rate;let h='';if(currentTab==='7'){h+='<div class="kpi"><div class="label">7月剩余</div><div class="countdown" id="countdown">--</div><div class="detail">天:时:分:秒</div></div>';h+='<div class="kpi"><div class="label">时间进度</div><div class="value" style="color:var(--blue)">'+TIME_PROGRESS.toFixed(0)+'%</div><div class="progress"><div class="progress-fill" style="width:'+TIME_PROGRESS.toFixed(0)+'%;background:var(--blue)"></div></div><div class="detail">'+DAYS_PASSED+'/'+DAYS_TOTAL+'天</div></div>'}const label=currentTab==='cum'?'累计总业绩':(currentTab+'月总业绩');h+='<div class="kpi"><div class="label">'+label+'</div><div class="value" style="color:var(--accent)">'+fmt(d.grand_actual)+'</div><div style="font-size:18px;font-weight:800;color:var(--accent);margin-top:2px">完成率 '+rate.toFixed(1)+'%</div><div class="progress"><div class="progress-fill" style="width:'+Math.min(rate,100).toFixed(0)+'%;background:var(--accent)"></div></div><div class="detail">目标 '+fmt(d.grand_target)+'</div></div>';kpis.innerHTML=h;if(currentTab==='7')startCountdown()}
+
+function renderTeams(d){const c=document.getElementById('teams');let h='';['蓝队','橙队','金队','紫队'].forEach(t=>{const td=d.teams[t]||{target:0,actual:0,rate:0};const color=COLORS[t],bg=BG[t];h+='<div class="team-card" style="border-color:'+color+';background:'+bg+'">';h+='<h3 style="color:'+color+'">'+t+'</h3>';h+='<div class="rate" style="color:'+color+';font-size:22px;font-weight:800">'+td.rate.toFixed(1)+'%</div>';h+='<div class="progress"><div class="progress-fill" style="width:'+Math.min(td.rate,100).toFixed(0)+'%;background:'+color+'"></div></div>';h+='<div class="metric"><span class="k">业绩</span><span class="v">'+fmt(td.actual)+'</span></div>';h+='<div class="metric"><span class="k">目标</span><span class="v">'+fmt(td.target)+'</span></div>';h+='</div>'});c.innerHTML=h}
+
+function renderRankings(d){const s=document.getElementById('month-rank'),ws=document.getElementById('week-rank');const members=d.members;const label=currentTab==='cum'?'累计':(currentTab+'月度');let h='<h2>📊 '+label+'个人完成率排行</h2>';h+='<table class="rank-table"><thead><tr><th>#</th><th>姓名</th><th>战队</th><th class="num">目标</th><th class="num">业绩</th><th>完成率</th></tr></thead><tbody>';members.forEach((m,i)=>{const color=COLORS[m.team]||'#666';const badge='<span class="badge" style="background:'+color+'">'+m.group+'</span>';h+='<tr><td>'+medal(i)+'</td><td>'+m.name+badge+'</td><td style="color:'+color+';font-weight:600">'+m.team+'</td><td class="num">'+fmt(m.target)+'</td><td class="num">'+fmt(m.actual)+'</td><td>'+barHtml(m.rate,color)+'</td></tr>'});h+='</tbody></table>';s.innerHTML=h;if(currentTab==='7'){const wm=d.members.slice().sort((a,b)=>b.week_rate-a.week_rate);let wh='<h2>⚡ 本周个人完成率排行（第'+['①','②','③','④','⑤'][WEEK_NUM-1]+'周）</h2>';wh+='<table class="rank-table"><thead><tr><th>#</th><th>姓名</th><th>战队</th><th class="num">周目标</th><th class="num">周业绩</th><th>完成率</th></tr></thead><tbody>';wm.forEach((m,i)=>{const color=COLORS[m.team]||'#666';const badge='<span class="badge" style="background:'+color+'">'+m.group+'</span>';wh+='<tr><td>'+medal(i)+'</td><td>'+m.name+badge+'</td><td style="color:'+color+';font-weight:600">'+m.team+'</td><td class="num">'+fmt(m.week_target)+'</td><td class="num">'+fmt(m.week_actual)+'</td><td>'+barHtml(m.week_rate,color)+'</td></tr>'});wh+='</tbody></table>';ws.innerHTML=wh;ws.style.display='block'}else{ws.style.display='none'}}
+
+function startCountdown(){function tick(){const el=document.getElementById('countdown');if(!el)return;const end=new Date('2026-07-31T23:59:59+08:00'),now=new Date();let d=Math.max(0,end-now);const dd=Math.floor(d/864e5);d%=864e5;const hh=Math.floor(d/36e5);d%=36e5;const mm=Math.floor(d/6e4);d%=6e4;const ss=Math.floor(d/1e3);el.textContent=String(dd).padStart(2,'0')+' : '+String(hh).padStart(2,'0')+' : '+String(mm).padStart(2,'0')+' : '+String(ss).padStart(2,'0')}tick();setInterval(tick,1000)}
+
+function refreshData(){
+  const btn=document.getElementById('refresh-btn');
+  btn.disabled=true;
+  btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg> 刷新中...';
+  fetch('sales_data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+    if(d.months&&d.months['7']){DATA['7']=d.months['7'];}
+    if(d.months&&d.months['cum']){DATA['cum']=d.months['cum'];}
+    if(d.current_week)WEEK_NUM=d.current_week;
+    if(d.time_progress)TIME_PROGRESS=d.time_progress;
+    if(d.days_passed)DAYS_PASSED=d.days_passed;
+    if(d.updated_at)document.getElementById('update-time').textContent='最近更新: '+d.updated_at;
+    render();
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg> ✓ 已更新';
+    btn.disabled=false;
+    setTimeout(()=>{btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg> 实时更新'},3000);
+  }).catch(()=>{btn.innerHTML='❌ 加载失败';btn.disabled=false;});
+}
+
+function render(){const d=DATA[currentTab];if(!d)return;renderTabs();renderKpis(d);renderTeams(d);renderRankings(d)}
+
+// On load: try to fetch latest data.json first
+fetch('sales_data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+  if(d.months && d.months['7']){DATA['7']=d.months['7'];}
+  if(d.months && d.months['cum']){DATA['cum']=d.months['cum'];}
+  if(d.current_week)WEEK_NUM=d.current_week;
+  if(d.time_progress)TIME_PROGRESS=d.time_progress;
+  if(d.days_passed)DAYS_PASSED=d.days_passed;
+  if(d.updated_at)document.getElementById('update-time').textContent='最近更新: '+d.updated_at;
+  render();
+}).catch(()=>render());
+
+
+function switchPanel(name) {
+  document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+  const panelNames=['sales','vip','marketing','acquisition','store1688'];
+  document.querySelectorAll('.top-tab').forEach((t,i) => {t.classList.remove('active');if(panelNames[i]===name)t.classList.add('active')});
+  document.getElementById('panel-' + name).style.display = '';
+  if (name === 'vip') renderTodos();
+  if (name === 'marketing') loadMarketingData();
+  if (name === 'acquisition') { loadAcquisitionData(); renderKelalaTodos(); }
+  if (name === 'store1688') { loadStore1688Data(); renderS1688Todos(); }
+}
+
+
+
+const VIP_DATA = [{"label": "品创-Dickies", "id": 20187, "level": "S级", "status": "normal", "last_30": 9075.0, "last_month": 0.0, "rest_amount": 137460.6, "user": "张玉珠", "years": 1.3, "days_since_follow": 8, "last_follow_date": "2026-08-04", "follows": [{"date": "2026-08-04", "content": "沟通DK的18个款"}, {"date": "2026-07-15", "content": "跟进打板和下单"}, {"date": "2026-06-10", "content": "KP：\n供应链总负责人：夏总\n男装负责人：思琪\n女装负责人：王岚\n高价货盘负责人：愚弱（李健泽）\n内衣货盘：清宇\n分销 ：小莎\n成本对接人： @乐风（米保俊）\n负责外采：东辉 \n负责品创成衣：林海建， 13868115232\n\n利润率计算：1-10000件=15%\n          10000-30000件=12%\n          30000-100000件=10%\n          大于100000件=8%\n报价为含运不含税，税点8% ，月结。\n\n男女的商品和运营在对接，预计12号给出选品需求"}, {"date": "2026-05-28", "content": "今天客户15人来访学习"}, {"date": "2026-05-26", "content": "Yaron-直播商品负责人,约28号来访选品沟通合作事宜"}, {"date": "2025-10-09", "content": "三次触达不回复"}, {"date": "2025-10-08", "content": "二次触达，未回复"}, {"date": "2025-10-07", "content": "触达，待回复"}, {"date": "2025-09-09", "content": "推热销款"}, {"date": "2025-08-18", "content": "秋冬新品推款"}], "created_at": "2025-04-17", "annual_total": 133476.80000000002, "monthly_sales": {"2026-05": 3553.95, "2026-06": 130112.85, "2026-01": -190.0}, "decision_maker": "李健泽 品创Dickies clot 负责人", "source": "主动挖掘", "customer_type": "品牌商", "connection": "开单", "brand": "品创，当阳品研服饰有限责任公司--王祉"}, {"label": "品创-Clottee", "id": 25497, "level": "O级", "status": "normal", "last_30": 0.0, "last_month": 0.0, "rest_amount": 2425667.0, "user": "张玉珠", "years": 0.1, "days_since_follow": 8, "last_follow_date": "2026-08-04", "follows": [{"date": "2026-08-04", "content": "沟通出货"}, {"date": "2026-07-15", "content": "跟进打板和下单"}], "created_at": "2026-07-06", "annual_total": 0, "monthly_sales": {}, "decision_maker": "李健泽--品创Dickies clot 负责人", "source": "转介绍", "customer_type": "品牌商", "connection": "开单", "brand": ""}, {"label": "品创-Iceconquer", "id": 25498, "level": "S级", "status": "attention", "last_30": 0.0, "last_month": 0.0, "rest_amount": 0.0, "user": "王娟", "years": 0.1, "days_since_follow": 27, "last_follow_date": "2026-07-16", "follows": [{"date": "2026-07-16", "content": "整理羊毛色卡中，目前卡在价格、logo"}], "created_at": "2026-07-06", "annual_total": 0, "monthly_sales": {}, "decision_maker": "沈总（沈曦皓）", "source": "转介绍", "customer_type": "品牌商", "connection": "开单", "brand": "iceconquer"}, {"label": "品创-供应链", "id": 25437, "level": "A级", "status": "normal", "last_30": 21792.6, "last_month": 808.6, "rest_amount": 78531.1, "user": "张玉珠", "years": 0.1, "days_since_follow": 8, "last_follow_date": "2026-08-04", "follows": [{"date": "2026-08-04", "content": "秋冬上新第一波产品推荐"}, {"date": "2026-07-16", "content": "女装寄样"}, {"date": "2026-07-03", "content": "拜访，了解ESPRIT女装需求，以及男装供应链需求\n梭织裤，夹克外套，毛衣，牛仔裤，"}, {"date": "2026-06-25", "content": "客户到访，洽谈新品牌的开发需求"}, {"date": "2026-06-22", "content": "确认现货品质，现货洗水唛现状，无法退换货\n确认合同"}, {"date": "2026-06-22", "content": "沟通大货品质，合同问题"}], "created_at": "2026-06-22", "annual_total": 56738.5, "monthly_sales": {"2026-06": 56738.5}, "decision_maker": "", "source": "转介绍", "customer_type": "品牌商", "connection": "开单", "brand": ""}, {"label": "FPA", "id": 20522, "level": "S级", "status": "normal", "last_30": 535348.0, "last_month": 574525.0, "rest_amount": 186946.6, "user": "彭培强", "years": 1.3, "days_since_follow": 29, "last_follow_date": "2026-07-14", "follows": [{"date": "2026-07-14", "content": "跟进拜访后产品的打样和策略"}, {"date": "2026-05-08", "content": "春夏发布会邀约"}, {"date": "2026-02-24", "content": "开工拜访和计划跟进"}, {"date": "2026-02-04", "content": "货盘钩子"}, {"date": "2025-12-06", "content": "气囊卫衣跟进"}, {"date": "2025-09-05", "content": "日常新品跟进"}, {"date": "2025-07-17", "content": "日常跟进"}, {"date": "2025-06-02", "content": "日常跟进"}], "created_at": "2025-05-01", "annual_total": 3067083.0, "monthly_sales": {"2026-01": 296298.0, "2026-03": 536311.5, "2026-04": 477787.5, "2026-05": 371054.0, "2026-06": 725186.5, "2026-07": 660445.5}, "decision_maker": "黄总", "source": "转介绍", "customer_type": "品牌商", "connection": "开单", "brand": ""}, {"label": "影视飓风", "id": 2612, "level": "A级", "status": "normal", "last_30": 610000.0, "last_month": 820000.0, "rest_amount": 3420714.0, "user": "彭培强", "years": 3.2, "days_since_follow": 96, "last_follow_date": "2026-05-08", "follows": [{"date": "2026-05-08", "content": "春夏发布会邀约"}, {"date": "2026-02-24", "content": "开工拜访和计划跟进"}, {"date": "2026-02-04", "content": "货盘钩子"}, {"date": "2025-12-22", "content": "新款开发\n周年礼物，客户过不来也不给我们过去\n\n已经安排成衣设计开发 了"}, {"date": "2025-12-06", "content": "气囊卫衣跟进"}, {"date": "2025-09-17", "content": "做货中"}, {"date": "2025-04-10", "content": "沟通确认coolmax发货到仓时间"}, {"date": "2025-03-31", "content": "接收大货辅料"}, {"date": "2025-03-28", "content": "COLMAX T恤 补单"}, {"date": "2025-03-27", "content": "919抗菌打底长袖大货发货"}], "created_at": "2023-06-03", "annual_total": 5756142.0, "monthly_sales": {"2026-03": 2416585.0, "2026-04": 673608.0, "2026-05": 323700.0, "2026-06": 1522249.0, "2026-07": 820000.0}, "decision_maker": "叶嘉伟", "source": "定制", "customer_type": "品牌商", "connection": "开单", "brand": "杭州平移科技有限公司"}, {"label": "1701", "id": 5542, "level": "A级", "status": "normal", "last_30": 343378.92, "last_month": 220885.0, "rest_amount": -56591.78, "user": "彭培强", "years": 2.2, "days_since_follow": 96, "last_follow_date": "2026-05-08", "follows": [{"date": "2026-05-08", "content": "春夏发布会邀约"}, {"date": "2026-02-24", "content": "开工拜访和计划跟进"}, {"date": "2026-02-04", "content": "货盘钩子"}, {"date": "2025-12-27", "content": "沟通26年春夏的产品，28号完成设计稿，年前想出货\n今天谈了5000件  水果弹力T恤的年框，定金已经支付"}, {"date": "2025-12-06", "content": "气囊卫衣跟进"}, {"date": "2025-09-05", "content": "日常新品跟进"}, {"date": "2025-07-17", "content": "日常跟进"}, {"date": "2025-06-02", "content": "日常跟进"}, {"date": "2025-03-25", "content": "跟进任务"}, {"date": "2025-03-04", "content": "展会邀约"}], "created_at": "2024-05-27", "annual_total": 986037.0, "monthly_sales": {"2026-01": 108244.0, "2026-03": 137553.0, "2026-04": 183498.0, "2026-05": 210214.0, "2026-06": 126396.0, "2026-07": 220132.0}, "decision_maker": "高嵩", "source": "主动挖掘", "customer_type": "品牌商", "connection": "开单", "brand": "1701"}, {"label": "CLOT", "id": 25494, "level": "A级", "status": "normal", "last_30": 0.0, "last_month": 0.0, "rest_amount": 36800.0, "user": "林梓仪", "years": 0.1, "days_since_follow": 5, "last_follow_date": "2026-08-07", "follows": [{"date": "2026-08-07", "content": "沟通款式打版"}, {"date": "2026-07-27", "content": "安排改标，"}, {"date": "2026-07-24", "content": "安排改标寄版，跟进打版进度，打合格证，合同跟进客户走盖章流程"}, {"date": "2026-07-23", "content": "安排寄样，改领标，核价，做资料，合格证调整打印中"}, {"date": "2026-07-22", "content": "安排辅料，打版，制单修改，改标，做资料，寄订货会样衣完善内容，合同审批盖章"}, {"date": "2026-07-21", "content": "制单修改提交设计稿，系统提交，安排辅料，测试合格证打印，合同沟通"}, {"date": "2026-07-20", "content": "安排打版，催促合同，安排辅料"}, {"date": "2026-07-17", "content": "修改制单提交设计稿，款式对接，系统对接"}, {"date": "2026-07-16", "content": "催促合同，沟通审版进度，对接系统资料"}, {"date": "2026-07-15", "content": "安排打版，修改设计稿提交，对接合同，对接其他事宜"}], "created_at": "2026-07-03", "annual_total": 0, "monthly_sales": {}, "decision_maker": "", "source": "转介绍", "customer_type": "品牌商", "connection": "聚水潭分销", "brand": ""}, {"label": "Karma8a", "id": 11235, "level": "A级", "status": "normal", "last_30": 166666.72, "last_month": 404252.22, "rest_amount": 1557833.4, "user": "敬健浩", "years": 1.6, "days_since_follow": 30, "last_follow_date": "2026-07-13", "follows": [{"date": "2026-07-13", "content": "27年春夏下单计划\n报价整理\n26秋冬补款"}, {"date": "2026-07-09", "content": "27年春夏开发样板\n新款增加"}, {"date": "2026-07-01", "content": "秋冬发布会第二波邀约"}, {"date": "2026-06-29", "content": "重点单品宣发"}, {"date": "2026-06-12", "content": "秋冬新款大货安排进度\n春夏样板安排\n设计提案\n电话沟通样板细节及新款大货"}, {"date": "2026-06-05", "content": "展厅邀约"}, {"date": "2026-06-05", "content": "重点单品宣发"}, {"date": "2026-05-22", "content": "展厅邀约"}, {"date": "2026-05-18", "content": "展厅邀约"}, {"date": "2026-05-08", "content": "新款沟通\n翻单沟通\n电话沟通27年春夏样品"}], "created_at": "2024-12-18", "annual_total": 2054339.91, "monthly_sales": {"2026-02": 164971.46, "2026-03": 71429.08, "2026-04": 462866.47, "2026-05": 636064.2, "2026-06": 546032.7, "2026-07": 172976.0}, "decision_maker": "杨老师", "source": "转介绍", "customer_type": "品牌商", "connection": "", "brand": "karma8a"}];
+
+// Render VIP KPIs and cards dynamically
+function fmtW(val){return val>=10000?'¥'+(val/10000).toFixed(1)+'万':val>0?'¥'+Math.round(val).toLocaleString():'¥0'}
+function calcDaysSinceFollow(v){
+  if(!v.last_follow_date||v.last_follow_date==='-') return 999;
+  const d=new Date(v.last_follow_date),today=new Date();
+  today.setHours(0,0,0,0);d.setHours(0,0,0,0);
+  return Math.max(0,Math.round((today-d)/86400000));
+}
+function renderVipPanel(){
+  // Sort by annual_total descending
+  const sorted=[...VIP_DATA].sort((a,b)=>(b.annual_total||0)-(a.annual_total||0));
+  // Compute KPIs
+  const total30=VIP_DATA.reduce((s,v)=>s+(v.last_30||0),0);
+  const totalAnnual=VIP_DATA.reduce((s,v)=>s+(v.annual_total||0),0);
+  const counts={normal:0,attention:0,risk:0};
+  VIP_DATA.forEach(v=>counts[v.status]=(counts[v.status]||0)+1);
+  document.getElementById('vipKpis').innerHTML=`
+    <div class="kpi"><div class="label">重点客户</div><div class="value">${VIP_DATA.length}</div><div class="sub">监控中</div></div>
+    <div class="kpi"><div class="label">近30天总采购</div><div class="value" style="color:#ef4444">${fmtW(total30)}</div></div>
+    <div class="kpi"><div class="label">2026年度累计</div><div class="value" style="color:#1d4ed8">${fmtW(totalAnnual)}</div></div>
+    <div class="kpi"><div class="label">状态分布</div><div class="value" style="font-size:16px">🟢 正常 ${counts.normal} &nbsp;🟡 关注 ${counts.attention} &nbsp;🔴 风险 ${counts.risk}</div></div>`;
+  // Render cards
+  const sc={normal:'#10b981',attention:'#f59e0b',risk:'#ef4444'};
+  const sl={normal:'正常',attention:'需关注',risk:'风险'};
+  document.getElementById('vipCards').innerHTML=sorted.map(v=>{
+    const days=calcDaysSinceFollow(v);
+    const daysText=days>=999?'无记录':(days+'天前');
+    return `<div class="vip-card" onclick="showVipDetail('${v.label}')" style="border-top:3px solid ${sc[v.status]};cursor:pointer">
+      <div class="vip-card-header"><span class="vip-name">${v.label}</span><span class="vip-status" style="background:${sc[v.status]}">${sl[v.status]}</span></div>
+      <div class="vip-metrics">
+        <div><span class="vip-metric-label">本月采购</span><span class="vip-metric-val">${fmtW(v.last_30||0)}</span></div>
+        <div><span class="vip-metric-label">上月采购</span><span class="vip-metric-val">${fmtW(v.last_month||0)}</span></div>
+        <div><span class="vip-metric-label">年度累计</span><span class="vip-metric-val" style="color:#1d4ed8;font-weight:700">${fmtW(v.annual_total||0)}</span></div>
+      </div>
+      <div class="vip-card-footer"><span>客户等级: <b>${v.level}</b></span><span>负责人: <b>${v.user}</b></span></div>
+      <div class="vip-card-follow">最近跟进: ${v.last_follow_date&&v.last_follow_date!=='-'?v.last_follow_date:'-'} &nbsp; ${daysText}</div>
+    </div>`;
+  }).join('');
+}
+
+function showVipDetail(label) {
+  const v = VIP_DATA.find(x => x.label === label);
+  if (!v) return;
+  const sc = {normal:'#10b981',attention:'#f59e0b',risk:'#ef4444'};
+  const sl = {normal:'正常',attention:'需关注',risk:'风险'};
+  // Sort follows by date descending (newest first)
+  let followsHtml = '';
+  if (v.follows && v.follows.length) {
+    const sorted=[...v.follows].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    followsHtml = sorted.map(f => `<div class="vip-follow-item"><span class="follow-date">${f.date||'-'}</span><span class="follow-content">${f.content||'无内容'}</span></div>`).join('');
+  } else {
+    followsHtml = '<div style="color:#94a3b8;font-size:13px">暂无跟进记录</div>';
+  }
+  const years = v.years ? v.years.toFixed(1)+'年' : '新客户';
+  // Monthly sales chart data
+  let monthlyHtml='';
+  if(v.monthly_sales&&Object.keys(v.monthly_sales).length){
+    const months=Object.keys(v.monthly_sales).sort();
+    monthlyHtml='<div class="vip-detail-section"><h4>📊 月度采购趋势</h4><div class="vip-monthly">';
+    months.forEach(m=>{
+      const val=v.monthly_sales[m];
+      monthlyHtml+=`<div class="vip-month-item"><span class="vip-month-label">${m.replace('2026-','')}</span><span class="vip-month-val">${fmtW(Math.max(0,val))}</span></div>`;
+    });
+    monthlyHtml+='</div></div>';
+  }
+  const days=calcDaysSinceFollow(v);
+  const daysText=days>=999?'无跟进记录':(days+'天前');
+  // Get stored editable fields from localStorage
+  const vipExtra=JSON.parse(localStorage.getItem('vip_extra_'+v.id)||'{}');
+  const website=vipExtra.website||'';
+  document.getElementById('vipDetailBody').innerHTML = `
+    <div class="vip-detail-header">
+      <h2>${v.label} <span class="vip-status" style="background:${sc[v.status]};font-size:12px;vertical-align:middle">${sl[v.status]}</span></h2>
+      <div style="font-size:13px;color:#64748b;margin-top:4px">等级: ${v.level} · 负责人: ${v.user}</div>
+    </div>
+    <div class="vip-detail-info">
+      <div class="info-row"><span class="info-label">客户来源</span><span class="info-val">${v.source||'-'}</span></div>
+      <div class="info-row"><span class="info-label">决策人</span><span class="info-val">${v.decision_maker||'-'}</span></div>
+      <div class="info-row"><span class="info-label">客户级别</span><span class="info-val" style="color:#1d4ed8;font-weight:600">${v.level}</span></div>
+      <div class="info-row"><span class="info-label">客户类型</span><span class="info-val">${v.customer_type||'-'}</span></div>
+      <div class="info-row"><span class="info-label">合作方式</span><span class="info-val">${v.connection||'-'}</span></div>
+      <div class="info-row"><span class="info-label">品牌/公司</span><span class="info-val">${v.brand||'-'}</span></div>
+      <div class="info-row" style="grid-column:1/-1"><span class="info-label">官网/店铺</span><span class="info-val" style="flex:1"><input class="vip-website-input" id="vipWebsite" value="${website.replace(/"/g,'&quot;')}" placeholder="填写客户官网或店铺链接..." onchange="saveVipWebsite(${v.id},this.value)"></span></div>
+    </div>
+    <div class="vip-detail-metrics">
+      <div><div class="dm-label">本月采购</div><div class="dm-val">${fmtW(v.last_30||0)}</div></div>
+      <div><div class="dm-label">上月采购</div><div class="dm-val">${fmtW(v.last_month||0)}</div></div>
+      <div><div class="dm-label">年度累计</div><div class="dm-val" style="color:#1d4ed8">${fmtW(v.annual_total||0)}</div></div>
+      <div><div class="dm-label">合作年限</div><div class="dm-val">${years}</div></div>
+    </div>
+    <div class="vip-detail-metrics" style="grid-template-columns:repeat(3,1fr);margin-top:8px">
+      <div><div class="dm-label">在途/待发金额</div><div class="dm-val" style="color:#ea580c">${fmtW(v.rest_amount||0)}</div></div>
+      <div><div class="dm-label">最近跟进</div><div class="dm-val">${daysText}</div></div>
+      <div><div class="dm-label">建档时间</div><div class="dm-val" style="font-size:14px">${v.created_at||'-'}</div></div>
+    </div>
+    ${monthlyHtml}
+    <div class="vip-detail-section">
+      <h4>📋 沟通记录</h4>
+      ${followsHtml}
+    </div>
+  `;
+  document.getElementById('vipDetailModal').style.display = 'flex';
+}
+function saveVipWebsite(id,val){localStorage.setItem('vip_extra_'+id,JSON.stringify({website:val}))}
+function closeVipDetail() { document.getElementById('vipDetailModal').style.display = 'none'; }
+
+// Todo system with localStorage
+const TODO_KEY = 'jiezhan_vip_todos';
+function getStatus(t){
+  if(t.done) return 'done';
+  const today=new Date().toISOString().slice(0,10);
+  const s=t.startDate||'',e=t.deadline||'';
+  if(e&&e<today) return 'overdue'; // 逾期未完成
+  if(!s&&!e) return 'pending';
+  if(s>today) return 'notstarted';
+  if(s<=today&&(!e||e>=today)) return 'inprogress';
+  return 'pending';
+}
+function getStatusLabel(s){return{done:'已完成',inprogress:'进行中',pending:'待开始',overdue:'未完成',notstarted:'未开始'}[s]||'-'}
+function getStatusColor(s){return{done:'#10b981',inprogress:'#3b82f6',pending:'#94a3b8',overdue:'#ef4444',notstarted:'#cbd5e1'}[s]||'#94a3b8'}
+function calcTimePct(t){
+  const s=t.startDate||'',e=t.deadline||'';
+  if(!s||!e) return -1;
+  const sd=new Date(s).getTime(),ed=new Date(e).getTime(),now=Date.now();
+  if(ed<=sd) return t.done?100:0;
+  return Math.max(0,Math.min(100,Math.round((now-sd)/(ed-sd)*100)));
+}
+function getTodos(){try{return JSON.parse(localStorage.getItem('vip_todos')||'[]')}catch{return[]}}
+function saveTodos(t){localStorage.setItem('vip_todos',JSON.stringify(t))}
+function findTodoIdx(id){return getTodos().findIndex(t=>t.id===id)}
+function renderTodoStats(){
+  const todos=getTodos(),el=document.getElementById('todoStats');
+  if(!todos.length){el.innerHTML='';return}
+  const stats={total:todos.length,done:0,inprogress:0,pending:0};
+  const byPerson={};
+  todos.forEach(t=>{
+    const s=getStatus(t);
+    if(s==='done')stats.done++;else if(s==='inprogress')stats.inprogress++;else stats.pending++;
+    const p=t.person||'未指定';
+    if(!byPerson[p])byPerson[p]={total:0,done:0,inprogress:0,pending:0};
+    byPerson[p].total++;
+    if(s==='done')byPerson[p].done++;else if(s==='inprogress')byPerson[p].inprogress++;else byPerson[p].pending++;
+  });
+  const dPct=Math.round(stats.done/stats.total*100),iPct=Math.round(stats.inprogress/stats.total*100);
+  let h=`<div class="ts-overview"><div class="ts-nums">
+    <span class="ts-item"><span class="ts-num">${stats.total}</span><span class="ts-label">总事项</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#10b981">${stats.done}</span><span class="ts-label">已完成</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#3b82f6">${stats.inprogress}</span><span class="ts-label">进行中</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#ef4444">${stats.pending}</span><span class="ts-label">未完成</span></span>
+  </div><div class="ts-bar"><div style="width:${dPct}%;background:#10b981"></div><div style="width:${iPct}%;background:#3b82f6"></div></div></div>`;
+  // Per person
+  const ps=Object.keys(byPerson).sort();
+  if(ps.length>1||ps[0]!=='未指定'){
+    h+='<div class="ts-persons">';
+    ps.forEach(p=>{
+      const d=byPerson[p];
+      h+=`<div class="ts-person"><span class="ts-pname">${p}</span><span class="ts-pbadge" style="background:#10b981">${d.done}</span><span class="ts-pbadge" style="background:#3b82f6">${d.inprogress}</span><span class="ts-pbadge" style="background:#ef4444">${d.pending}</span></div>`;
+    });
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+function renderTodos(){
+  const todos=getTodos(),tbody=document.getElementById('todoBody'),empty=document.getElementById('todoEmpty');
+  if(!todos.length){tbody.innerHTML='';empty.style.display='block';renderTodoStats();return}
+  empty.style.display='none';
+  const order={inprogress:0,overdue:1,pending:2,notstarted:3,done:4};
+  const sorted=[...todos].sort((a,b)=>{const sa=getStatus(a),sb=getStatus(b);if(order[sa]!==order[sb])return order[sa]-order[sb];return(a.startDate||'').localeCompare(b.startDate||'')});
+  tbody.innerHTML=sorted.map(t=>{
+    const st=getStatus(t),stColor=getStatusColor(st),stLabel=getStatusLabel(st);
+    const pct=calcTimePct(t);
+    let timeBar='<span style="color:#94a3b8;font-size:11px">-</span>';
+    if(pct>=0){
+      const barColor=st==='done'?'#10b981':(pct>85?'#ef4444':'#3b82f6');
+      timeBar=`<div class="time-bar"><div class="time-fill" style="width:${pct}%;background:${barColor}"></div></div><span style="font-size:10px;color:#64748b">${pct}%</span>`;
+    }
+    const priCls=t.priority==='高'?'color:#ef4444':(t.priority==='中'?'color:#f59e0b':'color:#10b981');
+    const tid=t.id;
+    return `<tr${st==='done'?' style="opacity:.5"':''}>
+      <td><input type="date" class="inline-edit" value="${t.startDate||''}" onchange="inlineEdit('${tid}','startDate',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.customer||'').replace(/"/g,'&quot;')}" onchange="inlineEdit('${tid}','customer',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.person||'').replace(/"/g,'&quot;')}" onchange="inlineEdit('${tid}','person',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.task||'').replace(/"/g,'&quot;')}" onchange="inlineEdit('${tid}','task',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.goal||'').replace(/"/g,'&quot;')}" onchange="inlineEdit('${tid}','goal',this.value)"></td>
+      <td><input type="date" class="inline-edit" value="${t.deadline||''}" onchange="inlineEdit('${tid}','deadline',this.value)"></td>
+      <td>${timeBar}</td>
+      <td><select class="inline-edit" style="${priCls};font-weight:700" onchange="inlineEdit('${tid}','priority',this.value)"><option value="高"${t.priority==='高'?' selected':''}>高</option><option value="中"${t.priority==='中'?' selected':''}>中</option><option value="低"${t.priority==='低'?' selected':''}>低</option></select></td>
+      <td><input class="progress-input" value="${(t.progress||'').replace(/"/g,'&quot;')}" placeholder="填写进展..." onchange="updateProgress('${tid}',this.value)"></td>
+      <td><span class="status-chip" style="background:${stColor}">${stLabel}</span></td>
+      <td>${t.done?'<button class="todo-undo" onclick="toggleTodo(\''+tid+'\')" title="撤销完成">↩</button>':'<button class="todo-done-btn" onclick="toggleTodo(\''+tid+'\')" title="标记完成">✓</button>'}<button class="todo-del" onclick="delTodo('${tid}')" title="删除">&times;</button></td>
+    </tr>`;
+  }).join('');
+  renderTodoStats();
+}
+function addTodo(){
+  const task=document.getElementById('todoInput').value.trim();
+  if(!task) return alert('请输入事项');
+  const todos=getTodos();
+  todos.push({
+    id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+    startDate:document.getElementById('todoStartDate').value,
+    customer:document.getElementById('todoCustomer').value,
+    person:document.getElementById('todoPerson').value,
+    task:task,
+    goal:document.getElementById('todoGoal').value.trim(),
+    deadline:document.getElementById('todoDeadline').value,
+    priority:document.getElementById('todoPriority').value,
+    progress:'',
+    done:false,
+    created:new Date().toISOString()
+  });
+  saveTodos(todos);
+  document.getElementById('todoInput').value='';
+  document.getElementById('todoGoal').value='';
+  renderTodos();
+}
+function updateProgress(id,val){
+  const todos=getTodos();
+  const t=todos.find(x=>x.id===id);
+  if(t){t.progress=val;}
+  saveTodos(todos);
+  // Don't re-render on progress update to avoid losing focus
+}
+function toggleTodo(id){const todos=getTodos();const t=todos.find(x=>x.id===id);if(t)t.done=!t.done;saveTodos(todos);renderTodos()}
+function delTodo(id){if(!confirm('确定删除？'))return;const todos=getTodos();const idx=todos.findIndex(x=>x.id===id);if(idx>=0)todos.splice(idx,1);saveTodos(todos);renderTodos()}
+function inlineEdit(id,field,val){const todos=getTodos();const t=todos.find(x=>x.id===id);if(t){t[field]=val;saveTodos(todos);if(field==='priority'||field==='startDate'||field==='deadline')renderTodos();}}
+document.addEventListener('DOMContentLoaded',function(){
+  // Migrate old todos without id
+  const todos=getTodos();
+  let changed=false;
+  todos.forEach(t=>{if(!t.id){t.id=Date.now().toString(36)+Math.random().toString(36).slice(2,6);changed=true}});
+  if(changed)saveTodos(todos);
+  renderVipPanel();renderTodos();renderKelalaTodos();renderS1688Todos();
+});
+
+// ============ Marketing Tab v34 ============
+let marketingLoaded=false;
+let MDATA=null;
+let MKT_AD_MONTH=null;
+let MKT_FUNNEL_MONTH=null;
+let MKT_PLAN_MONTH=null;
+let MKT_OS_MONTH=null;
+let echartsReady=false;
+let pendingCharts=[];
+
+function ensureECharts(cb){
+  if(typeof echarts!=='undefined'){echartsReady=true;cb();return}
+  if(echartsReady){cb();return}
+  pendingCharts.push(cb);
+  if(document.querySelector('script[src*="echarts"]'))return;
+  const s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js';
+  s.onerror=()=>{const s2=document.createElement('script');s2.src='https://unpkg.com/echarts@5/dist/echarts.min.js';s2.onload=()=>{echartsReady=true;pendingCharts.forEach(fn=>fn());pendingCharts=[]};document.head.appendChild(s2)};
+  s.onload=()=>{echartsReady=true;pendingCharts.forEach(fn=>fn());pendingCharts=[]};
+  document.head.appendChild(s);
+}
+
+function loadMarketingData(){
+  if(marketingLoaded&&MDATA){renderMarketing();return}
+  fetch('marketing_data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+    MDATA=d;marketingLoaded=true;
+    if(d.ad_data&&d.ad_data.monthly&&d.ad_data.monthly.length)
+      MKT_AD_MONTH=d.ad_data.monthly[d.ad_data.monthly.length-1].month;
+    if(d.team_funnel&&d.team_funnel.monthly&&d.team_funnel.monthly.length)
+      MKT_FUNNEL_MONTH=d.team_funnel.monthly[d.team_funnel.monthly.length-1].month;
+    const planKeys=Object.keys(d.marketing_plan||{}).sort((a,b)=>parseInt(b)-parseInt(a));
+    const curMonth=String(new Date().getMonth()+1);
+    MKT_PLAN_MONTH=planKeys.includes(curMonth)?curMonth:(planKeys[0]||null);
+    const osM=(d.overseas||{}).monthly||[];
+    if(osM.length) MKT_OS_MONTH=osM[osM.length-1].month;
+    renderMarketing();
+  }).catch(e=>{
+    document.getElementById('marketing-content').innerHTML='<div style="text-align:center;padding:40px;color:#ef4444">加载失败: '+e.message+'</div>';
+  });
+}
+
+function loadAcquisitionData(){
+  if(marketingLoaded&&MDATA){renderAcquisition();return}
+  fetch('marketing_data.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+    MDATA=d;marketingLoaded=true;
+    if(d.ad_data&&d.ad_data.monthly&&d.ad_data.monthly.length)
+      MKT_AD_MONTH=d.ad_data.monthly[d.ad_data.monthly.length-1].month;
+    if(d.team_funnel&&d.team_funnel.monthly&&d.team_funnel.monthly.length)
+      MKT_FUNNEL_MONTH=d.team_funnel.monthly[d.team_funnel.monthly.length-1].month;
+    const planKeys=Object.keys(d.marketing_plan||{}).sort((a,b)=>parseInt(b)-parseInt(a));
+    const curMonth=String(new Date().getMonth()+1);
+    MKT_PLAN_MONTH=planKeys.includes(curMonth)?curMonth:(planKeys[0]||null);
+    const osM=(d.overseas||{}).monthly||[];
+    if(osM.length) MKT_OS_MONTH=osM[osM.length-1].month;
+    renderAcquisition();
+  }).catch(e=>{
+    document.getElementById('acquisition-content').innerHTML='<div style="text-align:center;padding:40px;color:#ef4444">加载失败: '+e.message+'</div>';
+  });
+}
+
+function renderMarketing(){
+  if(!MDATA)return;
+  const c=document.getElementById('marketing-content');
+  let h='';
+  h+=renderCalendar();
+  h+='<div style="text-align:right;font-size:11px;color:#94a3b8;margin-top:8px">数据更新: '+(MDATA.updated_at||'未知')+'</div>';
+  c.innerHTML=h;
+}
+
+function renderAcquisition(){
+  if(!MDATA)return;
+  const c=document.getElementById('acquisition-content');
+  let h='';
+  h+=renderAdROI();
+  h+=renderOverseas();
+  h+=renderAccounts();
+  h+=renderFunnel();
+  h+='<div style="text-align:right;font-size:11px;color:#94a3b8;margin-top:8px">数据更新: '+(MDATA.updated_at||'未知')+'</div>';
+  c.innerHTML=h;
+  ensureECharts(()=>{initAllCharts()});
+}
+
+// === Calendar Section ===
+function getCustomEvents(){
+  try{return JSON.parse(localStorage.getItem('marketing_custom_events')||'[]')}catch(e){return[]}
+}
+function saveCustomEvents(evts){localStorage.setItem('marketing_custom_events',JSON.stringify(evts))}
+function getMonthTheme(){
+  try{return JSON.parse(localStorage.getItem('marketing_month_themes')||'{}')}catch(e){return{}}
+}
+function saveMonthTheme(themes){localStorage.setItem('marketing_month_themes',JSON.stringify(themes))}
+
+// KLL (客拉拉) content items - stored separately
+function getKllEvents(){
+  try{return JSON.parse(localStorage.getItem('kll_content_events')||'[]')}catch(e){return[]}
+}
+function saveKllEvents(evts){localStorage.setItem('kll_content_events',JSON.stringify(evts))}
+
+function renderCalendar(){
+  const allPlans=MDATA.marketing_plan||{};
+  const planKeys=Object.keys(allPlans).sort((a,b)=>parseInt(a)-parseInt(b));
+  if(!planKeys.length&&!getCustomEvents().length&&!getKllEvents().length)return'<div class="mkt-section"><h2>📅 内容日历</h2><p style="color:#94a3b8">暂无营销计划</p></div>';
+  let tabs=planKeys.map(k=>'<button class="mkt-month-btn '+(k===MKT_PLAN_MONTH?'active':'')+'" onclick="switchPlanMonth(\''+k+'\')">'+k+'月</button>').join('');
+  const plans=(allPlans[MKT_PLAN_MONTH]||[]).slice();
+  const customs=getCustomEvents().filter(e=>e.month===MKT_PLAN_MONTH);
+  // Apply localStorage edits to plan items
+  const allItems=[...plans.map((p,i)=>{
+    const id='plan_'+i;
+    let edits={};
+    try{edits=JSON.parse(localStorage.getItem('planEdit_'+MKT_PLAN_MONTH+'_'+id)||'{}')}catch{}
+    return {...p,...edits,id:id,custom:false,source:'brand'};
+  }),...customs.map(c=>({...c,custom:true,source:'brand'}))].sort((a,b)=>{
+    if(!a.date&&!b.date)return 0;
+    if(!a.date)return 1;
+    if(!b.date)return -1;
+    return a.date<b.date?-1:a.date>b.date?1:0;
+  });
+
+  // KLL items for this month
+  const kllItems=getKllEvents().filter(e=>e.month===MKT_PLAN_MONTH).map(c=>({...c,source:'kll'})).sort((a,b)=>{
+    if(!a.date&&!b.date)return 0;
+    if(!a.date)return 1;
+    if(!b.date)return -1;
+    return a.date<b.date?-1:a.date>b.date?1:0;
+  });
+
+  const themes=getMonthTheme();
+  const curTheme=themes[MKT_PLAN_MONTH]||'';
+  let themeCard='<div class="mkt-theme-card" id="theme-card-wrap"><div class="theme-label">📌 本月主题</div><div class="theme-text" contenteditable="true" id="theme-edit-field" onblur="saveThemeInline()" onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();this.blur()}">'+(curTheme||'')+'</div></div>';
+
+  // Combined gantt with both brand (blue) and kll (orange) items
+  let ganttHtml=renderGantt(allItems, kllItems, MKT_PLAN_MONTH);
+
+  // Cards - all content inline editable, no popups.
+  let cards=allItems.map(p=>{
+    const matOptions=['视频','海报','产品手册','货盘','朋友圈','SABC客户触达'];
+    const mats=getMaterialState(p.id)||p.materials||{};
+    const matHtml=matOptions.map(m=>'<label class="mat-check"><input type="checkbox" '+(mats[m]?'checked':'')+' onchange="toggleMaterial(\''+p.id+'\',\''+m+'\')"><span class="mat-name '+(mats[m]?'checked':'')+'">'+m+'</span></label>').join('');
+
+    const delBtn=p.custom?'<button class="mkt-del-btn" onclick="delCustomEvent(\''+p.id+'\')">✕</button>':'';
+
+    // Attachments with thumbnails - clickable preview
+    const attachments=getAllAttachments(p.id);
+    let attachHtml='';
+    if(attachments.length){
+      attachHtml='<div class="card-attachments">'+attachments.map((a,i)=>{
+        const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(a.url)||a.type==='image';
+        const isVideo=/\.(mp4|mov|avi|webm|mkv)$/i.test(a.url)||a.type==='video';
+        let preview='';
+        if(isImg&&a.url.startsWith('data:')) preview='<img src="'+a.url+'" class="attach-thumb" onclick="previewAttach(\''+p.id+'\','+i+')">';
+        else if(isImg) preview='<img src="'+a.url+'" class="attach-thumb" onerror="this.outerHTML=\'<div class=attach-thumb file-thumb>🖼</div>\'" onclick="previewAttach(\''+p.id+'\','+i+')">';
+        else if(isVideo) preview='<div class="attach-thumb video-thumb" onclick="previewAttach(\''+p.id+'\','+i+')">▶</div>';
+        else preview='<div class="attach-thumb file-thumb" onclick="previewAttach(\''+p.id+'\','+i+')">📎</div>';
+        return '<div class="attach-item">'+preview+'<span class="attach-name" onclick="previewAttach(\''+p.id+'\','+i+')">'+(a.name||'附件')+'</span><button class="attach-del" onclick="removeAttachment(\''+p.id+'\','+i+')">✕</button></div>';
+      }).join('')+'</div>';
+    }
+
+    // Upload area - compact single row
+    const fileId='file_'+p.id.replace(/[^a-z0-9_]/gi,'');
+    let uploadHtml='<div class="card-upload"><input type="file" id="'+fileId+'" accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" style="display:none" onchange="handleFileUpload(\''+p.id+'\',this)" multiple><div class="upload-row"><input class="attach-url-input" id="url-'+p.id+'" placeholder="粘贴链接"><button class="upload-btn" onclick="document.getElementById(\''+fileId+'\').click()">上传</button><button class="upload-btn" onclick="addAttachmentFromInput(\''+p.id+'\')">+链接</button></div></div>';
+
+    return '<div class="mkt-cal-card expanded">'+
+      '<div class="card-header"><input type="date" class="inline-date-input" value="'+(p.date||'')+'" onchange="saveFieldInline(\''+p.id+'\',\'date\',this.value)"><div class="card-actions">'+delBtn+'</div></div>'+
+      '<div class="cal-subject" contenteditable="true" data-field="subject" data-id="'+p.id+'" onblur="saveFieldInline(\''+p.id+'\',\'subject\',this.textContent)" onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();this.blur()}">'+(p.subject||'')+'</div>'+
+      '<div class="cal-direction" contenteditable="true" data-field="direction" data-id="'+p.id+'" onblur="saveFieldInline(\''+p.id+'\',\'direction\',this.textContent)">'+(p.direction||'')+'</div>'+
+      '<div class="card-materials"><div class="mat-label">物料：</div><div class="mat-list">'+matHtml+'</div></div>'+
+      attachHtml+uploadHtml+
+      '</div>';
+  }).join('');
+
+  return '<div class="mkt-section"><h2>📅 内容日历</h2>'+
+    '<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">'+tabs+
+    '<button class="mkt-add-btn" onclick="showAddEventForm()">+ 添加事项</button></div>'+
+    themeCard+
+    '<div id="mkt-add-form" style="display:none;margin-bottom:16px"></div>'+
+    '<div style="margin-bottom:6px;font-size:11px;color:#94a3b8">🟦 品牌内容 &nbsp; 🟧 客拉拉内容</div>'+
+    ganttHtml+
+    '<h3 style="margin:20px 0 10px;font-size:15px;color:#1e293b">📣 品牌内容</h3>'+
+    '<div class="mkt-calendar">'+(cards||'<p style="color:#94a3b8">本月暂无计划</p>')+'</div>'+
+    renderKllSection(kllItems)+
+    '</div>';
+}
+
+function getEventAttachments(itemId){
+  const evts=getCustomEvents();
+  const evt=evts.find(e=>e.id===itemId);
+  return (evt&&evt.attachments)||[];
+}
+
+function getMaterialState(itemId){
+  // For plan_ items, store material state in localStorage
+  if(itemId.startsWith('plan_')){
+    try{return JSON.parse(localStorage.getItem('mat_'+MKT_PLAN_MONTH+'_'+itemId)||'null')}catch{return null}
+  }
+  return null; // custom events use their own materials
+}
+
+function getAllAttachments(itemId){
+  // Check session memory first (includes blob URLs)
+  if(window._sessionAttachments){
+    const key=itemId.startsWith('plan_')?(MKT_PLAN_MONTH+'_'+itemId):itemId;
+    if(window._sessionAttachments[key])return window._sessionAttachments[key];
+  }
+  // Custom events: from custom events storage
+  if(!itemId.startsWith('plan_')){
+    const evts=getCustomEvents();
+    const evt=evts.find(e=>e.id===itemId);
+    return (evt&&evt.attachments)||[];
+  }
+  // Plan items: stored separately in localStorage
+  try{return JSON.parse(localStorage.getItem('attach_'+MKT_PLAN_MONTH+'_'+itemId)||'[]')}catch{return[]}
+}
+
+function savePlanAttachments(itemId,attachments){
+  localStorage.setItem('attach_'+MKT_PLAN_MONTH+'_'+itemId,JSON.stringify(attachments));
+}
+
+function handleFileUpload(itemId,input){
+  const files=input.files;
+  if(!files.length)return;
+  Array.from(files).forEach(file=>{
+    const isImg=file.type.startsWith('image/');
+    const isVid=file.type.startsWith('video/');
+    // For video/large files: use object URL (not data URL) to avoid localStorage size limit
+    // For images < 2MB: use data URL for thumbnail persistence
+    if(isVid || file.size > 2*1024*1024){
+      const objUrl=URL.createObjectURL(file);
+      const entry={name:file.name,url:objUrl,type:isVid?'video':'file',size:file.size,blob:true};
+      addAttachEntry(itemId,entry);
+      renderMarketing();
+    }else{
+      const reader=new FileReader();
+      reader.onload=function(e){
+        const entry={name:file.name,url:e.target.result,type:isImg?'image':'file',size:file.size};
+        addAttachEntry(itemId,entry);
+        renderMarketing();
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  input.value='';
+}
+
+function addAttachEntry(itemId,entry){
+  if(itemId.startsWith('plan_')){
+    const arr=getAllAttachments(itemId);
+    arr.push(entry);
+    // For blob URLs, we can't persist to localStorage; store non-blob entries only
+    const persistable=arr.filter(a=>!a.blob);
+    localStorage.setItem('attach_'+MKT_PLAN_MONTH+'_'+itemId,JSON.stringify(persistable));
+    // Keep full list in memory
+    if(!window._sessionAttachments)window._sessionAttachments={};
+    window._sessionAttachments[MKT_PLAN_MONTH+'_'+itemId]=arr;
+  }else{
+    const evts=getCustomEvents();
+    const evt=evts.find(ev=>ev.id===itemId);
+    if(!evt)return;
+    if(!evt.attachments)evt.attachments=[];
+    evt.attachments.push(entry);
+    // Only persist non-blob entries
+    const toSave=evts.map(e=>({...e,attachments:(e.attachments||[]).filter(a=>!a.blob)}));
+    saveCustomEvents(toSave);
+    // Keep session reference
+    if(!window._sessionAttachments)window._sessionAttachments={};
+    window._sessionAttachments[itemId]=evt.attachments;
+  }
+}
+
+function addAttachmentFromInput(itemId){
+  const input=document.getElementById('url-'+itemId);
+  const url=input.value.trim();
+  if(!url)return;
+  const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(url);
+  const isVid=/\.(mp4|mov|avi|webm|mkv)$/i.test(url);
+  const entry={name:url.split('/').pop()||'链接',url:url,type:isImg?'image':isVid?'video':'link'};
+  if(itemId.startsWith('plan_')){
+    const arr=getAllAttachments(itemId);
+    arr.push(entry);
+    savePlanAttachments(itemId,arr);
+  }else{
+    const evts=getCustomEvents();
+    const evt=evts.find(e=>e.id===itemId);
+    if(!evt)return;
+    if(!evt.attachments)evt.attachments=[];
+    evt.attachments.push(entry);
+    saveCustomEvents(evts);
+  }
+  renderMarketing();
+}
+
+function removeAttachment(itemId,idx){
+  if(itemId.startsWith('plan_')){
+    const arr=getAllAttachments(itemId);
+    arr.splice(idx,1);
+    savePlanAttachments(itemId,arr);
+  }else{
+    const evts=getCustomEvents();
+    const evt=evts.find(e=>e.id===itemId);
+    if(!evt||!evt.attachments)return;
+    evt.attachments.splice(idx,1);
+    saveCustomEvents(evts);
+  }
+  renderMarketing();
+}
+
+function previewAttach(itemId,idx){
+  const attachments=getAllAttachments(itemId);
+  const a=attachments[idx];
+  if(!a)return;
+  const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(a.url)||a.type==='image';
+  const isVideo=/\.(mp4|mov|avi|webm|mkv)$/i.test(a.url)||a.type==='video';
+  const overlay=document.createElement('div');
+  overlay.id='preview-overlay';
+  overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;cursor:pointer';
+  overlay.onclick=e=>{if(e.target===overlay||e.target.tagName==='BUTTON')overlay.remove()};
+  let content='';
+  if(isImg){
+    content='<img src="'+a.url+'" style="max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain">';
+  }else if(isVideo){
+    content='<video src="'+a.url+'" controls autoplay style="max-width:90vw;max-height:85vh;border-radius:8px"></video>';
+  }else if(a.url.startsWith('data:')){
+    content='<div style="background:#fff;padding:32px;border-radius:12px;text-align:center"><div style="font-size:48px;margin-bottom:16px">📄</div><div style="font-size:16px;color:#333">'+a.name+'</div><div style="font-size:13px;color:#666;margin-top:8px">'+(a.size?(Math.round(a.size/1024)+'KB'):'')+'</div><a href="'+a.url+'" download="'+a.name+'" style="display:inline-block;margin-top:16px;background:#2563eb;color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none">下载</a></div>';
+  }else{
+    // External URL - open in new tab
+    window.open(a.url,'_blank');
+    return;
+  }
+  overlay.innerHTML='<button style="position:absolute;top:16px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer">✕</button>'+content;
+  document.body.appendChild(overlay);
+}
+
+function saveFieldInline(itemId,field,value){
+  if(itemId.startsWith('plan_')){
+    const key='planEdit_'+MKT_PLAN_MONTH+'_'+itemId;
+    let edits={};
+    try{edits=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
+    edits[field]=value;
+    localStorage.setItem(key,JSON.stringify(edits));
+  }else{
+    const evts=getCustomEvents();
+    const evt=evts.find(e=>e.id===itemId);
+    if(!evt)return;
+    evt[field]=value;
+    saveCustomEvents(evts);
+  }
+  if(field==='date')renderMarketing();
+}
+
+function saveThemeInline(){
+  const el=document.getElementById('theme-edit-field');
+  if(!el)return;
+  const themes=getMonthTheme();
+  themes[MKT_PLAN_MONTH]=el.textContent.trim();
+  saveMonthTheme(themes);
+}
+
+function renderKllSection(kllItems){
+  // Card-style section for 客拉拉 business content (max 5 per row, no materials, with publish checkbox)
+  let cardsHtml='';
+  if(kllItems.length){
+    cardsHtml=kllItems.map(item=>{
+      const attachments=getKllAttachments(item.id);
+      let attachHtml='';
+      if(attachments.length){
+        attachHtml='<div class="card-attachments">'+attachments.map((a,i)=>{
+          const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(a.url)||a.type==='image';
+          const isVideo=/\.(mp4|mov|avi|webm|mkv)$/i.test(a.url)||a.type==='video';
+          let preview='';
+          if(isImg&&a.url.startsWith('data:')) preview='<img src="'+a.url+'" class="attach-thumb" onclick="previewKllAttach(\''+item.id+'\','+i+')">';
+          else if(isImg) preview='<img src="'+a.url+'" class="attach-thumb" onclick="previewKllAttach(\''+item.id+'\','+i+')">';
+          else if(isVideo) preview='<div class="attach-thumb video-thumb" onclick="previewKllAttach(\''+item.id+'\','+i+')">▶</div>';
+          else preview='<div class="attach-thumb file-thumb" onclick="previewKllAttach(\''+item.id+'\','+i+')">📎</div>';
+          return '<div class="attach-item">'+preview+'<span class="attach-name" onclick="previewKllAttach(\''+item.id+'\','+i+')">'+(a.name||'附件')+'</span><button class="attach-del" onclick="removeKllAttachment(\''+item.id+'\','+i+')">✕</button></div>';
+        }).join('')+'</div>';
+      }
+      const fileId='kllfile_'+item.id.replace(/[^a-z0-9_]/gi,'');
+      let uploadHtml='<div class="card-upload"><input type="file" id="'+fileId+'" accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx" style="display:none" onchange="handleKllFileUpload(\''+item.id+'\',this)" multiple><div class="upload-row"><input class="attach-url-input" id="kllurl-'+item.id+'" placeholder="粘贴链接"><button class="upload-btn" onclick="document.getElementById(\''+fileId+'\').click()">上传</button><button class="upload-btn" onclick="addKllAttachmentFromInput(\''+item.id+'\')">+链接</button></div></div>';
+
+      const published=item.published||false;
+      let publishHtml='<div class="kll-publish"><label class="mat-check"><input type="checkbox" '+(published?'checked':'')+' onchange="toggleKllPublished(\''+item.id+'\',this.checked)"><span class="mat-name '+(published?'checked':'')+'">已发布</span></label></div>';
+
+      return '<div class="kll-card'+(published?' kll-published':'')+'">'+
+        '<div class="card-header"><input type="date" class="inline-date-input" value="'+(item.date||'')+'" onchange="saveKllField(\''+item.id+'\',\'date\',this.value)"><div class="card-actions"><button class="mkt-del-btn" onclick="delKllEvent(\''+item.id+'\')">✕</button></div></div>'+
+        '<div class="cal-subject" contenteditable="true" onblur="saveKllField(\''+item.id+'\',\'subject\',this.textContent)" onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();this.blur()}">'+(item.subject||'')+'</div>'+
+        '<div class="cal-direction" contenteditable="true" onblur="saveKllField(\''+item.id+'\',\'direction\',this.textContent)">'+(item.direction||'')+'</div>'+
+        publishHtml+
+        attachHtml+uploadHtml+
+        '</div>';
+    }).join('');
+  }
+
+  return '<h3 style="margin:24px 0 10px;font-size:15px;color:#ea580c">🟧 客拉拉内容</h3>'+
+    '<button class="mkt-add-btn" onclick="showKllAddForm()" style="margin-bottom:12px">+ 添加客拉拉事项</button>'+
+    '<div id="kll-add-form" style="display:none;margin-bottom:12px"></div>'+
+    '<div class="kll-cards-grid">'+(cardsHtml||'<p style="color:#94a3b8;font-size:13px">本月暂无客拉拉内容</p>')+'</div>';
+}
+
+function showKllAddForm(){
+  const f=document.getElementById('kll-add-form');
+  if(f.style.display!=='none'){f.style.display='none';return}
+  f.style.display='block';
+  f.innerHTML='<div style="background:var(--card);border:1px solid #fed7aa;border-radius:10px;padding:12px">'+
+    '<div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-bottom:8px">'+
+    '<input id="kll-evt-title" placeholder="标题" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px">'+
+    '<input id="kll-evt-date" type="date" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px">'+
+    '</div>'+
+    '<input id="kll-evt-desc" placeholder="描述/方向" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;margin-bottom:8px">'+
+    '<button onclick="addKllEvent()" style="background:#ea580c;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px">添加</button>'+
+    '<button onclick="document.getElementById(\'kll-add-form\').style.display=\'none\'" style="background:#e2e8f0;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px;margin-left:8px">取消</button>'+
+    '</div>';
+}
+
+function addKllEvent(){
+  const title=document.getElementById('kll-evt-title').value.trim();
+  const date=document.getElementById('kll-evt-date').value;
+  const desc=document.getElementById('kll-evt-desc').value.trim();
+  if(!title){alert('请输入标题');return}
+  const evts=getKllEvents();
+  evts.push({id:'kll_'+Date.now(),subject:title,date:date,direction:desc,month:MKT_PLAN_MONTH,attachments:[]});
+  saveKllEvents(evts);
+  document.getElementById('kll-add-form').style.display='none';
+  renderMarketing();
+}
+
+function delKllEvent(id){
+  let evts=getKllEvents();
+  evts=evts.filter(e=>e.id!==id);
+  saveKllEvents(evts);
+  renderMarketing();
+}
+
+function saveKllField(id,field,value){
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===id);
+  if(!evt)return;
+  evt[field]=value;
+  saveKllEvents(evts);
+}
+
+function toggleKllPublished(id,checked){
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===id);
+  if(!evt)return;
+  evt.published=checked;
+  saveKllEvents(evts);
+  renderMarketing();
+}
+
+function getKllAttachments(itemId){
+  if(window._sessionAttachments&&window._sessionAttachments['kll_'+itemId])return window._sessionAttachments['kll_'+itemId];
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===itemId);
+  return (evt&&evt.attachments)||[];
+}
+
+function handleKllFileUpload(itemId,input){
+  const files=input.files;
+  if(!files.length)return;
+  Array.from(files).forEach(file=>{
+    const isImg=file.type.startsWith('image/');
+    const isVid=file.type.startsWith('video/');
+    if(isVid||file.size>2*1024*1024){
+      const objUrl=URL.createObjectURL(file);
+      const entry={name:file.name,url:objUrl,type:isVid?'video':'file',size:file.size,blob:true};
+      addKllAttachEntry(itemId,entry);
+      renderMarketing();
+    }else{
+      const reader=new FileReader();
+      reader.onload=function(e){
+        const entry={name:file.name,url:e.target.result,type:isImg?'image':'file',size:file.size};
+        addKllAttachEntry(itemId,entry);
+        renderMarketing();
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+  input.value='';
+}
+
+function addKllAttachEntry(itemId,entry){
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===itemId);
+  if(!evt)return;
+  if(!evt.attachments)evt.attachments=[];
+  evt.attachments.push(entry);
+  const toSave=evts.map(e=>({...e,attachments:(e.attachments||[]).filter(a=>!a.blob)}));
+  saveKllEvents(toSave);
+  if(!window._sessionAttachments)window._sessionAttachments={};
+  window._sessionAttachments['kll_'+itemId]=evt.attachments;
+}
+
+function addKllAttachmentFromInput(itemId){
+  const input=document.getElementById('kllurl-'+itemId);
+  const url=input.value.trim();
+  if(!url)return;
+  const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(url);
+  const isVid=/\.(mp4|mov|avi|webm|mkv)$/i.test(url);
+  const entry={name:url.split('/').pop()||'链接',url:url,type:isImg?'image':isVid?'video':'link'};
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===itemId);
+  if(!evt)return;
+  if(!evt.attachments)evt.attachments=[];
+  evt.attachments.push(entry);
+  saveKllEvents(evts);
+  renderMarketing();
+}
+
+function removeKllAttachment(itemId,idx){
+  const evts=getKllEvents();
+  const evt=evts.find(e=>e.id===itemId);
+  if(!evt||!evt.attachments)return;
+  evt.attachments.splice(idx,1);
+  saveKllEvents(evts);
+  if(window._sessionAttachments&&window._sessionAttachments['kll_'+itemId]){
+    window._sessionAttachments['kll_'+itemId].splice(idx,1);
+  }
+  renderMarketing();
+}
+
+function previewKllAttach(itemId,idx){
+  const attachments=getKllAttachments(itemId);
+  const a=attachments[idx];
+  if(!a)return;
+  const isImg=/\.(jpg|jpeg|png|gif|webp)$/i.test(a.url)||a.type==='image';
+  const isVideo=/\.(mp4|mov|avi|webm|mkv)$/i.test(a.url)||a.type==='video';
+  const overlay=document.createElement('div');
+  overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;cursor:pointer';
+  overlay.onclick=e=>{if(e.target===overlay||e.target.tagName==='BUTTON')overlay.remove()};
+  let content='';
+  if(isImg) content='<img src="'+a.url+'" style="max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain">';
+  else if(isVideo) content='<video src="'+a.url+'" controls autoplay style="max-width:90vw;max-height:85vh;border-radius:8px"></video>';
+  else if(a.url.startsWith('data:')) content='<div style="background:#fff;padding:32px;border-radius:12px;text-align:center"><div style="font-size:48px;margin-bottom:16px">📄</div><div>'+a.name+'</div><a href="'+a.url+'" download="'+a.name+'" style="display:inline-block;margin-top:16px;background:#ea580c;color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none">下载</a></div>';
+  else{window.open(a.url,'_blank');return}
+  overlay.innerHTML='<button style="position:absolute;top:16px;right:24px;background:none;border:none;color:#fff;font-size:28px;cursor:pointer">✕</button>'+content;
+  document.body.appendChild(overlay);
+}
+
+function renderGantt(brandItems, kllItems, monthStr){
+  const combined=[...brandItems.map(i=>({...i,source:'brand'})),...kllItems.map(i=>({...i,source:'kll'}))];
+  if(!combined.length)return'';
+  const year=MDATA.year||2026;
+  const month=parseInt(monthStr);
+  const daysInMonth=new Date(year,month,0).getDate();
+  let headerCells='';
+  for(let d=1;d<=daysInMonth;d++){
+    const isWeekend=new Date(year,month-1,d).getDay()%6===0;
+    headerCells+='<div class="gantt-cell gantt-header '+(isWeekend?'weekend':'')+'">'+d+'</div>';
+  }
+  let rows='';
+  combined.forEach(item=>{
+    if(!item.date)return;
+    const startDay=parseInt(item.date.split('-')[2])||1;
+    const clampStart=Math.max(1,Math.min(startDay,daysInMonth));
+    const colorClass=item.source==='kll'?'gantt-active-kll':'gantt-active';
+    let cells='';
+    for(let d=1;d<=daysInMonth;d++){
+      cells+='<div class="gantt-cell '+(d===clampStart?colorClass:'')+'"></div>';
+    }
+    const label=(item.subject||'').substring(0,12);
+    rows+='<div class="gantt-row"><div class="gantt-label" title="'+(item.subject||'')+'" style="'+(item.source==='kll'?'color:#ea580c':'')+'">'+label+'</div><div class="gantt-cells">'+cells+'</div></div>';
+  });
+  return '<div class="gantt-chart"><div class="gantt-row gantt-header-row"><div class="gantt-label" style="font-weight:700">事项</div><div class="gantt-cells">'+headerCells+'</div></div>'+rows+'</div>';
+}
+
+function switchPlanMonth(m){MKT_PLAN_MONTH=m;renderMarketing()}
+
+function editMonthTheme(){
+  // Legacy - now handled by inline contenteditable
+  const el=document.getElementById('theme-edit-field');
+  if(el)el.focus();
+}
+
+function showAddEventForm(){
+  const f=document.getElementById('mkt-add-form');
+  if(f.style.display!=='none'){f.style.display='none';return}
+  f.style.display='block';
+  f.innerHTML='<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px">'+
+    '<div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-bottom:8px">'+
+    '<input id="evt-title" placeholder="标题" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px">'+
+    '<input id="evt-date" type="date" style="padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px">'+
+    '</div>'+
+    '<input id="evt-direction" placeholder="方向/描述" style="width:100%;padding:8px;border:1px solid var(--border);border-radius:6px;font-size:13px;margin-bottom:8px">'+
+    '<button onclick="addCustomEvent()" style="background:#2563eb;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px">添加</button>'+
+    '<button onclick="document.getElementById(\'mkt-add-form\').style.display=\'none\'" style="background:#e2e8f0;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px;margin-left:8px">取消</button>'+
+    '</div>';
+}
+
+function addCustomEvent(){
+  const title=document.getElementById('evt-title').value.trim();
+  const date=document.getElementById('evt-date').value;
+  const direction=document.getElementById('evt-direction').value.trim();
+  if(!title){alert('请输入标题');return}
+  const evts=getCustomEvents();
+  evts.push({id:'c_'+Date.now(),month:MKT_PLAN_MONTH,date:date,subject:title,direction:direction,materials:{},custom:true,attachments:[]});
+  saveCustomEvents(evts);
+  renderMarketing();
+}
+
+function delCustomEvent(id){
+  if(!confirm('确认删除?'))return;
+  const evts=getCustomEvents().filter(e=>e.id!==id);
+  saveCustomEvents(evts);
+  renderMarketing();
+}
+
+function toggleMaterial(itemId,matKey){
+  if(itemId.startsWith('plan_')){
+    // Plan items: store in localStorage
+    const key='mat_'+MKT_PLAN_MONTH+'_'+itemId;
+    let mats={};
+    try{mats=JSON.parse(localStorage.getItem(key)||'{}')}catch{}
+    mats[matKey]=!mats[matKey];
+    localStorage.setItem(key,JSON.stringify(mats));
+  }else{
+    const evts=getCustomEvents();
+    const evt=evts.find(e=>e.id===itemId);
+    if(!evt)return;
+    if(!evt.materials)evt.materials={};
+    evt.materials[matKey]=!evt.materials[matKey];
+    saveCustomEvents(evts);
+  }
+  renderMarketing();
+}
+
+// === Ad Data Section (广告投放数据) ===
+function renderAdROI(){
+  const ad=MDATA.ad_data||{};
+  const monthly=ad.monthly||[];
+  if(!monthly.length)return'<div class="mkt-section"><h2>💰 广告投放数据</h2><p style="color:#94a3b8">暂无数据</p></div>';
+  const EXCLUDED_CHANNELS=['AI','合计','OK哥'];
+  function filterChannels(obj){
+    if(!obj)return{};
+    const r={};Object.keys(obj).forEach(k=>{if(!EXCLUDED_CHANNELS.includes(k))r[k]=obj[k]});return r;
+  }
+  function fmtMoney(v){return v>10000?'¥'+(v/10000).toFixed(2)+'万':'¥'+(v||0).toLocaleString()}
+  let tabs=monthly.map(m=>'<button class="mkt-month-btn '+(m.month===MKT_AD_MONTH?'active':'')+'" onclick="switchAdMonth(\''+m.month+'\')">'+m.month.replace('26.','')+'月</button>').join('');
+  tabs+='<button class="mkt-month-btn '+(MKT_AD_MONTH==='yearly'?'active':'')+'" onclick="switchAdMonth(\'yearly\')">全年</button>';
+  let kpiHtml='',channelTableHtml='';
+  if(MKT_AD_MONTH==='yearly'){
+    let yLeads=0,ySpend=0,yRecharge=0,yPerfNew=0,yPerfOld=0;
+    const chAgg={};
+    monthly.forEach(m=>{
+      const ch=filterChannels(m.channel_leads||{});
+      const cs=filterChannels(m.channels||{});
+      yLeads+=Object.values(ch).reduce((a,b)=>a+b,0);
+      ySpend+=Object.values(cs).reduce((a,b)=>a+b,0);
+      yRecharge+=(m.kpi&&m.kpi.recharge)||0;
+      yPerfNew+=(m.kpi&&m.kpi.performance_new)||0;
+      yPerfOld+=(m.kpi&&m.kpi.performance_old)||0;
+      Object.keys(ch).forEach(k=>{if(!chAgg[k])chAgg[k]={leads:0,spend:0};chAgg[k].leads+=ch[k]});
+      Object.keys(cs).forEach(k=>{if(!chAgg[k])chAgg[k]={leads:0,spend:0};chAgg[k].spend+=cs[k]});
+    });
+    const yAvg=yLeads>0?(ySpend/yLeads):0;
+    const yTotal=yPerfNew+yPerfOld;
+    kpiHtml='<div class="mkt-kpi-row" style="grid-template-columns:repeat(4,1fr)">'+
+      '<div class="mkt-kpi"><div class="mk-label">全年充值</div><div class="mk-value" style="color:#8b5cf6">'+fmtMoney(yRecharge)+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">全年留资数</div><div class="mk-value" style="color:#2563eb">'+yLeads+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">平均成本</div><div class="mk-value">¥'+yAvg.toFixed(1)+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">全年总消费</div><div class="mk-value" style="color:#ea580c">'+fmtMoney(ySpend)+'</div></div>'+
+      '</div><div class="mkt-kpi-row" style="grid-template-columns:1fr">'+
+      '<div class="mkt-kpi"><div class="mk-label">转化业绩</div><div class="mk-value" style="color:#7c3aed">'+(yTotal?fmtMoney(yTotal):'¥-')+'</div><div style="font-size:11px;color:#64748b;margin-top:2px">新客 <span style="color:#10b981;font-weight:600">'+(yPerfNew?fmtMoney(yPerfNew):'¥0')+'</span> | 老客 <span style="color:#0891b2;font-weight:600">'+(yPerfOld?fmtMoney(yPerfOld):'¥0')+'</span></div></div>'+
+      '</div>';
+    const chKeys=Object.keys(chAgg).sort((a,b)=>chAgg[b].leads-chAgg[a].leads);
+    channelTableHtml='<div style="margin:16px 0;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr style="background:#f1f5f9"><th style="padding:8px 12px;text-align:left;border-bottom:2px solid #e2e8f0">渠道</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">留资数</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">消费</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">留资成本</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">占比</th></tr></thead><tbody>'+
+      chKeys.map(k=>{
+        const c=chAgg[k];const cost=c.leads>0?(c.spend/c.leads):0;const pct=yLeads>0?Math.round(c.leads/yLeads*100):0;
+        return '<tr><td style="padding:6px 12px;border-bottom:1px solid #f1f5f9">'+k+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9;font-weight:600;color:#2563eb">'+c.leads+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">'+fmtMoney(c.spend)+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">¥'+cost.toFixed(1)+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">'+pct+'%</td></tr>';
+      }).join('')+
+      '<tr style="background:#f8fafc;font-weight:600"><td style="padding:6px 12px">合计</td><td style="padding:6px 12px;text-align:right;color:#2563eb">'+yLeads+'</td><td style="padding:6px 12px;text-align:right">'+fmtMoney(ySpend)+'</td><td style="padding:6px 12px;text-align:right">¥'+yAvg.toFixed(1)+'</td><td style="padding:6px 12px;text-align:right">100%</td></tr>'+
+      '</tbody></table></div>';
+  }else{
+    const cur=monthly.find(m=>m.month===MKT_AD_MONTH)||monthly[monthly.length-1];
+    const kpi=cur.kpi||{};
+    const ch=filterChannels(cur.channel_leads||{});
+    const cs=filterChannels(cur.channels||{});
+    const filteredLeads=Object.values(ch).reduce((a,b)=>a+b,0);
+    const filteredSpend=Object.values(cs).reduce((a,b)=>a+b,0);
+    const filteredAvg=filteredLeads>0?(filteredSpend/filteredLeads):0;
+    const recharge=kpi.recharge||0;
+    const perfNew=kpi.performance_new||0;
+    const perfOld=kpi.performance_old||0;
+    const perfTotal=perfNew+perfOld;
+    const curIdx=monthly.indexOf(cur);
+    let momLeadsHtml='',momPerfHtml='';
+    if(curIdx>0){
+      const prev=monthly[curIdx-1];
+      const prevCh=filterChannels(prev.channel_leads||{});
+      const prevLeads=Object.values(prevCh).reduce((a,b)=>a+b,0);
+      if(prevLeads>0){
+        const momChange=Math.round((filteredLeads-prevLeads)/prevLeads*100);
+        const momColor=momChange>=0?'#10b981':'#ef4444';
+        momLeadsHtml='<div class="mkt-kpi"><div class="mk-label">留资环比</div><div class="mk-value" style="color:'+momColor+'">'+(momChange>=0?'+':'')+momChange+'%</div></div>';
+      }
+      const prevKpi=prev.kpi||{};
+      const prevTotal=(prevKpi.performance_new||0)+(prevKpi.performance_old||0);
+      if(prevTotal>0&&perfTotal>0){
+        const perfMom=Math.round((perfTotal-prevTotal)/prevTotal*100);
+        const perfColor=perfMom>=0?'#10b981':'#ef4444';
+        momPerfHtml='<div class="mkt-kpi"><div class="mk-label">业绩环比</div><div class="mk-value" style="color:'+perfColor+'">'+(perfMom>=0?'+':'')+perfMom+'%</div></div>';
+      }
+    }
+    kpiHtml='<div class="mkt-kpi-row" style="grid-template-columns:repeat(4,1fr)">'+
+      '<div class="mkt-kpi"><div class="mk-label">充值金额</div><div class="mk-value" style="color:#8b5cf6">'+(recharge?fmtMoney(recharge):'¥0')+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">本月留资数</div><div class="mk-value" style="color:#2563eb">'+filteredLeads+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">平均留资成本</div><div class="mk-value">¥'+filteredAvg.toFixed(1)+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">总消费</div><div class="mk-value" style="color:#ea580c">'+fmtMoney(filteredSpend)+'</div></div>'+
+      '</div><div class="mkt-kpi-row" style="grid-template-columns:repeat(3,1fr)">'+
+      '<div class="mkt-kpi"><div class="mk-label">转化业绩</div><div class="mk-value" style="color:#7c3aed">'+(perfTotal?fmtMoney(perfTotal):'¥-')+'</div><div style="font-size:11px;color:#64748b;margin-top:2px">新客 <span style="color:#10b981;font-weight:600">'+(perfNew?fmtMoney(perfNew):'¥0')+'</span> | 老客 <span style="color:#0891b2;font-weight:600">'+(perfOld?fmtMoney(perfOld):'¥0')+'</span></div></div>'+
+      momLeadsHtml+momPerfHtml+'</div>';
+    // Channel detail table
+    const allChKeys=new Set([...Object.keys(ch),...Object.keys(cs)]);
+    const chArr=Array.from(allChKeys).sort((a,b)=>(ch[b]||0)-(ch[a]||0));
+    if(chArr.length){
+      channelTableHtml='<div style="margin:16px 0;overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><thead><tr style="background:#f1f5f9"><th style="padding:8px 12px;text-align:left;border-bottom:2px solid #e2e8f0">渠道</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">留资数</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">消费</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">留资成本</th><th style="padding:8px 12px;text-align:right;border-bottom:2px solid #e2e8f0">占比</th></tr></thead><tbody>'+
+        chArr.map(k=>{
+          const leads=ch[k]||0;const spend=cs[k]||0;const cost=leads>0?(spend/leads):0;const pct=filteredLeads>0?Math.round(leads/filteredLeads*100):0;
+          return '<tr><td style="padding:6px 12px;border-bottom:1px solid #f1f5f9">'+k+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9;font-weight:600;color:#2563eb">'+leads+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">'+fmtMoney(spend)+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">'+(cost>0?'¥'+cost.toFixed(1):'-')+'</td><td style="padding:6px 12px;text-align:right;border-bottom:1px solid #f1f5f9">'+pct+'%</td></tr>';
+        }).join('')+
+        '<tr style="background:#f8fafc;font-weight:600"><td style="padding:6px 12px">合计</td><td style="padding:6px 12px;text-align:right;color:#2563eb">'+filteredLeads+'</td><td style="padding:6px 12px;text-align:right">'+fmtMoney(filteredSpend)+'</td><td style="padding:6px 12px;text-align:right">¥'+filteredAvg.toFixed(1)+'</td><td style="padding:6px 12px;text-align:right">100%</td></tr>'+
+        '</tbody></table></div>';
+    }
+  }
+  return '<div class="mkt-section"><h2>💰 广告投放数据</h2>'+
+    '<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">'+tabs+'</div>'+
+    kpiHtml+
+    '<div class="mkt-chart-row"><div class="mkt-chart-box"><div id="chart-ad-daily" style="height:260px"></div></div><div class="mkt-chart-box"><div id="chart-ad-pie" style="height:260px"></div></div></div>'+
+    channelTableHtml+'</div>';
+}
+
+function switchAdMonth(m){MKT_AD_MONTH=m;renderAcquisition()}
+
+// === Overseas Section (with monthly tabs) ===
+function renderOverseas(){
+  const os=MDATA.overseas||{};
+  const osMonthly=os.monthly||[];
+  if(!osMonthly.length){
+    const kpi=os.kpi||{};
+    if(!kpi.total_inquiries)return'<div class="mkt-section"><h2>🌍 海外获客</h2><p style="color:#94a3b8">暂无数据</p></div>';
+    return '<div class="mkt-section"><h2>🌍 海外获客</h2>'+
+      '<div class="mkt-kpi-row" style="grid-template-columns:repeat(3,1fr)">'+
+      '<div class="mkt-kpi"><div class="mk-label">咨询量</div><div class="mk-value" style="color:#7c3aed">'+(kpi.total_inquiries||0)+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">已分配</div><div class="mk-value">'+(kpi.distributed||0)+'</div></div>'+
+      '<div class="mkt-kpi"><div class="mk-label">分配率</div><div class="mk-value">'+(kpi.distribution_rate||0).toFixed(0)+'%</div></div></div>'+
+      '<div class="mkt-chart-row" style="grid-template-columns:1fr 1fr"><div class="mkt-chart-box"><div id="chart-os-region" style="height:220px"></div></div><div class="mkt-chart-box"><div id="chart-os-trend" style="height:220px"></div></div></div></div>';
+  }
+  let tabs=osMonthly.map(m=>'<button class="mkt-month-btn '+(m.month===MKT_OS_MONTH?'active':'')+'" onclick="switchOsMonth('+m.month+')">'+m.month+'月</button>').join('');
+  const cur=osMonthly.find(m=>m.month===MKT_OS_MONTH)||osMonthly[osMonthly.length-1];
+  const kpi=cur.kpi||{};
+  return '<div class="mkt-section"><h2>🌍 海外获客</h2>'+
+    '<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">'+tabs+'</div>'+
+    '<div class="mkt-kpi-row" style="grid-template-columns:repeat(3,1fr)">'+
+    '<div class="mkt-kpi"><div class="mk-label">咨询量</div><div class="mk-value" style="color:#7c3aed">'+(kpi.total_inquiries||0)+'</div></div>'+
+    '<div class="mkt-kpi"><div class="mk-label">已分配</div><div class="mk-value">'+(kpi.distributed||0)+'</div></div>'+
+    '<div class="mkt-kpi"><div class="mk-label">分配率</div><div class="mk-value">'+(kpi.distribution_rate||0).toFixed(0)+'%</div></div></div>'+
+    '<div class="mkt-chart-row" style="grid-template-columns:1fr 1fr"><div class="mkt-chart-box"><div id="chart-os-region" style="height:220px"></div></div><div class="mkt-chart-box"><div id="chart-os-trend" style="height:220px"></div></div></div></div>';
+}
+function switchOsMonth(m){MKT_OS_MONTH=m;renderAcquisition()}
+
+// === Overseas Accounts Section ===
+var MKT_ACCT_PLATFORM='all';
+var MKT_ACCT_MONTH=0;
+function renderAccounts(){
+  const os=MDATA.overseas||{};
+  const acct=os.accounts||{};
+  const monthly=acct.monthly||[];
+  if(!monthly.length)return'';
+  if(!MKT_ACCT_MONTH||!monthly.find(m=>m.month===MKT_ACCT_MONTH))MKT_ACCT_MONTH=monthly[monthly.length-1].month;
+  
+  // Month tabs
+  let monthTabs=monthly.map(m=>'<button class="mkt-month-btn '+(MKT_ACCT_MONTH===m.month?'active':'')+'" onclick="switchAcctMonth('+m.month+')">'+m.month+'月</button>').join('');
+  
+  // Get current month data
+  const curMonth=monthly.find(m=>m.month===MKT_ACCT_MONTH)||monthly[monthly.length-1];
+  const weeklyData=curMonth.weekly||{};
+  
+  // Platform tabs
+  const availPlatforms=Object.keys(weeklyData);
+  const allPlatforms=['all',...availPlatforms];
+  let platTabs=allPlatforms.map(p=>'<button class="mkt-month-btn '+(MKT_ACCT_PLATFORM===p?'active':'')+'" style="font-size:11px;padding:3px 8px" onclick="switchAcctPlatform(\''+p.replace(/'/g,"\\'")+'\')">'+
+    (p==='all'?'全部':p.replace('TikTok (主号)','TikTok主').replace('TikTok (OK哥)','TikTok-OK').replace('TikTok (早期)','TikTok早'))+'</button>').join('');
+  
+  let bodyHtml='';
+  if(MKT_ACCT_PLATFORM==='all'){
+    // Summary cards for all platforms — show TOTALS for the month
+    const summaryPlatforms=availPlatforms.filter(p=>p!=='TikTok (早期)');
+    let cards='';
+    summaryPlatforms.forEach(p=>{
+      const w=weeklyData[p]||[];
+      if(!w.length)return;
+      // Sum all weeks in this month
+      let totalViews=0,totalFollowers=0,totalInteract=0;
+      let isImpressions=false;
+      w.forEach(r=>{
+        if(r.impressions!==undefined)isImpressions=true;
+        totalViews+=(r.views||r.impressions||0);
+        totalFollowers+=(r.followers||r.subscribers||0);
+        totalInteract+=(r.interactions||r.likes||0);
+      });
+      const mainLabel=isImpressions?'展示':'浏览/播放';
+      cards+='<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;min-width:140px">'+
+        '<div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px">'+p.replace('TikTok (主号)','TikTok 主号').replace('TikTok (OK哥)','TikTok OK哥')+'</div>'+
+        '<div style="font-size:18px;font-weight:800;color:#2563eb">'+totalViews.toLocaleString()+'</div>'+
+        '<div style="font-size:11px;color:#64748b">'+mainLabel+'（'+w.length+'周合计）</div>'+
+        '<div style="font-size:11px;color:#64748b;margin-top:4px">粉丝+'+totalFollowers+' | 互动'+totalInteract+'</div>'+
+        '</div>';
+    });
+    bodyHtml='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:12px">'+cards+'</div>';
+    bodyHtml+='<div class="mkt-chart-row" style="margin-top:16px"><div class="mkt-chart-box"><div id="chart-acct-compare" style="height:280px"></div></div></div>';
+  }else{
+    // Single platform detail — sort by date properly
+    const w=weeklyData[MKT_ACCT_PLATFORM]||[];
+    if(w.length){
+      const sortByPeriod=(a,b)=>{
+        const pa=a.period.split('/');const pb=b.period.split('/');
+        const ma=parseInt(pa[0]),da=parseInt(pa[1]);
+        const mb=parseInt(pb[0]),db=parseInt(pb[1]);
+        return ma!==mb?ma-mb:da-db;
+      };
+      let rows=[...w].sort(sortByPeriod).map(r=>{
+        const views=r.views||r.impressions||0;
+        const fans=r.followers||r.subscribers||0;
+        const interact=r.interactions||r.likes||0;
+        return '<tr><td>'+r.period+'</td><td style="text-align:right">'+views.toLocaleString()+'</td><td style="text-align:right">'+fans+'</td><td style="text-align:right">'+interact+'</td><td style="text-align:right">'+(r.reach||r.visits||r.profile_visits||'-')+'</td></tr>';
+      }).join('');
+      bodyHtml='<table style="width:100%;border-collapse:collapse;font-size:12px;margin-top:12px"><thead><tr style="background:#f1f5f9"><th style="padding:6px 8px;text-align:left">周期</th><th style="padding:6px 8px;text-align:right">浏览/播放</th><th style="padding:6px 8px;text-align:right">新增粉丝</th><th style="padding:6px 8px;text-align:right">互动/赞</th><th style="padding:6px 8px;text-align:right">触达/访问</th></tr></thead><tbody>'+rows+'</tbody></table>';
+    }
+    bodyHtml+='<div class="mkt-chart-row" style="margin-top:12px"><div class="mkt-chart-box"><div id="chart-acct-trend" style="height:220px"></div></div></div>';
+  }
+  return '<div class="mkt-section"><h2>📱 海外账号数据</h2>'+
+    '<div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap">'+monthTabs+'</div>'+
+    '<div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap">'+platTabs+'</div>'+bodyHtml+'</div>';
+}
+function switchAcctMonth(m){MKT_ACCT_MONTH=m;MKT_ACCT_PLATFORM='all';renderAcquisition()}
+function switchAcctPlatform(p){MKT_ACCT_PLATFORM=p;renderAcquisition()}
+
+// === Team Funnel Section (with team breakdown) ===
+function renderFunnel(){
+  const tf=MDATA.team_funnel||{};
+  const monthly=tf.monthly||[];
+  const yearly=tf.yearly_total||{};
+  if(!monthly.length)return'<div class="mkt-section"><h2>📊 团队获客漏斗</h2><p style="color:#94a3b8">暂无数据</p></div>';
+  let tabs=monthly.map(m=>'<button class="mkt-month-btn '+(m.month===MKT_FUNNEL_MONTH?'active':'')+'" onclick="switchFunnelMonth('+m.month+')">'+m.month+'月</button>').join('');
+  tabs+='<button class="mkt-month-btn '+(MKT_FUNNEL_MONTH==='yearly'?'active':'')+'" onclick="switchFunnelMonth(\'yearly\')">全年</button>';
+  let bodyHtml='';
+  if(MKT_FUNNEL_MONTH==='yearly'){
+    bodyHtml=renderFunnelVisual(yearly.assigned||0,yearly.added||0,yearly.crm||0,yearly.conversion_amount||0)+
+      '<div style="margin-top:12px;font-size:12px;color:#64748b;text-align:center">全年添加率: '+(yearly.assigned?Math.round(yearly.added/yearly.assigned*100):0)+'% | 建CRM率: '+(yearly.assigned?Math.round(yearly.crm/yearly.assigned*100):0)+'%</div>';
+  }else{
+    const cur=monthly.find(m=>m.month===MKT_FUNNEL_MONTH)||monthly[monthly.length-1];
+    const members=(cur.members||[]).filter(m=>m.assigned>0);
+    const funnel=cur.funnel||{};
+    bodyHtml=renderFunnelVisual(funnel.assigned||0,funnel.added||0,funnel.crm||0,0);
+    // Team breakdown
+    const blueMembers=members.filter(m=>m.team==='蓝队');
+    const orangeMembers=members.filter(m=>m.team==='橙队');
+    const blueStats=calcTeamStats(blueMembers);
+    const orangeStats=calcTeamStats(orangeMembers);
+    bodyHtml+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">'+
+      renderTeamCard('蓝队',blueStats,blueMembers,'#2563eb')+
+      renderTeamCard('橙队',orangeStats,orangeMembers,'#ea580c')+
+      '</div>';
+  }
+  return '<div class="mkt-section"><h2>📊 团队获客漏斗</h2>'+
+    '<div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">'+tabs+'</div>'+
+    bodyHtml+'</div>';
+}
+function switchFunnelMonth(m){MKT_FUNNEL_MONTH=m;renderAcquisition()}
+
+function calcTeamStats(members){
+  const assigned=members.reduce((s,m)=>s+m.assigned,0);
+  const added=members.reduce((s,m)=>s+(m.added||0),0);
+  const crm=members.reduce((s,m)=>s+(m.crm_count||0),0);
+  const conv=members.reduce((s,m)=>s+(m.conversion_amount||0),0);
+  return {assigned,added,crm,conversion_amount:conv,
+    add_rate:assigned?Math.round(added/assigned*100):0,
+    crm_rate:assigned?Math.round(crm/assigned*100):0};
+}
+
+function renderFunnelVisual(assigned,added,crm,conv){
+  let convHtml='';
+  if(conv>0) convHtml='<div style="font-size:20px;color:#94a3b8">→</div><div style="background:#fce7f3;padding:12px 24px;border-radius:8px;text-align:center"><div style="font-size:24px;font-weight:800;color:#db2777">¥'+(conv/10000).toFixed(1)+'万</div><div style="font-size:11px;color:#64748b">转化金额</div></div>';
+  return '<div class="mkt-funnel-visual"><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center">'+
+    '<div style="background:#dbeafe;padding:12px 24px;border-radius:8px;text-align:center"><div style="font-size:24px;font-weight:800;color:#2563eb">'+assigned+'</div><div style="font-size:11px;color:#64748b">分配</div></div>'+
+    '<div style="font-size:20px;color:#94a3b8">→</div>'+
+    '<div style="background:#d1fae5;padding:12px 24px;border-radius:8px;text-align:center"><div style="font-size:24px;font-weight:800;color:#10b981">'+added+'</div><div style="font-size:11px;color:#64748b">添加微信</div></div>'+
+    '<div style="font-size:20px;color:#94a3b8">→</div>'+
+    '<div style="background:#fef3c7;padding:12px 24px;border-radius:8px;text-align:center"><div style="font-size:24px;font-weight:800;color:#ca8a04">'+crm+'</div><div style="font-size:11px;color:#64748b">建CRM</div></div>'+
+    convHtml+'</div></div>';
+}
+
+function renderTeamCard(teamName,stats,members,color){
+  let rows=members.map(m=>{
+    const name=m.name.replace('@','');
+    const addCls=m.add_rate<85?'warn':'';
+    const crmCls=m.crm_rate<40?'warn':'';
+    return '<tr><td>'+name+'</td><td>'+m.assigned+'</td><td class="'+addCls+'">'+m.add_rate.toFixed(0)+'%</td><td class="'+crmCls+'">'+m.crm_rate.toFixed(0)+'%</td><td>'+(m.conversion_amount?'¥'+Math.round(m.conversion_amount).toLocaleString():'-')+'</td></tr>';
+  }).join('');
+  return '<div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px">'+
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="background:'+color+';color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700">'+teamName+'</span>'+
+    '<span style="font-size:12px;color:#64748b">分配'+stats.assigned+' | 添加率'+stats.add_rate+'% | CRM率'+stats.crm_rate+'%</span></div>'+
+    '<table class="mkt-funnel-table" style="font-size:12px"><thead><tr><th>姓名</th><th>分配</th><th>添加率</th><th>CRM率</th><th>转化</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+}
+
+// === ECharts Initialization ===
+function initAllCharts(){
+  const ad=MDATA.ad_data||{};
+  const monthly=ad.monthly||[];
+  const EXCLUDED_CH=['AI','合计','OK哥'];
+  function filterObj(o){const r={};Object.keys(o||{}).forEach(k=>{if(!EXCLUDED_CH.includes(k))r[k]=o[k]});return r}
+  let chartData=null;
+  if(MKT_AD_MONTH==='yearly'){
+    const allDaily=[];const allChannels={};const allChLeads={};
+    monthly.forEach(m=>{(m.daily||[]).forEach(d=>allDaily.push(d));Object.entries(filterObj(m.channels)).forEach(([k,v])=>{allChannels[k]=(allChannels[k]||0)+v});Object.entries(filterObj(m.channel_leads||{})).forEach(([k,v])=>{allChLeads[k]=(allChLeads[k]||0)+v})});
+    chartData={daily:allDaily,channels:allChannels,channel_leads:allChLeads};
+  }else{
+    const raw=monthly.find(m=>m.month===MKT_AD_MONTH)||monthly[monthly.length-1]||{daily:[],channels:{}};
+    chartData={daily:raw.daily||[],channels:filterObj(raw.channels),channel_leads:filterObj(raw.channel_leads||{})};
+  }
+  const daily=chartData.daily||[];
+  const el1=document.getElementById('chart-ad-daily');
+  if(el1&&daily.length){
+    const c1=echarts.init(el1);
+    const dates=daily.map(d=>(d.date||'').slice(5));
+    const leads=daily.map(d=>d.leads||0);
+    const costs=daily.map(d=>d.cost||0);
+    c1.setOption({tooltip:{trigger:'axis'},legend:{data:['留资数','留资成本'],top:0},grid:{top:30,bottom:24,left:40,right:40},xAxis:{type:'category',data:dates,axisLabel:{fontSize:10,rotate:daily.length>20?45:0}},yAxis:[{type:'value',name:'留资数',splitLine:{lineStyle:{type:'dashed'}}},{type:'value',name:'成本(¥)',splitLine:{show:false}}],series:[{name:'留资数',type:'bar',data:leads,itemStyle:{color:'#3b82f6',borderRadius:[3,3,0,0]}},{name:'留资成本',type:'line',yAxisIndex:1,data:costs,smooth:true,lineStyle:{color:'#f97316'},itemStyle:{color:'#f97316'}}]});
+  }
+  const chLeads=chartData.channel_leads||{};
+  const el2=document.getElementById('chart-ad-pie');
+  if(el2&&Object.keys(chLeads).length){
+    const c2=echarts.init(el2);
+    const pieData=Object.entries(chLeads).map(([k,v])=>({name:k,value:v}));
+    c2.setOption({title:{text:'留资数分布',left:'center',top:0,textStyle:{fontSize:13,color:'#64748b'}},tooltip:{trigger:'item',formatter:'{b}: {c}条 ({d}%)'},legend:{orient:'vertical',right:0,top:'middle',textStyle:{fontSize:11}},series:[{type:'pie',radius:['35%','65%'],center:['35%','55%'],data:pieData,label:{show:false},emphasis:{label:{show:true,fontSize:12}}}]});
+  }
+  // Overseas charts
+  const os=MDATA.overseas||{};
+  const osMonthly=os.monthly||[];
+  let osData=osMonthly.find(m=>m.month===MKT_OS_MONTH)||{regions:{},daily_trend:[]};
+  const regions=osData.regions||{};
+  const el3=document.getElementById('chart-os-region');
+  if(el3&&Object.keys(regions).length){
+    const c=echarts.init(el3);
+    const sorted=Object.entries(regions).sort((a,b)=>b[1]-a[1]);
+    c.setOption({tooltip:{},grid:{top:10,bottom:24,left:60,right:10},xAxis:{type:'value'},yAxis:{type:'category',data:sorted.map(s=>s[0]),axisLabel:{fontSize:11}},series:[{type:'bar',data:sorted.map(s=>s[1]),itemStyle:{color:'#7c3aed',borderRadius:[0,3,3,0]}}]});
+  }
+  const trend=osData.daily_trend||[];
+  const el4=document.getElementById('chart-os-trend');
+  if(el4&&trend.length){
+    const c=echarts.init(el4);
+    c.setOption({tooltip:{trigger:'axis'},grid:{top:10,bottom:24,left:30,right:10},xAxis:{type:'category',data:trend.map(t=>t.date.slice(5)),axisLabel:{fontSize:10}},yAxis:{type:'value',minInterval:1},series:[{type:'line',data:trend.map(t=>t.count),smooth:true,areaStyle:{color:'rgba(124,58,237,0.1)'},lineStyle:{color:'#7c3aed'},itemStyle:{color:'#7c3aed'}}]});
+  }
+  // === Accounts Charts ===
+  const acct=(MDATA.overseas||{}).accounts||{};
+  const acctMonthly=acct.monthly||[];
+  const curAcctMonth=acctMonthly.find(m=>m.month===MKT_ACCT_MONTH)||acctMonthly[acctMonthly.length-1]||{};
+  const acctWeekly=curAcctMonth.weekly||{};
+  const elCompare=document.getElementById('chart-acct-compare');
+  if(elCompare&&MKT_ACCT_PLATFORM==='all'){
+    const cc=echarts.init(elCompare);
+    const mainPlats=Object.keys(acctWeekly).filter(p=>p!=='TikTok (早期)');
+    const colorMap={'Instagram':'#e91e63','YouTube':'#ff0000','TikTok (主号)':'#000000','Facebook':'#1877f2','视频号':'#07c160','LinkedIn':'#0a66c2','TikTok (OK哥)':'#666'};
+    let allPeriods=new Set();
+    mainPlats.forEach(p=>{(acctWeekly[p]||[]).forEach(r=>allPeriods.add(r.period))});
+    const periods=[...allPeriods].sort((a,b)=>{const pa=a.split('/');const pb=b.split('/');const ma=parseInt(pa[0]),da=parseInt(pa[1]);const mb=parseInt(pb[0]),db=parseInt(pb[1]);return ma!==mb?ma-mb:da-db});
+    let series=mainPlats.map(p=>{
+      const w=(acctWeekly[p]||[]).sort((a,b)=>{const pa=a.period.split("/");const pb=b.period.split("/");const ma=parseInt(pa[0]),da=parseInt(pa[1]);const mb=parseInt(pb[0]),db=parseInt(pb[1]);return ma!==mb?ma-mb:da-db});
+      const dataMap={};w.forEach(r=>{dataMap[r.period]=r.views||r.impressions||0});
+      return {name:p.replace('TikTok (主号)','TikTok主').replace('TikTok (OK哥)','TikTok-OK'),type:'line',smooth:true,data:periods.map(pd=>dataMap[pd]||0),lineStyle:{color:colorMap[p]||'#999'},itemStyle:{color:colorMap[p]||'#999'}};
+    });
+    cc.setOption({tooltip:{trigger:'axis'},legend:{data:series.map(s=>s.name),top:0,textStyle:{fontSize:11}},grid:{top:36,bottom:24,left:50,right:10},xAxis:{type:'category',data:periods,axisLabel:{fontSize:10,rotate:30}},yAxis:{type:'value',name:'浏览/播放',axisLabel:{formatter:v=>v>=10000?(v/10000).toFixed(0)+'万':v}},series:series});
+  }
+  const elTrend=document.getElementById('chart-acct-trend');
+  if(elTrend&&MKT_ACCT_PLATFORM!=='all'){
+    const ct=echarts.init(elTrend);
+    const w=(acctWeekly[MKT_ACCT_PLATFORM]||[]).sort((a,b)=>{const pa=a.period.split("/");const pb=b.period.split("/");const ma=parseInt(pa[0]),da=parseInt(pa[1]);const mb=parseInt(pb[0]),db=parseInt(pb[1]);return ma!==mb?ma-mb:da-db});
+    if(w.length){
+      const periods=w.map(r=>r.period);
+      const views=w.map(r=>r.views||r.impressions||0);
+      const fans=w.map(r=>r.followers||r.subscribers||0);
+      ct.setOption({tooltip:{trigger:'axis'},legend:{data:['浏览/播放','新增粉丝'],top:0},grid:{top:30,bottom:24,left:50,right:40},xAxis:{type:'category',data:periods,axisLabel:{fontSize:10}},yAxis:[{type:'value',name:'浏览'},{type:'value',name:'粉丝',splitLine:{show:false}}],series:[{name:'浏览/播放',type:'bar',data:views,itemStyle:{color:'#3b82f6',borderRadius:[3,3,0,0]}},{name:'新增粉丝',type:'line',yAxisIndex:1,data:fans,smooth:true,lineStyle:{color:'#10b981'},itemStyle:{color:'#10b981'}}]});
+    }
+  }
+}
+
+
+// === 1688 Store Dashboard Module ===
+let S1688_DATA=null,S1688_PERIOD='week',S1688_STORE='Inflation',S1688_START='',S1688_END='',S1688_DETAIL_START='',S1688_DETAIL_END='';
+const S1688_STORES=['Inflation','Techlation','Teeshe'];
+const S1688_TAGS={Inflation:'潮牌',Techlation:'轻运动',Teeshe:'女装'};
+const S1688_COLORS={Inflation:'#2563eb',Techlation:'#10b981',Teeshe:'#f59e0b'};
+
+function loadStore1688Data(){
+  if(S1688_DATA){renderStore1688();return;}
+  fetch('store1688_data.json?v='+Date.now()).then(r=>r.json()).then(d=>{S1688_DATA=d;renderStore1688();}).catch(e=>{
+    document.getElementById('store1688-content').innerHTML='<div style="text-align:center;padding:40px;color:#ef4444">数据加载失败</div>';
+  });
+}
+function s1688Recent(s){
+  const d=S1688_DATA.stores[s]?.daily||[];
+  if(S1688_PERIOD==='yesterday'){var yd=new Date();yd.setDate(yd.getDate()-1);var yds=yd.toISOString().slice(0,10);return d.filter(function(r){return r.date===yds;});}
+  if(S1688_PERIOD==='custom'&&S1688_START&&S1688_END){return d.filter(function(r){return r.date>=S1688_START&&r.date<=S1688_END;});}
+  const n=S1688_PERIOD==='week'?7:S1688_PERIOD==='month'?30:9999;return d.slice(-n);
+}
+function s1688Prev(s){
+  var d=S1688_DATA.stores[s]?.daily||[];
+  if(S1688_PERIOD==="yesterday"){var yd=new Date();yd.setDate(yd.getDate()-2);var yds=yd.toISOString().slice(0,10);return d.filter(function(r){return r.date===yds;});}
+  if(S1688_PERIOD==="custom"&&S1688_START&&S1688_END){
+    var s1=new Date(S1688_START),e1=new Date(S1688_END);
+    var span=Math.round((e1-s1)/(86400000))+1;
+    var ps=new Date(s1);ps.setDate(ps.getDate()-span);
+    var pe=new Date(s1);pe.setDate(pe.getDate()-1);
+    var pss=ps.toISOString().slice(0,10),pes=pe.toISOString().slice(0,10);
+    return d.filter(function(r){return r.date>=pss&&r.date<=pes;});
+  }
+  var n=S1688_PERIOD==="week"?7:S1688_PERIOD==="month"?30:9999;
+  if(n>=9999)return [];
+  return d.slice(-(n*2),-n);
+}function s1688RecentDetail(s){
+  const d=S1688_DATA.stores[s]?.daily||[];
+  if(S1688_DETAIL_START&&S1688_DETAIL_END){return d.filter(function(r){return r.date>=S1688_DETAIL_START&&r.date<=S1688_DETAIL_END;});}
+  // default: current month
+  var now=new Date();var ms=new Date(now.getFullYear(),now.getMonth(),1).toISOString().slice(0,10);
+  return d.filter(function(r){return r.date>=ms;});
+}
+function s1688Sum(a,k){return a.reduce((s,r)=>s+(r[k]||0),0);}
+function s1688Avg(a,k){const v=a.filter(r=>r[k]>0);return v.length?s1688Sum(v,k)/v.length:0;}
+function s1688Fm(n){if(n>=10000)return'¥'+(n/10000).toFixed(1)+'万';return'¥'+Math.round(n).toLocaleString();}
+function s1688Fn(n){if(n>=10000)return(n/10000).toFixed(1)+'万';if(n>=1000)return(n/1000).toFixed(1)+'k';return Math.round(n).toLocaleString();}
+function s1688Fp(n){if(n==null||isNaN(n))return'--';return n<1?(n*100).toFixed(1)+'%':n.toFixed(1)+'%';}
+function s1688SetPeriod(p){S1688_PERIOD=p;if(p!=='custom'){S1688_START='';S1688_END='';}renderStore1688();}
+function s1688ApplyRange(){var s=document.getElementById('s1688-range-start').value;var e=document.getElementById('s1688-range-end').value;if(s&&e){S1688_PERIOD='custom';S1688_START=s;S1688_END=e;renderStore1688();}}
+function s1688ApplyDetailRange(){var s=document.getElementById('s1688-detail-start').value;var e=document.getElementById('s1688-detail-end').value;if(s&&e){S1688_DETAIL_START=s;S1688_DETAIL_END=e;renderS1688Detail();}}
+function s1688ClearDetailRange(){S1688_DETAIL_START='';S1688_DETAIL_END='';renderS1688Detail();}
+function s1688SetStore(s){S1688_STORE=s;renderStore1688();}
+
+function renderStore1688(){
+  var tPay=0,tVis=0,tAd=0,wPay=0,wAd=0;
+  var pPay=0,pVis=0,pAd=0,pwPay=0,pwAd=0;
+  S1688_STORES.forEach(function(s){var d=s1688Recent(s);tPay+=s1688Sum(d,'payment_amount');tVis+=s1688Sum(d,'visitors');tAd+=s1688Sum(d,'ad_spend');var a=s1688Sum(d,'ad_spend');if(a>0){wPay+=s1688Sum(d,'payment_amount');wAd+=a;}
+    var pd=s1688Prev(s);pPay+=s1688Sum(pd,'payment_amount');pVis+=s1688Sum(pd,'visitors');pAd+=s1688Sum(pd,'ad_spend');var pa=s1688Sum(pd,'ad_spend');if(pa>0){pwPay+=s1688Sum(pd,'payment_amount');pwAd+=pa;}
+  });
+  var roi=wAd>0?(wPay/wAd).toFixed(1):'--';
+  var pRoi=pwAd>0?(pwPay/pwAd).toFixed(1):0;
+  var lb=S1688_PERIOD==='yesterday'?'昨天':S1688_PERIOD==='week'?'近7天':S1688_PERIOD==='month'?'近30天':'自定义';
+  function s1688Cmp(cur,prev){if(!prev||prev===0)return '';var diff=((cur-prev)/prev)*100;var sign=diff>0?'+':'';var color=diff>0?'#10b981':'#ef4444';return '<div style="font-size:10px;color:'+color+';margin-top:2px">'+sign+diff.toFixed(1)+'%</div>';}
+  var kc=function(l,v,s,cmp){return'<div class="kpi-card"><div class="label">'+l+'</div><div class="value">'+v+'</div><div class="sub">'+s+'</div>'+(cmp||'')+'</div>';};
+  // compute MoM comparison for KPI
+  var yd=new Date();yd.setDate(yd.getDate()-1);var yds=yd.toISOString().slice(0,10);
+  var h='<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px"><div style="font-size:12px;color:#94a3b8">更新: '+S1688_DATA.updated_at+'</div>';
+  h+='<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">';
+  h+='<span class="pb'+(S1688_PERIOD==='yesterday'?' active':'')+'" onclick="s1688SetPeriod(\'yesterday\')">昨天</span>';
+  ['week','month'].forEach(function(p){var l=p==='week'?'近7天':'近30天';h+='<span class="pb'+(S1688_PERIOD===p?' active':'')+'" onclick="s1688SetPeriod(\''+p+'\')">'+l+'</span>';});
+  h+='<input type="date" id="s1688-range-start" value="'+(S1688_START||'')+'" style="font-size:11px;padding:3px 6px;border:1px solid var(--border);border-radius:6px">';
+  h+='<span style="color:var(--sub)">~</span>';
+  h+='<input type="date" id="s1688-range-end" value="'+(S1688_END||'')+'" style="font-size:11px;padding:3px 6px;border:1px solid var(--border);border-radius:6px">';
+  h+='<span class="pb" onclick="s1688ApplyRange()">确定</span>';
+  h+='</div></div>';
+  h+='<div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:16px">'+kc('总支付金额',s1688Fm(tPay),lb,s1688Cmp(tPay,pPay))+kc('总访客数',s1688Fn(tVis),lb,s1688Cmp(tVis,pVis))+kc('总广告消耗',s1688Fm(tAd),lb,s1688Cmp(tAd,pAd))+kc('综合ROI',roi,'加权平均',pRoi?s1688Cmp(parseFloat(roi)||0,parseFloat(pRoi)):'')+'</div>';
+  h+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">';
+  S1688_STORES.forEach(function(s){
+    var d=s1688Recent(s),pay=s1688Sum(d,'payment_amount'),vis=s1688Sum(d,'visitors'),cvr=s1688Avg(d,'payment_rate'),aov=s1688Avg(d,'avg_order'),ad=s1688Sum(d,'ad_spend'),r=ad>0?(pay/ad).toFixed(1):'--';
+    var refund=s1688Avg(d,'refund_rate'),online=Math.round(s1688Avg(d,'online_products')),activeR=s1688Avg(d,'active_rate'),newPct=s1688Avg(d,'new_buyer_pct'),oldPct=s1688Avg(d,'old_buyer_pct'),cpc=s1688Avg(d,'ad_cost_rate');
+    var pd=s1688Prev(s);
+    var pPay2=s1688Sum(pd,'payment_amount'),pVis2=s1688Sum(pd,'visitors'),pCvr=s1688Avg(pd,'payment_rate'),pAov=s1688Avg(pd,'avg_order'),pAd2=s1688Sum(pd,'ad_spend'),pRefund=s1688Avg(pd,'refund_rate'),pActiveR=s1688Avg(pd,'active_rate'),pNewPct=s1688Avg(pd,'new_buyer_pct'),pOldPct=s1688Avg(pd,'old_buyer_pct'),pOrders=s1688Sum(pd,'orders');
+    function momTag(cur,prev,isRate){
+      if(!prev||prev===0)return '';
+      var diff=isRate?((cur-prev)*100):(((cur-prev)/prev)*100);
+      var sign=diff>0?'+':'';
+      var color=diff>0?'#10b981':'#ef4444';
+      var txt=sign+diff.toFixed(1)+'%';
+      return '<div style="font-size:9px;color:'+color+';margin-top:1px">'+txt+'</div>';
+    }
+    h+='<div style="background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border)">';
+    h+='<div style="font-size:14px;font-weight:700;margin-bottom:10px">'+s+' <span style="font-size:10px;background:#eff6ff;color:var(--blue);padding:2px 6px;border-radius:4px">'+S1688_TAGS[s]+'</span></div>';
+    h+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center">';
+    var mc=function(v,l,c,mom){return '<div style="background:#fff;border-radius:8px;border:1px solid #e2e8f0;padding:10px 6px;box-shadow:0 1px 3px rgba(0,0,0,.06)"><div style="font-size:15px;font-weight:700;color:'+(c||'#1e293b')+'">'+v+'</div><div style="font-size:10px;color:#64748b;margin-top:2px">'+l+'</div>'+(mom||'')+'</div>';};
+    h+=mc(s1688Fm(pay),'支付金额',null,momTag(pay,pPay2,false));
+    h+=mc(s1688Fn(vis),'访客数',null,momTag(vis,pVis2,false));
+    h+=mc(s1688Fp(cvr),'转化率',null,momTag(cvr,pCvr,true));
+    h+=mc(s1688Fm(aov),'客单价',null,momTag(aov,pAov,false));
+    h+=mc(s1688Fm(ad),'广告消耗',null,momTag(ad,pAd2,false));
+    h+=mc('¥'+cpc.toFixed(2),'点击成本');
+    h+=mc(r,'ROI');
+    h+=mc(s1688Fp(refund),'退款率','#ef4444',momTag(refund,pRefund,true));
+    h+=mc(online,'在线商品');
+    h+=mc(s1688Fp(activeR),'动销率','#10b981',momTag(activeR,pActiveR,true));
+    h+=mc(s1688Fp(newPct),'新客占比','#2563eb',momTag(newPct,pNewPct,true));
+    h+=mc(s1688Fp(oldPct),'老客占比','#f59e0b',momTag(oldPct,pOldPct,true));
+    h+=mc(Math.round(s1688Sum(d,'orders')),'订单数',null,momTag(s1688Sum(d,'orders'),pOrders,false));
+    h+='</div></div>';
+  });
+  h+='</div>';
+  h+='<div style="background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border);margin-bottom:16px"><div style="font-size:14px;font-weight:700;margin-bottom:12px">📈 支付金额趋势</div><div id="s1688-chart-pay" style="height:280px"></div></div>';
+  h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">';
+  h+='<div style="background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border)"><div style="font-size:14px;font-weight:700;margin-bottom:12px">👥 访客数趋势</div><div id="s1688-chart-vis" style="height:250px"></div></div>';
+  h+='<div style="background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border)"><div style="font-size:14px;font-weight:700;margin-bottom:12px">💰 广告 & ROI</div><div id="s1688-chart-ad" style="height:250px"></div></div>';
+  h+='</div>';
+  h+='<div style="background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border)">';
+  h+='<div style="font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span>📋 每日明细</span><div style="display:flex;gap:6px;margin-left:auto">';
+  S1688_STORES.forEach(function(s){h+='<span class="pb'+(S1688_STORE===s?' active':'')+'" onclick="s1688SetStore(\''+s+'\')">'+s+'</span>';});
+  h+='</div><div style="display:inline-flex;align-items:center;gap:4px;margin-left:8px">';
+  h+='<input type="date" id="s1688-detail-start" value="'+(S1688_DETAIL_START||'')+'" style="font-size:11px;padding:3px 6px;border:1px solid var(--border);border-radius:6px" onchange="s1688ApplyDetailRange()">';
+  h+='<span>~</span>';
+  h+='<input type="date" id="s1688-detail-end" value="'+(S1688_DETAIL_END||'')+'" style="font-size:11px;padding:3px 6px;border:1px solid var(--border);border-radius:6px" onchange="s1688ApplyDetailRange()">';
+  h+='<span class="pb" onclick="s1688ClearDetailRange()">清除</span>';
+  h+='</div></div><div style="overflow-x:auto" id="s1688-detail"></div></div>';
+  document.getElementById('store1688-content').innerHTML=h;
+  setTimeout(function(){ensureECharts(renderS1688Charts);},100);
+  renderS1688Detail();
+}
+
+function renderS1688Charts(){
+  if(typeof echarts==='undefined'){ensureECharts(renderS1688Charts);return;}
+  var allDates=new Set();
+  S1688_STORES.forEach(function(s){s1688Recent(s).forEach(function(r){allDates.add(r.date);});});
+  var dates=[...allDates].sort();
+  var shortDates=dates.map(function(d){return d.slice(5);});
+
+  // Payment chart
+  var el=document.getElementById('s1688-chart-pay');
+  if(!el)return;
+  var payChart=echarts.init(el);
+  payChart.setOption({tooltip:{trigger:'axis',valueFormatter:function(v){return'¥'+Math.round(v).toLocaleString();}},legend:{data:S1688_STORES,bottom:0},grid:{top:10,right:20,bottom:40,left:60},xAxis:{type:'category',data:shortDates,axisLabel:{fontSize:10}},yAxis:{type:'value',axisLabel:{formatter:function(v){return v>=10000?(v/10000)+'万':v;}}},series:S1688_STORES.map(function(s){var map={};s1688Recent(s).forEach(function(r){map[r.date]=r.payment_amount||0;});return{name:s,type:'line',smooth:true,symbol:'none',lineStyle:{width:2},itemStyle:{color:S1688_COLORS[s]},data:dates.map(function(d){return map[d]||0;})};})});
+
+  // Visitors chart
+  var el2=document.getElementById('s1688-chart-vis');
+  if(!el2)return;
+  var visChart=echarts.init(el2);
+  visChart.setOption({tooltip:{trigger:'axis'},legend:{data:S1688_STORES,bottom:0},grid:{top:10,right:20,bottom:40,left:50},xAxis:{type:'category',data:shortDates,axisLabel:{fontSize:10}},yAxis:{type:'value'},series:S1688_STORES.map(function(s){var map={};s1688Recent(s).forEach(function(r){map[r.date]=r.visitors||0;});return{name:s,type:'line',smooth:true,symbol:'none',lineStyle:{width:2},itemStyle:{color:S1688_COLORS[s]},data:dates.map(function(d){return map[d]||0;})};})});
+
+  // Ad & ROI chart
+  var el3=document.getElementById('s1688-chart-ad');
+  if(!el3)return;
+  var adChart=echarts.init(el3);
+  var adData=[],roiData=[];
+  dates.forEach(function(d){var tAd=0,tPay=0;S1688_STORES.forEach(function(s){var rec=S1688_DATA.stores[s]?.daily.find(function(r){return r.date===d;});if(rec){tAd+=(rec.ad_spend||0);tPay+=(rec.payment_amount||0);}});adData.push(tAd);roiData.push(tAd>0?(tPay/tAd).toFixed(1):0);});
+  adChart.setOption({tooltip:{trigger:'axis'},legend:{data:['广告消耗','ROI'],bottom:0},grid:{top:10,right:50,bottom:40,left:60},xAxis:{type:'category',data:shortDates,axisLabel:{fontSize:10}},yAxis:[{type:'value',axisLabel:{formatter:function(v){return v>=1000?(v/1000)+'k':v;}}},{type:'value',name:'ROI',position:'right'}],series:[{name:'广告消耗',type:'bar',data:adData,itemStyle:{color:'#93c5fd'}},{name:'ROI',type:'line',yAxisIndex:1,data:roiData,smooth:true,symbol:'none',lineStyle:{color:'#ef4444',width:2},itemStyle:{color:'#ef4444'}}]});
+
+  window.addEventListener('resize',function(){payChart.resize();visChart.resize();adChart.resize();});
+}
+
+function renderS1688Detail(){
+  var d=s1688RecentDetail(S1688_STORE).slice().reverse();
+  var th=function(t){return '<th style="padding:6px 6px;text-align:right;white-space:nowrap">'+t+'</th>';};
+  var h='<table style="width:100%;border-collapse:collapse;font-size:11px"><thead><tr style="background:#f8fafc"><th style="padding:6px 6px;text-align:left">日期</th>'+th('支付金额')+th('订单数')+th('转化率')+th('客单价')+th('访客')+th('新客%')+th('老客%')+th('退款率')+th('点击成本')+th('广告消耗')+th('ROI')+th('在线数')+th('动销率')+'</tr></thead><tbody>';
+  d.forEach(function(r){
+    var roi=(r.ad_spend&&r.ad_spend>0)?(r.payment_amount/r.ad_spend).toFixed(1):'--';
+    var td=function(v){return '<td style="padding:5px 6px;text-align:right">'+v+'</td>';};
+    h+='<tr style="border-bottom:1px solid #e2e8f0"><td style="padding:5px 6px">'+r.date.slice(5)+'</td>';
+    h+=td(s1688Fm(r.payment_amount||0));
+    h+=td(Math.round(r.orders||0));
+    h+=td(s1688Fp(r.payment_rate));
+    h+=td(s1688Fm(r.avg_order||0));
+    h+=td(Math.round(r.visitors||0));
+    h+=td(s1688Fp(r.new_buyer_pct));
+    h+=td(s1688Fp(r.old_buyer_pct));
+    h+=td(s1688Fp(r.refund_rate));
+    h+=td('¥'+(r.ad_cost_rate||0).toFixed(2));
+    h+=td(s1688Fm(r.ad_spend||0));
+    h+=td(roi);
+    h+=td(Math.round(r.online_products||0));
+    h+=td(s1688Fp(r.active_rate));
+    h+='</tr>';
+  });
+  h+='</tbody></table>';
+  var el=document.getElementById('s1688-detail');
+  if(el)el.innerHTML=h;
+}
+
+// ============ Kelala (Acquisition) Todo System ============
+function getKelalaTodos(){try{return JSON.parse(localStorage.getItem('kelala_todos')||'[]')}catch{return[]}}
+function saveKelalaTodos(t){localStorage.setItem('kelala_todos',JSON.stringify(t))}
+function renderKelalaTodoStats(){
+  const todos=getKelalaTodos(),el=document.getElementById('kelalaTodoStats');
+  if(!todos.length){el.innerHTML='';return}
+  const stats={total:todos.length,done:0,inprogress:0,pending:0};
+  const byPerson={};
+  todos.forEach(t=>{
+    const s=getStatus(t);
+    if(s==='done')stats.done++;else if(s==='inprogress')stats.inprogress++;else stats.pending++;
+    const p=t.person||'未指定';
+    if(!byPerson[p])byPerson[p]={total:0,done:0,inprogress:0,pending:0};
+    byPerson[p].total++;
+    if(s==='done')byPerson[p].done++;else if(s==='inprogress')byPerson[p].inprogress++;else byPerson[p].pending++;
+  });
+  const dPct=Math.round(stats.done/stats.total*100),iPct=Math.round(stats.inprogress/stats.total*100);
+  let h=`<div class="ts-overview"><div class="ts-nums">
+    <span class="ts-item"><span class="ts-num">${stats.total}</span><span class="ts-label">总事项</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#10b981">${stats.done}</span><span class="ts-label">已完成</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#3b82f6">${stats.inprogress}</span><span class="ts-label">进行中</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#ef4444">${stats.pending}</span><span class="ts-label">未完成</span></span>
+  </div><div class="ts-bar"><div style="width:${dPct}%;background:#10b981"></div><div style="width:${iPct}%;background:#3b82f6"></div></div></div>`;
+  const ps=Object.keys(byPerson).sort();
+  if(ps.length>1||ps[0]!=='未指定'){
+    h+='<div class="ts-persons">';
+    ps.forEach(p=>{
+      const d=byPerson[p];
+      h+=`<div class="ts-person"><span class="ts-pname">${p}</span><span class="ts-pbadge" style="background:#10b981">${d.done}</span><span class="ts-pbadge" style="background:#3b82f6">${d.inprogress}</span><span class="ts-pbadge" style="background:#ef4444">${d.pending}</span></div>`;
+    });
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+function renderKelalaTodos(){
+  const todos=getKelalaTodos(),tbody=document.getElementById('kelalaTodoBody'),empty=document.getElementById('kelalaTodoEmpty');
+  if(!todos.length){tbody.innerHTML='';empty.style.display='block';renderKelalaTodoStats();return}
+  empty.style.display='none';
+  const order={inprogress:0,overdue:1,pending:2,notstarted:3,done:4};
+  const sorted=[...todos].sort((a,b)=>{const sa=getStatus(a),sb=getStatus(b);if(order[sa]!==order[sb])return order[sa]-order[sb];return(a.startDate||'').localeCompare(b.startDate||'')});
+  tbody.innerHTML=sorted.map(t=>{
+    const st=getStatus(t),stColor=getStatusColor(st),stLabel=getStatusLabel(st);
+    const pct=calcTimePct(t);
+    let timeBar='<span style="color:#94a3b8;font-size:11px">-</span>';
+    if(pct>=0){
+      const barColor=st==='done'?'#10b981':(pct>85?'#ef4444':'#3b82f6');
+      timeBar=`<div class="time-bar"><div class="time-fill" style="width:${pct}%;background:${barColor}"></div></div><span style="font-size:10px;color:#64748b">${pct}%</span>`;
+    }
+    const priCls=t.priority==='高'?'color:#ef4444':(t.priority==='中'?'color:#f59e0b':'color:#10b981');
+    const tid=t.id;
+    return `<tr${st==='done'?' style="opacity:.5"':''}>
+      <td><input type="date" class="inline-edit" value="${t.startDate||''}" onchange="inlineEditKelala('${tid}','startDate',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.person||'').replace(/"/g,'&quot;')}" onchange="inlineEditKelala('${tid}','person',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.task||'').replace(/"/g,'&quot;')}" onchange="inlineEditKelala('${tid}','task',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.goal||'').replace(/"/g,'&quot;')}" onchange="inlineEditKelala('${tid}','goal',this.value)"></td>
+      <td><input type="date" class="inline-edit" value="${t.deadline||''}" onchange="inlineEditKelala('${tid}','deadline',this.value)"></td>
+      <td>${timeBar}</td>
+      <td><select class="inline-edit" style="${priCls};font-weight:700" onchange="inlineEditKelala('${tid}','priority',this.value)"><option value="高"${t.priority==='高'?' selected':''}>高</option><option value="中"${t.priority==='中'?' selected':''}>中</option><option value="低"${t.priority==='低'?' selected':''}>低</option></select></td>
+      <td><input class="progress-input" value="${(t.progress||'').replace(/"/g,'&quot;')}" placeholder="填写进展..." onchange="updateKelalaProgress('${tid}',this.value)"></td>
+      <td><span class="status-chip" style="background:${stColor}">${stLabel}</span></td>
+      <td>${t.done?'<button class="todo-undo" onclick="toggleKelalaTodo(\''+tid+'\')" title="撤销完成">↩</button>':'<button class="todo-done-btn" onclick="toggleKelalaTodo(\''+tid+'\')" title="标记完成">✓</button>'}<button class="todo-del" onclick="delKelalaTodo(\''+tid+'\')" title="删除">&times;</button></td>
+    </tr>`;
+  }).join('');
+  renderKelalaTodoStats();
+}
+function addKelalaTodo(){
+  const task=document.getElementById('kelalaTodoInput').value.trim();
+  if(!task) return alert('请输入事项');
+  const todos=getKelalaTodos();
+  todos.push({
+    id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+    startDate:document.getElementById('kelalaTodoStartDate').value,
+    person:document.getElementById('kelalaTodoPerson').value.trim(),
+    task:task,
+    goal:document.getElementById('kelalaTodoGoal').value.trim(),
+    deadline:document.getElementById('kelalaTodoDeadline').value,
+    priority:document.getElementById('kelalaTodoPriority').value,
+    progress:'',
+    done:false,
+    created:new Date().toISOString()
+  });
+  saveKelalaTodos(todos);
+  document.getElementById('kelalaTodoInput').value='';
+  document.getElementById('kelalaTodoGoal').value='';
+  renderKelalaTodos();
+}
+function updateKelalaProgress(id,val){
+  const todos=getKelalaTodos();
+  const t=todos.find(x=>x.id===id);
+  if(t){t.progress=val;}
+  saveKelalaTodos(todos);
+}
+function toggleKelalaTodo(id){const todos=getKelalaTodos();const t=todos.find(x=>x.id===id);if(t)t.done=!t.done;saveKelalaTodos(todos);renderKelalaTodos()}
+function delKelalaTodo(id){if(!confirm('确定删除？'))return;const todos=getKelalaTodos();const idx=todos.findIndex(x=>x.id===id);if(idx>=0)todos.splice(idx,1);saveKelalaTodos(todos);renderKelalaTodos()}
+function inlineEditKelala(id,field,val){const todos=getKelalaTodos();const t=todos.find(x=>x.id===id);if(t){t[field]=val;saveKelalaTodos(todos);if(field==='priority'||field==='startDate'||field==='deadline')renderKelalaTodos();}}
+// ============ Store 1688 Todo System ============
+function getS1688Todos(){try{return JSON.parse(localStorage.getItem('store1688_todos')||'[]')}catch{return[]}}
+function saveS1688Todos(t){localStorage.setItem('store1688_todos',JSON.stringify(t))}
+function renderS1688TodoStats(){
+  const todos=getS1688Todos(),el=document.getElementById('s1688TodoStats');
+  if(!todos.length){el.innerHTML='';return}
+  const stats={total:todos.length,done:0,inprogress:0,pending:0};
+  const byPerson={};
+  todos.forEach(t=>{
+    const s=getStatus(t);
+    if(s==='done')stats.done++;else if(s==='inprogress')stats.inprogress++;else stats.pending++;
+    const p=t.person||'未指定';
+    if(!byPerson[p])byPerson[p]={total:0,done:0,inprogress:0,pending:0};
+    byPerson[p].total++;
+    if(s==='done')byPerson[p].done++;else if(s==='inprogress')byPerson[p].inprogress++;else byPerson[p].pending++;
+  });
+  const dPct=Math.round(stats.done/stats.total*100),iPct=Math.round(stats.inprogress/stats.total*100);
+  let h=`<div class="ts-overview"><div class="ts-nums">
+    <span class="ts-item"><span class="ts-num">${stats.total}</span><span class="ts-label">总事项</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#10b981">${stats.done}</span><span class="ts-label">已完成</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#3b82f6">${stats.inprogress}</span><span class="ts-label">进行中</span></span>
+    <span class="ts-item"><span class="ts-num" style="color:#ef4444">${stats.pending}</span><span class="ts-label">未完成</span></span>
+  </div><div class="ts-bar"><div style="width:${dPct}%;background:#10b981"></div><div style="width:${iPct}%;background:#3b82f6"></div></div></div>`;
+  const ps=Object.keys(byPerson).sort();
+  if(ps.length>1||ps[0]!=='未指定'){
+    h+='<div class="ts-persons">';
+    ps.forEach(p=>{
+      const d=byPerson[p];
+      h+=`<div class="ts-person"><span class="ts-pname">${p}</span><span class="ts-pbadge" style="background:#10b981">${d.done}</span><span class="ts-pbadge" style="background:#3b82f6">${d.inprogress}</span><span class="ts-pbadge" style="background:#ef4444">${d.pending}</span></div>`;
+    });
+    h+='</div>';
+  }
+  el.innerHTML=h;
+}
+function renderS1688Todos(){
+  const todos=getS1688Todos(),tbody=document.getElementById('s1688TodoBody'),empty=document.getElementById('s1688TodoEmpty');
+  if(!todos.length){tbody.innerHTML='';empty.style.display='block';renderS1688TodoStats();return}
+  empty.style.display='none';
+  const order={inprogress:0,overdue:1,pending:2,notstarted:3,done:4};
+  const sorted=[...todos].sort((a,b)=>{const sa=getStatus(a),sb=getStatus(b);if(order[sa]!==order[sb])return order[sa]-order[sb];return(a.startDate||'').localeCompare(b.startDate||'')});
+  tbody.innerHTML=sorted.map(t=>{
+    const st=getStatus(t),stColor=getStatusColor(st),stLabel=getStatusLabel(st);
+    const pct=calcTimePct(t);
+    let timeBar='<span style="color:#94a3b8;font-size:11px">-</span>';
+    if(pct>=0){
+      const barColor=st==='done'?'#10b981':(pct>85?'#ef4444':'#3b82f6');
+      timeBar=`<div class="time-bar"><div class="time-fill" style="width:${pct}%;background:${barColor}"></div></div><span style="font-size:10px;color:#64748b">${pct}%</span>`;
+    }
+    const priCls=t.priority==='高'?'color:#ef4444':(t.priority==='中'?'color:#f59e0b':'color:#10b981');
+    const tid=t.id;
+    return `<tr${st==='done'?' style="opacity:.5"':''}>
+      <td><input type="date" class="inline-edit" value="${t.startDate||''}" onchange="inlineEditS1688('${tid}','startDate',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.person||'').replace(/"/g,'&quot;')}" onchange="inlineEditS1688('${tid}','person',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.task||'').replace(/"/g,'&quot;')}" onchange="inlineEditS1688('${tid}','task',this.value)"></td>
+      <td><input type="text" class="inline-edit" value="${(t.goal||'').replace(/"/g,'&quot;')}" onchange="inlineEditS1688('${tid}','goal',this.value)"></td>
+      <td><input type="date" class="inline-edit" value="${t.deadline||''}" onchange="inlineEditS1688('${tid}','deadline',this.value)"></td>
+      <td>${timeBar}</td>
+      <td><select class="inline-edit" style="${priCls};font-weight:700" onchange="inlineEditS1688('${tid}','priority',this.value)"><option value="高"${t.priority==='高'?' selected':''}>高</option><option value="中"${t.priority==='中'?' selected':''}>中</option><option value="低"${t.priority==='低'?' selected':''}>低</option></select></td>
+      <td><input class="progress-input" value="${(t.progress||'').replace(/"/g,'&quot;')}" placeholder="填写进展..." onchange="updateS1688Progress('${tid}',this.value)"></td>
+      <td><span class="status-chip" style="background:${stColor}">${stLabel}</span></td>
+      <td>${t.done?'<button class="todo-undo" onclick="toggleS1688Todo(\''+tid+'\')" title="撤销完成">↩</button>':'<button class="todo-done-btn" onclick="toggleS1688Todo(\''+tid+'\')" title="标记完成">✓</button>'}<button class="todo-del" onclick="delS1688Todo(\''+tid+'\')" title="删除">&times;</button></td>
+    </tr>`;
+  }).join('');
+  renderS1688TodoStats();
+}
+function addS1688Todo(){
+  const task=document.getElementById('s1688TodoInput').value.trim();
+  if(!task) return alert('请输入事项');
+  const todos=getS1688Todos();
+  todos.push({
+    id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),
+    startDate:document.getElementById('s1688TodoStartDate').value,
+    person:document.getElementById('s1688TodoPerson').value.trim(),
+    task:task,
+    goal:document.getElementById('s1688TodoGoal').value.trim(),
+    deadline:document.getElementById('s1688TodoDeadline').value,
+    priority:document.getElementById('s1688TodoPriority').value,
+    progress:'',
+    done:false,
+    created:new Date().toISOString()
+  });
+  saveS1688Todos(todos);
+  document.getElementById('s1688TodoInput').value='';
+  document.getElementById('s1688TodoGoal').value='';
+  renderS1688Todos();
+}
+function updateS1688Progress(id,val){
+  const todos=getS1688Todos();
+  const t=todos.find(x=>x.id===id);
+  if(t){t.progress=val;}
+  saveS1688Todos(todos);
+}
+function toggleS1688Todo(id){const todos=getS1688Todos();const t=todos.find(x=>x.id===id);if(t)t.done=!t.done;saveS1688Todos(todos);renderS1688Todos()}
+function delS1688Todo(id){if(!confirm('确定删除？'))return;const todos=getS1688Todos();const idx=todos.findIndex(x=>x.id===id);if(idx>=0)todos.splice(idx,1);saveS1688Todos(todos);renderS1688Todos()}
+function inlineEditS1688(id,field,val){const todos=getS1688Todos();const t=todos.find(x=>x.id===id);if(t){t[field]=val;saveS1688Todos(todos);if(field==='priority'||field==='startDate'||field==='deadline')renderS1688Todos();}}
+// === Todo Cloud Sync (GitHub API) ===
+const _K='jiezhan2026';
+const _E=[13,0,17,18,29,3,49,66,81,70,105,91,88,38,60,45,51,42,97,121,2,91,15,63,14,20,41,6,30,72,99,81,91,53,43,60,79,30,43,37,93,95,98,103,93,15,17,66,89,3,36,72,70,106,95,25,88,87,45,2,4,34,81,126,67,115,45,56,38,73,41,38,6,101,88,116,103,41,32,82,34,92,84,92,102,126,88,125,43,26,20,48,4];
+function _D(){return _E.map((c,i)=>String.fromCharCode(c^_K.charCodeAt(i%_K.length))).join('')}
+const SYNC_REPO='x5268002-tech/talent-dashboards';
+const SYNC_FILE='todos_data.json';
+let SYNC_SHA=null;
+let SYNC_DEBOUNCE=null;
+
+function loadTodosFromCloud(){
+  fetch('https://api.github.com/repos/'+SYNC_REPO+'/contents/'+SYNC_FILE,{
+    headers:{'Authorization':'Bearer '+_D(),'User-Agent':'dashboard'}
+  }).then(r=>r.json()).then(d=>{
+    if(d.sha)SYNC_SHA=d.sha;
+    if(d.content){
+      const json=JSON.parse(decodeURIComponent(escape(atob(d.content.replace(/\n/g,'')))));
+      if(json.vip&&json.vip.length){localStorage.setItem('vip_todos',JSON.stringify(json.vip));if(typeof renderTodos==='function')renderTodos();}
+      if(json.kelala&&json.kelala.length){localStorage.setItem('kelala_todos',JSON.stringify(json.kelala));if(typeof renderKelalaTodos==='function')renderKelalaTodos();}
+      if(json.store1688&&json.store1688.length){localStorage.setItem('store1688_todos',JSON.stringify(json.store1688));if(typeof renderS1688Todos==='function')renderS1688Todos();}
+      // Restore marketing localStorage data
+      if(json.marketing){
+        Object.keys(json.marketing).forEach(function(k){
+          localStorage.setItem(k,JSON.stringify(json.marketing[k]));
+        });
+        if(typeof renderMarketing==='function')renderMarketing();
+      }
+    }
+  }).catch(()=>{});
+}
+
+function saveTodosToCloud(){
+  if(SYNC_DEBOUNCE)clearTimeout(SYNC_DEBOUNCE);
+  SYNC_DEBOUNCE=setTimeout(function(){
+    // Collect all marketing localStorage keys
+    var mkt={};
+    for(var i=0;i<localStorage.length;i++){
+      var k=localStorage.key(i);
+      if(k.startsWith('planEdit_')||k.startsWith('mat_')||k.startsWith('attach_')||k==='marketing_custom_events'||k==='marketing_month_themes'){
+        try{mkt[k]=JSON.parse(localStorage.getItem(k))}catch(e){mkt[k]=localStorage.getItem(k)}
+      }
+    }
+    const data={
+      vip:JSON.parse(localStorage.getItem('vip_todos')||'[]'),
+      kelala:JSON.parse(localStorage.getItem('kelala_todos')||'[]'),
+      store1688:JSON.parse(localStorage.getItem('store1688_todos')||'[]'),
+      marketing:mkt,
+      updated_at:new Date().toISOString()
+    };
+    const content=btoa(unescape(encodeURIComponent(JSON.stringify(data,null,2))));
+    const body={message:'sync: auto-update todos',content:content};
+    if(SYNC_SHA)body.sha=SYNC_SHA;
+    fetch('https://api.github.com/repos/'+SYNC_REPO+'/contents/'+SYNC_FILE,{
+      method:'PUT',
+      headers:{'Authorization':'Bearer '+_D(),'Content-Type':'application/json','User-Agent':'dashboard'},
+      body:JSON.stringify(body)
+    }).then(r=>r.json()).then(d=>{if(d.content&&d.content.sha)SYNC_SHA=d.content.sha}).catch(()=>{});
+  },3000);
+}
+
+// Monkey-patch save functions to trigger cloud sync
+const _origSaveTodos=saveTodos;
+saveTodos=function(t){_origSaveTodos(t);saveTodosToCloud()};
+const _origSaveKelalaTodos=saveKelalaTodos;
+saveKelalaTodos=function(t){_origSaveKelalaTodos(t);saveTodosToCloud()};
+const _origSaveS1688Todos=saveS1688Todos;
+saveS1688Todos=function(t){_origSaveS1688Todos(t);saveTodosToCloud()};
+
+// Monkey-patch localStorage.setItem to auto-sync marketing data
+const _origSetItem=localStorage.setItem.bind(localStorage);
+localStorage.setItem=function(key,value){
+  _origSetItem(key,value);
+  if(key.startsWith('planEdit_')||key.startsWith('mat_')||key.startsWith('attach_')||key==='marketing_custom_events'||key==='marketing_month_themes'){
+    saveTodosToCloud();
+  }
+};
+
+loadTodosFromCloud();
+
+// Role-based tab filtering
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var role=params.get("role");
+  if(!role||role==="admin")return;
+  var ROLE_TABS={"sales":["sales","vip"],"kelala":["marketing","acquisition"],"1688":["sales","store1688"]};
+  var allowed=ROLE_TABS[role];
+  if(!allowed)return;
+  var panelNames=["sales","vip","marketing","acquisition","store1688"];
+  var tabs=document.querySelectorAll(".top-tab");
+  tabs.forEach(function(t,i){if(!allowed.includes(panelNames[i])){t.style.display="none"}});
+  var first=allowed[0];
+  tabs.forEach(function(t,i){t.classList.remove("active");if(panelNames[i]===first)t.classList.add("active")});
+  document.querySelectorAll(".panel").forEach(function(p){p.style.display="none"});
+  document.getElementById("panel-"+first).style.display="";
+  if(first==="vip")renderTodos();
+  if(first==="marketing")loadMarketingData();
+  if(first==="acquisition"){loadAcquisitionData();renderKelalaTodos();}
+  if(first==="store1688"){loadStore1688Data();renderS1688Todos();}
+  var titles={"sales":"供应链销售看板","kelala":"客拉拉看板","1688":"1688运营看板"};
+  var icons={"sales":"💼","kelala":"🎯","1688":"🏪"};
+  if(titles[role]){document.querySelector(".header h1").innerHTML=titles[role]+" <span>"+icons[role]+"</span>"}
+})();
+</script>
+
+</body>
+</html>

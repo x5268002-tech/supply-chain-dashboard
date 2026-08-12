@@ -1,0 +1,5647 @@
+{
+  "updated_at": "2026-08-08 14:00",
+  "month": 8,
+  "year": 2026,
+  "marketing_plan": {
+    "1": [
+      {
+        "date": "目的",
+        "end_date": null,
+        "subject": "内容",
+        "content": "关键交付物",
+        "direction": "发布渠道",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": true
+        }
+      },
+      {
+        "date": "2026SS新品上新",
+        "end_date": null,
+        "subject": "所有新品 分街头、运动两个合集每款发布",
+        "content": "所有款式的视频图文",
+        "direction": "视频号“捷展New新品发布”",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "所有新品 朋友圈9宫格发布",
+        "content": "所有款式模特图 详情页",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "上新新品预告海报",
+        "content": "2张海报",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "全店包邮、新品拿样9折 仅限3天",
+        "content": "1688首页、1张海报",
+        "direction": "1688+朋友圈+1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "满888元赠送 水果T恤马年恭喜发财T",
+        "content": "",
+        "direction": "1688+朋友圈+1V1触达",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "太乐星运动店新店开业",
+        "end_date": null,
+        "subject": "全店9折、包邮三天",
+        "content": "1688首页、1张海报",
+        "direction": "1688+朋友圈+1V1触达",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "满888元赠送 水果T恤马年恭喜发财T",
+        "content": "",
+        "direction": "1688+朋友圈+1V1触达",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "INF首页设太乐星入口",
+        "content": "1688首页入口",
+        "direction": "1688",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "跑调T、水果T营销",
+        "end_date": null,
+        "subject": "跑调T恤、水果T恤每日朋友圈发布",
+        "content": "模特图 详情页",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤、水果T恤预告视频",
+        "content": "2个视频",
+        "direction": "捷展詹姆斯账号+朋友圈+1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "鲁道夫面料吸湿速干、透气测试视频",
+        "content": "2个视频",
+        "direction": "捷展官方账号+朋友圈+1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "水果T恤弹力测试视频",
+        "content": "1个视频",
+        "direction": "捷展官方账号+朋友圈+1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "徒步产品体验视频",
+        "content": "1个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤、水果T恤形象片",
+        "content": "2个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤、水果T恤系列视频",
+        "content": "2个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "四针六线工艺",
+        "content": "1个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "制衣、面料工厂生产线",
+        "content": "2个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "运动科技T恤印花推荐",
+        "content": "1个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "大牌流行色推荐",
+        "content": "1个视频+1张海报",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "核心大单品营销",
+        "end_date": null,
+        "subject": "薄荷T恤、呼吸T恤、马卡龙T恤等 9宫格持续发布",
+        "content": "所有款式模特图 详情页",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "薄荷T恤、呼吸T恤、马卡龙T恤等 原有视频二创",
+        "content": "各1个视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "业务内容",
+        "end_date": null,
+        "subject": "运动科技T恤 供应链 现货、跨境、定制",
+        "content": "结合产品视频",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "明星潮牌代工厂 现货、跨境、定制",
+        "content": "",
+        "direction": "捷展官方账号+朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "工具包",
+        "end_date": null,
+        "subject": "核心大单品货盘+上新货盘",
+        "content": "2个文档",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "核心单品PDF",
+        "content": "7个PDF文档",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "二开手册",
+        "content": "1个文档",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "公司介绍更新版",
+        "content": "1个文档",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "核心大单品电子色卡和面料介绍PDF",
+        "content": "7个PDF文档",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "邀约展厅",
+        "end_date": null,
+        "subject": "全员新媒体邀约",
+        "content": "200个视频",
+        "direction": "全员新媒体账号",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "展厅客户到访日常",
+        "content": "",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "版房打版日常，品牌已打版",
+        "content": "",
+        "direction": "朋友圈",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "周年礼赠送反馈",
+        "content": "",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "年框等优惠政策邀约钩子",
+        "content": "",
+        "direction": "1V1触达",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      }
+    ],
+    "2": [
+      {
+        "date": "目的",
+        "end_date": null,
+        "subject": "内容",
+        "content": "关键目标结果",
+        "direction": "关键交付物",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": true
+        }
+      },
+      {
+        "date": "“鲜衣怒马”新年活动",
+        "end_date": null,
+        "subject": "1688INF店 满3件起8.6折",
+        "content": "销量1w件",
+        "direction": "合集产品海报",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "1688INF店 折扣集合专区",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "“鲜衣怒马”主题系列海报",
+        "content": "所有销售朋友圈发布",
+        "direction": "海报",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "新年趣味拜年视频",
+        "content": "C级以上客户全转发触达",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "马年发财T恤系列推品（8364-精致牛马、888-恭喜发财t、8377-马上来财、8392-愿望成真、8341-行运T、8368-Just Run Free（“只管自由奔跑”）",
+        "content": "C级以上客户全转发触达，总销量1000件以上",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "气囊卫衣推品",
+        "end_date": null,
+        "subject": "春节出行刚需：气囊卫衣推品",
+        "content": "所有企业定制类型客户全转发触达",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "超级单品溯源营销",
+        "end_date": null,
+        "subject": "薄荷T恤溯源：巨丰联合研发",
+        "content": "客户全转发触达，完成2月大单品销售目标",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "上江南春案例的薄荷T恤的生产过程",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "薄荷T恤薄荷爆珠摩擦有气味卖点",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "呼吸T恤：捷展从源头开始，将国际大牌吸湿排汗纱线价格打下来",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "呼吸T恤：什么是coolmax？科普讲解",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "呼吸T恤：让知名博主疯狂翻单10万件",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "水果T：纯正的西海岸版型，面料升级",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "水果T：一件潮牌印花T恤的诞生过程",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤：去年拿下了美国莱卡cool Max，真正做到了把大牌价格打下来，再次联合国际大牌鲁道夫助剂，延续大牌平替",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤：德国鲁道夫面料的优势",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "跑调T恤：运动T恤生产工艺的难点，突显捷展的优势",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "3M速干无缝T恤：展现一体织工艺",
+        "content": "",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "大单品与面料集合手册",
+        "content": "",
+        "direction": "PDF",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "开工活动",
+        "end_date": null,
+        "subject": "开工大吉，包邮三天",
+        "content": "客户全转发触达",
+        "direction": "海报",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      }
+    ],
+    "3": [
+      {
+        "date": "目的",
+        "end_date": null,
+        "subject": "发布时间",
+        "content": "内容",
+        "direction": "内容类型",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "超级单品溯源营销",
+        "end_date": null,
+        "subject": "46078",
+        "content": "水果T恤印花系列",
+        "direction": "视频",
+        "materials": {
+          "视频": true,
+          "海报": true,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46079",
+        "content": "呼吸T恤：捷展从源头开始，将国际大牌吸湿排汗纱线价格打下来",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46080",
+        "content": "年销百万件经典西海岸T恤",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46081",
+        "content": "马卡龙重磅T恤",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46083",
+        "content": "薄荷T恤溯源：巨丰联合研发",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46084",
+        "content": "跑调T恤：去年拿下了美国莱卡cool Max，真正做到了把大牌价格打下来，再次联合国际大牌鲁道夫助剂，延续大牌平替",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46085",
+        "content": "跑调T恤：德国鲁道夫面料的优势",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46086",
+        "content": "捷展巨丰COOLMAX开年跑",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46087",
+        "content": "呼吸T恤：什么是coolmax？科普讲解",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46088",
+        "content": "呼吸T恤：让知名博主疯狂翻单10万件",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46090",
+        "content": "水果T：纯正的西海岸版型，面料升级",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46091",
+        "content": "水果T：一件潮牌印花T恤的诞生过程",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46092",
+        "content": "捷展巨丰COOLMAX深呼吸T恤亮相上海展会",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46093",
+        "content": "COOLMAX深呼吸T恤溯源",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46094",
+        "content": "COOLMAX深呼吸T恤上新预告",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46095",
+        "content": "COOLMAX深呼吸T恤上新预告",
+        "direction": "图文",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46097",
+        "content": "COOLMAX深呼吸T恤上线",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46098",
+        "content": "COOLMAX深呼吸T恤诞生过程",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46099",
+        "content": "coolmax功能性讲解",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46100",
+        "content": "跑调/coolmaxT恤：运动T恤生产工艺的难点，突显捷展的优势",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46101",
+        "content": "跑调T恤各大博主已上身晒图",
+        "direction": "图文",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46102",
+        "content": "跑调T恤",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46104",
+        "content": "上江南春案例的薄荷T恤的生产过程",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46105",
+        "content": "薄荷T恤薄荷爆珠摩擦有气味卖点",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46106",
+        "content": "蜂窝薄荷T恤6大功能",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46107",
+        "content": "蜂窝薄荷T恤的诞生过程",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "46109",
+        "content": "马卡龙重磅T恤",
+        "direction": "视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      }
+    ],
+    "4": [
+      {
+        "date": "2026-04-08",
+        "end_date": "1900-01-01",
+        "subject": "捷展女装大爆发，爆款集合在这里！",
+        "content": "很多人不知道，捷展女装早已悄悄打磨三年，订单量已翻倍，客人早已靠它赚钱。捷展女装以舒适感、体感、肤感作为女性用户核心痛点切入，主打科技面料，已诞生多个爆款。例如，兰精天丝羊毛混纺系列，跑调t恤等等",
+        "direction": "True",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-13",
+        "end_date": null,
+        "subject": "不卷价格卷工艺，件件有说法",
+        "content": "聚焦高工艺价值，与行业贴膜、烫画、直喷等泛滥趋势。当POD和直喷变得廉价，高工艺才值得被尊重。将输出“潮牌十大热门工艺”专题内容，突出捷展在烫染洗水等工艺上的积累。",
+        "direction": "True",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-14",
+        "end_date": null,
+        "subject": "高工艺8469S26 8470S26 8471S26 8473S26",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-15",
+        "end_date": null,
+        "subject": "4052S26压胶背心",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-16",
+        "end_date": null,
+        "subject": "跑步短裤系列（12961S26/12996S26/12970S26/12972S26/12965S26)",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-20",
+        "end_date": null,
+        "subject": "8547S26/4062S26氧气运动T恤",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-21",
+        "end_date": null,
+        "subject": "8435S26气流运动POLO",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-22",
+        "end_date": null,
+        "subject": "8366S26/8367S26 风洞T恤",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-23",
+        "end_date": null,
+        "subject": "12975S26天丝凉感工装裤",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-27",
+        "end_date": null,
+        "subject": "8561S26/8562S26 真液氨高支T恤",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-28",
+        "end_date": null,
+        "subject": "8549S26 健身造型T恤/背心",
+        "content": "",
+        "direction": "True",
+        "materials": {
+          "视频": false,
+          "海报": true,
+          "产品手册": true,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-29",
+        "end_date": null,
+        "subject": "羊毛系列",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-04-30",
+        "end_date": null,
+        "subject": "世界杯系列",
+        "content": "",
+        "direction": "",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      }
+    ],
+    "5": [],
+    "6": [],
+    "7": [
+      {
+        "date": null,
+        "end_date": null,
+        "subject": "7月核心营销是将捷展秋冬重点面料以每周放出一波预告的形式，一层一层逐步爆破吸引眼球，每个系列都是很厉害的，让客户感受到26秋冬一定要找捷展",
+        "content": "",
+        "direction": "很厉害 很想买 很想来",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-01",
+        "end_date": "1900-01-01",
+        "subject": "轻热秋冬发布会正式宣发",
+        "content": "捷展2026秋冬主题概念，与全球顶级面料品牌再度联合，市面上是找不到的，作为钩子吸引客户前来",
+        "direction": "",
+        "materials": {
+          "视频": true,
+          "海报": false,
+          "产品手册": false,
+          "货盘": true,
+          "朋友圈": true,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-03",
+        "end_date": null,
+        "subject": "Polartec×捷展预告",
+        "content": "讲述Polartec的历史以及行业地位，世界顶级的抓绒面料，捷展Polartec新品，8月上新，敬请期待——局部细节",
+        "direction": "1、10秒logo特写视频，局部海报  2、历史行业地位视频",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-08",
+        "end_date": null,
+        "subject": "新钱静奢风",
+        "content": "新钱目前的趋势、棉麻为何受欢迎与为什么客户一定要上新钱风，捷展2026，也推出了新钱风系列，8月上新敬请期待",
+        "direction": "1、老钱feel视频 亨利领 条纹 2、老钱的趋势",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-13",
+        "end_date": null,
+        "subject": "Thermolite®一体绒×捷展预告",
+        "content": "Thermolite®热销爆款再升级2.0，8月上新敬请期待",
+        "direction": "1、1代升级到2代 越野跑场景 参考stisfy",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-20",
+        "end_date": null,
+        "subject": "捷展女装 预告",
+        "content": "各大天然纤维面料匹马棉、莱赛尔、亚麻等热门趋势，舒适体感，性能不输。捷展26秋冬天然纤维相关的优势是什么，8月上新",
+        "direction": "1、参考lulu  “天然肌肤nature skin”概念",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      },
+      {
+        "date": "2026-07-27",
+        "end_date": null,
+        "subject": "洗水扎染羊毛",
+        "content": "工艺",
+        "direction": "1、手工 运动 场景切换",
+        "materials": {
+          "视频": false,
+          "海报": false,
+          "产品手册": false,
+          "货盘": false,
+          "朋友圈": false,
+          "SABC客户触达": false
+        }
+      }
+    ],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": []
+  },
+  "ad_data": {
+    "monthly": [
+      {
+        "month": "26.01",
+        "daily": [
+          {
+            "date": "2026-01-01",
+            "leads": 37,
+            "cost": 100.53,
+            "spend": 3719.45
+          },
+          {
+            "date": "2026-01-02",
+            "leads": 31,
+            "cost": 104.37,
+            "spend": 3235.6
+          },
+          {
+            "date": "2026-01-03",
+            "leads": 117,
+            "cost": 27.49,
+            "spend": 3216.85
+          },
+          {
+            "date": "2026-01-04",
+            "leads": 53,
+            "cost": 59.11,
+            "spend": 3132.78
+          },
+          {
+            "date": "2026-01-05",
+            "leads": 63,
+            "cost": 44.25,
+            "spend": 2787.91
+          },
+          {
+            "date": "2026-01-06",
+            "leads": 54,
+            "cost": 39.54,
+            "spend": 2135.07
+          },
+          {
+            "date": "2026-01-07",
+            "leads": 41,
+            "cost": 52.02,
+            "spend": 2132.84
+          },
+          {
+            "date": "2026-01-08",
+            "leads": 58,
+            "cost": 36.84,
+            "spend": 2136.71
+          },
+          {
+            "date": "2026-01-09",
+            "leads": 68,
+            "cost": 33.92,
+            "spend": 2306.81
+          },
+          {
+            "date": "2026-01-10",
+            "leads": 55,
+            "cost": 38.3,
+            "spend": 2106.5
+          },
+          {
+            "date": "2026-01-11",
+            "leads": 26,
+            "cost": 72.9,
+            "spend": 1895.35
+          },
+          {
+            "date": "2026-01-12",
+            "leads": 75,
+            "cost": 22.94,
+            "spend": 1720.8
+          },
+          {
+            "date": "2026-01-13",
+            "leads": 35,
+            "cost": 31.15,
+            "spend": 1090.26
+          },
+          {
+            "date": "2026-01-14",
+            "leads": 19,
+            "cost": 49.36,
+            "spend": 937.88
+          },
+          {
+            "date": "2026-01-15",
+            "leads": 21,
+            "cost": 42.99,
+            "spend": 902.7
+          },
+          {
+            "date": "2026-01-16",
+            "leads": 18,
+            "cost": 35.18,
+            "spend": 633.22
+          },
+          {
+            "date": "2026-01-17",
+            "leads": 14,
+            "cost": 56.91,
+            "spend": 796.8
+          },
+          {
+            "date": "2026-01-18",
+            "leads": 10,
+            "cost": 82.23,
+            "spend": 822.28
+          },
+          {
+            "date": "2026-01-19",
+            "leads": 24,
+            "cost": 24.13,
+            "spend": 579.22
+          },
+          {
+            "date": "2026-01-20",
+            "leads": 18,
+            "cost": 45.9,
+            "spend": 826.16
+          },
+          {
+            "date": "2026-01-21",
+            "leads": 13,
+            "cost": 30.94,
+            "spend": 402.23
+          },
+          {
+            "date": "2026-01-22",
+            "leads": 15,
+            "cost": 53.45,
+            "spend": 801.74
+          },
+          {
+            "date": "2026-01-23",
+            "leads": 24,
+            "cost": 42.13,
+            "spend": 1011.23
+          },
+          {
+            "date": "2026-01-24",
+            "leads": 8,
+            "cost": 100.17,
+            "spend": 801.33
+          },
+          {
+            "date": "2026-01-25",
+            "leads": 7,
+            "cost": 100.15,
+            "spend": 701.07
+          },
+          {
+            "date": "2026-01-26",
+            "leads": 28,
+            "cost": 29.71,
+            "spend": 831.94
+          },
+          {
+            "date": "2026-01-27",
+            "leads": 10,
+            "cost": 60.83,
+            "spend": 608.34
+          },
+          {
+            "date": "2026-01-28",
+            "leads": 11,
+            "cost": 63.62,
+            "spend": 699.83
+          },
+          {
+            "date": "2026-01-29",
+            "leads": 25,
+            "cost": 36.1,
+            "spend": 902.38
+          },
+          {
+            "date": "2026-01-30",
+            "leads": 10,
+            "cost": 57.19,
+            "spend": 571.87
+          },
+          {
+            "date": "2026-01-31",
+            "leads": 7,
+            "cost": 54.49,
+            "spend": 381.45
+          }
+        ],
+        "channels": {
+          "抖音大号": 16625.68,
+          "红书大号": 16332.21,
+          "红书代工": 11870.71,
+          "詹姆斯": 6242.9
+        },
+        "channel_leads": {
+          "抖音大号": 501,
+          "OK哥": 1,
+          "红书大号": 264,
+          "红书代工": 229,
+          "詹姆斯": 294
+        },
+        "kpi": {
+          "total_leads": 995,
+          "avg_cost": 45.05,
+          "total_spend": 44828.6,
+          "recharge": 15000.0,
+          "performance_new": 329749.11,
+          "performance_old": 632908.55
+        }
+      },
+      {
+        "month": "26.02",
+        "daily": [
+          {
+            "date": "2026-02-01",
+            "leads": 1,
+            "cost": 190.51,
+            "spend": 190.51
+          },
+          {
+            "date": "2026-02-02",
+            "leads": 15,
+            "cost": 39.37,
+            "spend": 590.58
+          },
+          {
+            "date": "2026-02-03",
+            "leads": 12,
+            "cost": 32.15,
+            "spend": 385.83
+          },
+          {
+            "date": "2026-02-04",
+            "leads": 10,
+            "cost": 23.35,
+            "spend": 233.52
+          },
+          {
+            "date": "2026-02-05",
+            "leads": 11,
+            "cost": 21.31,
+            "spend": 234.45
+          },
+          {
+            "date": "2026-02-06",
+            "leads": 8,
+            "cost": 16.86,
+            "spend": 134.89
+          },
+          {
+            "date": "2026-02-07",
+            "leads": 4,
+            "cost": 31.86,
+            "spend": 127.44
+          },
+          {
+            "date": "2026-02-08",
+            "leads": 7,
+            "cost": 25.84,
+            "spend": 180.86
+          },
+          {
+            "date": "2026-02-09",
+            "leads": 3,
+            "cost": 32.68,
+            "spend": 98.05
+          },
+          {
+            "date": "2026-02-10",
+            "leads": 2,
+            "cost": 28.96,
+            "spend": 57.93
+          },
+          {
+            "date": "2026-02-11",
+            "leads": 1,
+            "cost": 0.0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-12",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-13",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-14",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-15",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-16",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-17",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-18",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-19",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-20",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-21",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-22",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-23",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-24",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          },
+          {
+            "date": "2026-02-25",
+            "leads": 19,
+            "cost": 16.32,
+            "spend": 310.12
+          },
+          {
+            "date": "2026-02-26",
+            "leads": 28,
+            "cost": 42.27,
+            "spend": 1183.59
+          },
+          {
+            "date": "2026-02-27",
+            "leads": 53,
+            "cost": 33.42,
+            "spend": 1771.5
+          },
+          {
+            "date": "2026-02-28",
+            "leads": 47,
+            "cost": 33.31,
+            "spend": 1565.49
+          }
+        ],
+        "channels": {
+          "抖音大号": 2263.83,
+          "红书大号": 2684.7,
+          "红书代工": 2116.23
+        },
+        "channel_leads": {
+          "抖音大号": 117,
+          "OK哥": 1,
+          "红书大号": 54,
+          "红书代工": 49
+        },
+        "kpi": {
+          "total_leads": 221,
+          "avg_cost": 31.97,
+          "total_spend": 7064.76,
+          "recharge": 0.0,
+          "performance_new": 13485.78,
+          "performance_old": 131769.59
+        }
+      },
+      {
+        "month": "26.03",
+        "daily": [
+          {
+            "date": "2026-03-01",
+            "leads": 26,
+            "cost": 76.49,
+            "spend": 1988.85
+          },
+          {
+            "date": "2026-03-02",
+            "leads": 79,
+            "cost": 17.93,
+            "spend": 1416.5
+          },
+          {
+            "date": "2026-03-03",
+            "leads": 35,
+            "cost": 37.82,
+            "spend": 1323.74
+          },
+          {
+            "date": "2026-03-04",
+            "leads": 42,
+            "cost": 40.09,
+            "spend": 1683.87
+          },
+          {
+            "date": "2026-03-05",
+            "leads": 56,
+            "cost": 41.84,
+            "spend": 2343.0
+          },
+          {
+            "date": "2026-03-06",
+            "leads": 65,
+            "cost": 32.16,
+            "spend": 2090.5
+          },
+          {
+            "date": "2026-03-07",
+            "leads": 66,
+            "cost": 38.1,
+            "spend": 2514.62
+          },
+          {
+            "date": "2026-03-08",
+            "leads": 22,
+            "cost": 124.15,
+            "spend": 2731.34
+          },
+          {
+            "date": "2026-03-09",
+            "leads": 100,
+            "cost": 20.38,
+            "spend": 2037.81
+          },
+          {
+            "date": "2026-03-10",
+            "leads": 57,
+            "cost": 34.87,
+            "spend": 1987.53
+          },
+          {
+            "date": "2026-03-11",
+            "leads": 42,
+            "cost": 52.3,
+            "spend": 2196.67
+          },
+          {
+            "date": "2026-03-12",
+            "leads": 68,
+            "cost": 40.67,
+            "spend": 2765.31
+          },
+          {
+            "date": "2026-03-13",
+            "leads": 66,
+            "cost": 39.23,
+            "spend": 2589.18
+          },
+          {
+            "date": "2026-03-14",
+            "leads": 62,
+            "cost": 43.91,
+            "spend": 2722.47
+          },
+          {
+            "date": "2026-03-15",
+            "leads": 94,
+            "cost": 33.79,
+            "spend": 3176.02
+          },
+          {
+            "date": "2026-03-16",
+            "leads": 75,
+            "cost": 38.51,
+            "spend": 2887.97
+          },
+          {
+            "date": "2026-03-17",
+            "leads": 63,
+            "cost": 41.54,
+            "spend": 2617.11
+          },
+          {
+            "date": "2026-03-18",
+            "leads": 66,
+            "cost": 40.78,
+            "spend": 2691.37
+          },
+          {
+            "date": "2026-03-19",
+            "leads": 52,
+            "cost": 34.2,
+            "spend": 1778.28
+          },
+          {
+            "date": "2026-03-20",
+            "leads": 60,
+            "cost": 35.41,
+            "spend": 2124.31
+          },
+          {
+            "date": "2026-03-21",
+            "leads": 52,
+            "cost": 38.1,
+            "spend": 1980.96
+          },
+          {
+            "date": "2026-03-22",
+            "leads": 11,
+            "cost": 164.99,
+            "spend": 1814.91
+          },
+          {
+            "date": "2026-03-23",
+            "leads": 93,
+            "cost": 13.49,
+            "spend": 1254.13
+          },
+          {
+            "date": "2026-03-24",
+            "leads": 32,
+            "cost": 32.08,
+            "spend": 1026.51
+          },
+          {
+            "date": "2026-03-25",
+            "leads": 55,
+            "cost": 29.31,
+            "spend": 1611.8
+          },
+          {
+            "date": "2026-03-26",
+            "leads": 39,
+            "cost": 33.64,
+            "spend": 1311.96
+          },
+          {
+            "date": "2026-03-27",
+            "leads": 37,
+            "cost": 45.72,
+            "spend": 1691.6
+          },
+          {
+            "date": "2026-03-28",
+            "leads": 52,
+            "cost": 32.13,
+            "spend": 1670.59
+          },
+          {
+            "date": "2026-03-29",
+            "leads": 16,
+            "cost": 98.77,
+            "spend": 1580.36
+          },
+          {
+            "date": "2026-03-30",
+            "leads": 74,
+            "cost": 20.47,
+            "spend": 1514.85
+          },
+          {
+            "date": "2026-03-31",
+            "leads": 46,
+            "cost": 37.0,
+            "spend": 1701.81
+          }
+        ],
+        "channels": {
+          "抖音大号": 32175.6,
+          "红书大号": 19389.56,
+          "红书代工": 11260.77
+        },
+        "channel_leads": {
+          "抖音大号": 1178,
+          "红书大号": 337,
+          "红书代工": 188
+        },
+        "kpi": {
+          "total_leads": 1703,
+          "avg_cost": 36.89,
+          "total_spend": 62825.93,
+          "recharge": 63000.0,
+          "performance_new": 120157.53,
+          "performance_old": 828539.9
+        }
+      },
+      {
+        "month": "26.04",
+        "daily": [
+          {
+            "date": "2026-04-01",
+            "leads": 53,
+            "cost": 38.55,
+            "spend": 2043.03
+          },
+          {
+            "date": "2026-04-02",
+            "leads": 52,
+            "cost": 28.4,
+            "spend": 1476.6
+          },
+          {
+            "date": "2026-04-03",
+            "leads": 53,
+            "cost": 38.02,
+            "spend": 2014.91
+          },
+          {
+            "date": "2026-04-04",
+            "leads": 20,
+            "cost": 94.67,
+            "spend": 1893.44
+          },
+          {
+            "date": "2026-04-05",
+            "leads": 22,
+            "cost": 94.65,
+            "spend": 2082.4
+          },
+          {
+            "date": "2026-04-06",
+            "leads": 145,
+            "cost": 15.86,
+            "spend": 2299.89
+          },
+          {
+            "date": "2026-04-07",
+            "leads": 47,
+            "cost": 44.09,
+            "spend": 2072.28
+          },
+          {
+            "date": "2026-04-08",
+            "leads": 56,
+            "cost": 26.36,
+            "spend": 1476.11
+          },
+          {
+            "date": "2026-04-09",
+            "leads": 50,
+            "cost": 44.4,
+            "spend": 2219.77
+          },
+          {
+            "date": "2026-04-10",
+            "leads": 60,
+            "cost": 26.81,
+            "spend": 1608.79
+          },
+          {
+            "date": "2026-04-11",
+            "leads": 45,
+            "cost": 44.21,
+            "spend": 1989.44
+          },
+          {
+            "date": "2026-04-12",
+            "leads": 14,
+            "cost": 179.96,
+            "spend": 2519.47
+          },
+          {
+            "date": "2026-04-13",
+            "leads": 102,
+            "cost": 21.73,
+            "spend": 2216.0
+          },
+          {
+            "date": "2026-04-14",
+            "leads": 47,
+            "cost": 36.21,
+            "spend": 1701.69
+          },
+          {
+            "date": "2026-04-15",
+            "leads": 50,
+            "cost": 49.55,
+            "spend": 2477.47
+          },
+          {
+            "date": "2026-04-16",
+            "leads": 67,
+            "cost": 36.33,
+            "spend": 2434.4
+          },
+          {
+            "date": "2026-04-17",
+            "leads": 55,
+            "cost": 48.84,
+            "spend": 2686.3
+          },
+          {
+            "date": "2026-04-18",
+            "leads": 66,
+            "cost": 35.87,
+            "spend": 2367.54
+          },
+          {
+            "date": "2026-04-19",
+            "leads": 9,
+            "cost": 195.67,
+            "spend": 1761.06
+          },
+          {
+            "date": "2026-04-20",
+            "leads": 82,
+            "cost": 21.02,
+            "spend": 1723.63
+          },
+          {
+            "date": "2026-04-21",
+            "leads": 57,
+            "cost": 36.27,
+            "spend": 2067.51
+          },
+          {
+            "date": "2026-04-22",
+            "leads": 47,
+            "cost": 43.48,
+            "spend": 2043.69
+          },
+          {
+            "date": "2026-04-23",
+            "leads": 52,
+            "cost": 45.95,
+            "spend": 2389.38
+          },
+          {
+            "date": "2026-04-24",
+            "leads": 63,
+            "cost": 29.09,
+            "spend": 1832.45
+          },
+          {
+            "date": "2026-04-25",
+            "leads": 43,
+            "cost": 35.19,
+            "spend": 1513.22
+          },
+          {
+            "date": "2026-04-26",
+            "leads": 6,
+            "cost": 336.49,
+            "spend": 2018.96
+          },
+          {
+            "date": "2026-04-27",
+            "leads": 94,
+            "cost": 25.72,
+            "spend": 2417.94
+          },
+          {
+            "date": "2026-04-28",
+            "leads": 51,
+            "cost": 37.83,
+            "spend": 1929.27
+          },
+          {
+            "date": "2026-04-29",
+            "leads": 36,
+            "cost": 46.55,
+            "spend": 1675.86
+          },
+          {
+            "date": "2026-04-30",
+            "leads": 36,
+            "cost": 27.77,
+            "spend": 999.87
+          }
+        ],
+        "channels": {
+          "抖音大号": 39415.82,
+          "红书大号": 11549.76,
+          "红书代工": 8986.79
+        },
+        "channel_leads": {
+          "抖音大号": 1235,
+          "红书大号": 205,
+          "红书代工": 140
+        },
+        "kpi": {
+          "total_leads": 1580,
+          "avg_cost": 37.94,
+          "total_spend": 59952.37,
+          "recharge": 90000.0,
+          "performance_new": 336721.41,
+          "performance_old": 795348.45
+        }
+      },
+      {
+        "month": "26.05",
+        "daily": [
+          {
+            "date": "2026-05-01",
+            "leads": 11,
+            "cost": 168.48,
+            "spend": 1853.24
+          },
+          {
+            "date": "2026-05-02",
+            "leads": 9,
+            "cost": 178.56,
+            "spend": 1607.0
+          },
+          {
+            "date": "2026-05-03",
+            "leads": 8,
+            "cost": 163.75,
+            "spend": 1309.96
+          },
+          {
+            "date": "2026-05-04",
+            "leads": 137,
+            "cost": 11.15,
+            "spend": 1527.34
+          },
+          {
+            "date": "2026-05-05",
+            "leads": 37,
+            "cost": 61.8,
+            "spend": 2286.42
+          },
+          {
+            "date": "2026-05-06",
+            "leads": 58,
+            "cost": 47.62,
+            "spend": 2762.07
+          },
+          {
+            "date": "2026-05-07",
+            "leads": 72,
+            "cost": 39.19,
+            "spend": 2821.63
+          },
+          {
+            "date": "2026-05-08",
+            "leads": 72,
+            "cost": 43.41,
+            "spend": 3125.48
+          },
+          {
+            "date": "2026-05-09",
+            "leads": 77,
+            "cost": 40.34,
+            "spend": 3106.42
+          },
+          {
+            "date": "2026-05-10",
+            "leads": 26,
+            "cost": 126.65,
+            "spend": 3292.97
+          },
+          {
+            "date": "2026-05-11",
+            "leads": 80,
+            "cost": 31.09,
+            "spend": 2487.22
+          },
+          {
+            "date": "2026-05-12",
+            "leads": 66,
+            "cost": 31.64,
+            "spend": 2088.35
+          },
+          {
+            "date": "2026-05-13",
+            "leads": 38,
+            "cost": 68.46,
+            "spend": 2601.6
+          },
+          {
+            "date": "2026-05-14",
+            "leads": 59,
+            "cost": 45.62,
+            "spend": 2691.29
+          },
+          {
+            "date": "2026-05-15",
+            "leads": 58,
+            "cost": 44.27,
+            "spend": 2567.69
+          },
+          {
+            "date": "2026-05-16",
+            "leads": 82,
+            "cost": 41.1,
+            "spend": 3370.11
+          },
+          {
+            "date": "2026-05-17",
+            "leads": 28,
+            "cost": 118.43,
+            "spend": 3315.92
+          },
+          {
+            "date": "2026-05-18",
+            "leads": 96,
+            "cost": 18.24,
+            "spend": 1751.11
+          },
+          {
+            "date": "2026-05-19",
+            "leads": 26,
+            "cost": 40.47,
+            "spend": 1052.18
+          },
+          {
+            "date": "2026-05-20",
+            "leads": 26,
+            "cost": 35.52,
+            "spend": 923.46
+          },
+          {
+            "date": "2026-05-21",
+            "leads": 20,
+            "cost": 37.66,
+            "spend": 753.19
+          },
+          {
+            "date": "2026-05-22",
+            "leads": 29,
+            "cost": 23.66,
+            "spend": 686.14
+          },
+          {
+            "date": "2026-05-23",
+            "leads": 9,
+            "cost": 102.16,
+            "spend": 919.46
+          },
+          {
+            "date": "2026-05-24",
+            "leads": 5,
+            "cost": 164.66,
+            "spend": 823.32
+          },
+          {
+            "date": "2026-05-25",
+            "leads": 30,
+            "cost": 9.14,
+            "spend": 274.13
+          },
+          {
+            "date": "2026-05-26",
+            "leads": 11,
+            "cost": 43.25,
+            "spend": 475.71
+          },
+          {
+            "date": "2026-05-27",
+            "leads": 21,
+            "cost": 38.22,
+            "spend": 802.66
+          },
+          {
+            "date": "2026-05-28",
+            "leads": 18,
+            "cost": 42.28,
+            "spend": 761.0
+          },
+          {
+            "date": "2026-05-29",
+            "leads": 8,
+            "cost": 70.0,
+            "spend": 559.97
+          },
+          {
+            "date": "2026-05-30",
+            "leads": 16,
+            "cost": 45.71,
+            "spend": 731.37
+          },
+          {
+            "date": "2026-05-31",
+            "leads": 0,
+            "cost": 0,
+            "spend": 643.16
+          }
+        ],
+        "channels": {
+          "抖音大号": 33250.68,
+          "红书大号": 8517.48,
+          "红书代工": 12203.41
+        },
+        "channel_leads": {
+          "抖音大号": 887,
+          "红书大号": 145,
+          "红书代工": 201
+        },
+        "kpi": {
+          "total_leads": 1233,
+          "avg_cost": 43.77,
+          "total_spend": 53971.57,
+          "recharge": 30000.0,
+          "performance_new": 210572.09,
+          "performance_old": 670762.02
+        }
+      },
+      {
+        "month": "26.06",
+        "daily": [
+          {
+            "date": "2026-06-01",
+            "leads": 37,
+            "cost": 38.13,
+            "spend": 1410.92
+          },
+          {
+            "date": "2026-06-02",
+            "leads": 44,
+            "cost": 42.48,
+            "spend": 1869.0
+          },
+          {
+            "date": "2026-06-03",
+            "leads": 38,
+            "cost": 36.02,
+            "spend": 1368.57
+          },
+          {
+            "date": "2026-06-04",
+            "leads": 51,
+            "cost": 42.71,
+            "spend": 2178.12
+          },
+          {
+            "date": "2026-06-05",
+            "leads": 35,
+            "cost": 51.05,
+            "spend": 1786.83
+          },
+          {
+            "date": "2026-06-06",
+            "leads": 40,
+            "cost": 43.64,
+            "spend": 1745.59
+          },
+          {
+            "date": "2026-06-07",
+            "leads": 15,
+            "cost": 139.42,
+            "spend": 2091.31
+          },
+          {
+            "date": "2026-06-08",
+            "leads": 78,
+            "cost": 23.54,
+            "spend": 1835.95
+          },
+          {
+            "date": "2026-06-09",
+            "leads": 32,
+            "cost": 51.04,
+            "spend": 1633.34
+          },
+          {
+            "date": "2026-06-10",
+            "leads": 43,
+            "cost": 36.36,
+            "spend": 1563.31
+          },
+          {
+            "date": "2026-06-11",
+            "leads": 39,
+            "cost": 35.71,
+            "spend": 1392.71
+          },
+          {
+            "date": "2026-06-12",
+            "leads": 22,
+            "cost": 54.37,
+            "spend": 1196.18
+          },
+          {
+            "date": "2026-06-13",
+            "leads": 25,
+            "cost": 45.81,
+            "spend": 1145.32
+          },
+          {
+            "date": "2026-06-14",
+            "leads": 0,
+            "cost": 0,
+            "spend": 305.67
+          },
+          {
+            "date": "2026-06-15",
+            "leads": 19,
+            "cost": 10.04,
+            "spend": 190.69
+          },
+          {
+            "date": "2026-06-16",
+            "leads": 7,
+            "cost": 33.45,
+            "spend": 234.14
+          },
+          {
+            "date": "2026-06-17",
+            "leads": 13,
+            "cost": 18.98,
+            "spend": 246.76
+          },
+          {
+            "date": "2026-06-18",
+            "leads": 0,
+            "cost": 0,
+            "spend": 260.04
+          },
+          {
+            "date": "2026-06-19",
+            "leads": 0,
+            "cost": 0,
+            "spend": 241.41
+          },
+          {
+            "date": "2026-06-20",
+            "leads": 0,
+            "cost": 0,
+            "spend": 200.36
+          },
+          {
+            "date": "2026-06-21",
+            "leads": 13,
+            "cost": 13.91,
+            "spend": 180.84
+          },
+          {
+            "date": "2026-06-22",
+            "leads": 6,
+            "cost": 41.24,
+            "spend": 247.42
+          },
+          {
+            "date": "2026-06-23",
+            "leads": 9,
+            "cost": 31.3,
+            "spend": 281.74
+          },
+          {
+            "date": "2026-06-24",
+            "leads": 9,
+            "cost": 30.17,
+            "spend": 271.57
+          },
+          {
+            "date": "2026-06-25",
+            "leads": 7,
+            "cost": 46.08,
+            "spend": 322.54
+          },
+          {
+            "date": "2026-06-26",
+            "leads": 10,
+            "cost": 27.69,
+            "spend": 276.88
+          },
+          {
+            "date": "2026-06-27",
+            "leads": 1,
+            "cost": 131.1,
+            "spend": 131.1
+          },
+          {
+            "date": "2026-06-28",
+            "leads": 0,
+            "cost": 0,
+            "spend": 105.78
+          },
+          {
+            "date": "2026-06-29",
+            "leads": 15,
+            "cost": 5.62,
+            "spend": 84.36
+          },
+          {
+            "date": "2026-06-30",
+            "leads": 0,
+            "cost": 0,
+            "spend": 0.0
+          }
+        ],
+        "channels": {
+          "抖音大号": 16021.64,
+          "腾讯广告": 132.63,
+          "红书大号": 2047.82,
+          "红书代工": 6596.36
+        },
+        "channel_leads": {
+          "抖音大号": 445,
+          "腾讯广告": 4,
+          "红书大号": 39,
+          "红书代工": 120
+        },
+        "kpi": {
+          "total_leads": 608,
+          "avg_cost": 40.79,
+          "total_spend": 24798.45,
+          "recharge": 35000.0,
+          "performance_new": 128318.1,
+          "performance_old": 351361.46
+        }
+      }
+    ],
+    "yearly_total": {
+      "total_leads": 6340,
+      "total_spend": 253441.68,
+      "avg_cost": 39.98
+    }
+  },
+  "overseas": {
+    "monthly": [
+      {
+        "month": 6,
+        "kpi": {
+          "total_inquiries": 113,
+          "distributed": 113,
+          "distribution_rate": 100.0
+        },
+        "regions": {
+          "北美洲": 18,
+          "亚洲": 29,
+          "非洲": 9,
+          "中东": 15,
+          "欧洲": 20,
+          "大洋洲": 9,
+          "未知": 5,
+          "南美洲": 3,
+          "东南亚": 5
+        },
+        "daily_trend": [
+          {
+            "date": "2026-06-03",
+            "count": 1
+          },
+          {
+            "date": "2026-06-05",
+            "count": 2
+          },
+          {
+            "date": "2026-06-08",
+            "count": 12
+          },
+          {
+            "date": "2026-06-09",
+            "count": 3
+          },
+          {
+            "date": "2026-06-10",
+            "count": 2
+          },
+          {
+            "date": "2026-06-11",
+            "count": 12
+          },
+          {
+            "date": "2026-06-12",
+            "count": 10
+          },
+          {
+            "date": "2026-06-15",
+            "count": 7
+          },
+          {
+            "date": "2026-06-16",
+            "count": 7
+          },
+          {
+            "date": "2026-06-17",
+            "count": 10
+          },
+          {
+            "date": "2026-06-18",
+            "count": 6
+          },
+          {
+            "date": "2026-06-21",
+            "count": 9
+          },
+          {
+            "date": "2026-06-22",
+            "count": 3
+          },
+          {
+            "date": "2026-06-23",
+            "count": 7
+          },
+          {
+            "date": "2026-06-24",
+            "count": 5
+          },
+          {
+            "date": "2026-06-25",
+            "count": 7
+          },
+          {
+            "date": "2026-06-26",
+            "count": 4
+          },
+          {
+            "date": "2026-06-27",
+            "count": 1
+          },
+          {
+            "date": "2026-06-29",
+            "count": 3
+          },
+          {
+            "date": "2026-06-30",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "month": 7,
+        "kpi": {
+          "total_inquiries": 125,
+          "distributed": 125,
+          "distribution_rate": 100.0
+        },
+        "regions": {
+          "欧洲": 23,
+          "未知": 25,
+          "南美洲": 3,
+          "非洲": 5,
+          "中东": 10,
+          "北美洲": 25,
+          "亚洲": 25,
+          "东南亚": 2,
+          "大洋洲": 7
+        },
+        "daily_trend": [
+          {
+            "date": "2026-07-01",
+            "count": 2
+          },
+          {
+            "date": "2026-07-02",
+            "count": 1
+          },
+          {
+            "date": "2026-07-03",
+            "count": 6
+          },
+          {
+            "date": "2026-07-06",
+            "count": 7
+          },
+          {
+            "date": "2026-07-07",
+            "count": 4
+          },
+          {
+            "date": "2026-07-08",
+            "count": 4
+          },
+          {
+            "date": "2026-07-09",
+            "count": 8
+          },
+          {
+            "date": "2026-07-10",
+            "count": 3
+          },
+          {
+            "date": "2026-07-11",
+            "count": 5
+          },
+          {
+            "date": "2026-07-13",
+            "count": 7
+          },
+          {
+            "date": "2026-07-14",
+            "count": 5
+          },
+          {
+            "date": "2026-07-15",
+            "count": 7
+          },
+          {
+            "date": "2026-07-16",
+            "count": 2
+          },
+          {
+            "date": "2026-07-17",
+            "count": 3
+          },
+          {
+            "date": "2026-07-18",
+            "count": 5
+          },
+          {
+            "date": "2026-07-20",
+            "count": 4
+          },
+          {
+            "date": "2026-07-21",
+            "count": 11
+          },
+          {
+            "date": "2026-07-22",
+            "count": 4
+          },
+          {
+            "date": "2026-07-23",
+            "count": 7
+          },
+          {
+            "date": "2026-07-24",
+            "count": 2
+          },
+          {
+            "date": "2026-07-25",
+            "count": 5
+          },
+          {
+            "date": "2026-07-27",
+            "count": 5
+          },
+          {
+            "date": "2026-07-28",
+            "count": 5
+          },
+          {
+            "date": "2026-07-29",
+            "count": 7
+          },
+          {
+            "date": "2026-07-30",
+            "count": 2
+          },
+          {
+            "date": "2026-07-31",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "month": 8,
+        "kpi": {
+          "total_inquiries": 35,
+          "distributed": 0,
+          "distribution_rate": 0.0
+        },
+        "regions": {
+          "北美洲": 5,
+          "中东": 10,
+          "欧洲": 6,
+          "非洲": 1,
+          "未知": 7,
+          "亚洲": 6
+        },
+        "daily_trend": [
+          {
+            "date": "2026-08-01",
+            "count": 2
+          },
+          {
+            "date": "2026-08-03",
+            "count": 8
+          },
+          {
+            "date": "2026-08-04",
+            "count": 9
+          },
+          {
+            "date": "2026-08-05",
+            "count": 8
+          },
+          {
+            "date": "2026-08-06",
+            "count": 3
+          },
+          {
+            "date": "2026-08-07",
+            "count": 5
+          }
+        ]
+      }
+    ],
+    "kpi": {
+      "total_inquiries": 35,
+      "distributed": 35,
+      "distribution_rate": 100.0
+    },
+    "regions": {
+      "北美洲": 5,
+      "中东": 10,
+      "欧洲": 6,
+      "非洲": 1,
+      "未知": 7,
+      "亚洲": 6
+    },
+    "daily_trend": [
+      {
+        "date": "2026-08-01",
+        "count": 2
+      },
+      {
+        "date": "2026-08-03",
+        "count": 8
+      },
+      {
+        "date": "2026-08-04",
+        "count": 9
+      },
+      {
+        "date": "2026-08-05",
+        "count": 8
+      },
+      {
+        "date": "2026-08-06",
+        "count": 3
+      },
+      {
+        "date": "2026-08-07",
+        "count": 5
+      }
+    ],
+    "accounts": {
+      "platforms": {
+        "Instagram": [
+          {
+            "week": "7/6-7/12",
+            "followers_new": 179,
+            "interactions": 551,
+            "views": 0,
+            "reach": 0,
+            "visits": 754
+          },
+          {
+            "week": "5/11-5/17",
+            "followers_new": 0,
+            "interactions": 1,
+            "views": 108,
+            "reach": 53,
+            "visits": 12
+          },
+          {
+            "week": "5/25-5/31",
+            "followers_new": 9,
+            "interactions": 46,
+            "views": 3897,
+            "reach": 2525,
+            "visits": 31
+          },
+          {
+            "week": "6/1-6/7",
+            "followers_new": 153,
+            "interactions": 412,
+            "views": 0,
+            "reach": 6985,
+            "visits": 395
+          },
+          {
+            "week": "6/29-7/5",
+            "followers_new": 190,
+            "interactions": 729,
+            "views": 0,
+            "reach": 0,
+            "visits": 884
+          },
+          {
+            "week": "5/18-5/24",
+            "followers_new": 2,
+            "interactions": 2,
+            "views": 120,
+            "reach": 66,
+            "visits": 2
+          },
+          {
+            "week": "7/20-7/26",
+            "followers_new": 123,
+            "interactions": 358,
+            "views": 0,
+            "reach": 9708,
+            "visits": 772
+          },
+          {
+            "week": "6/22-6/28",
+            "followers_new": 347,
+            "interactions": 1273,
+            "views": 0,
+            "reach": 0,
+            "visits": 1247
+          },
+          {
+            "week": "7/27-8/2",
+            "followers_new": 129,
+            "interactions": 447,
+            "views": 0,
+            "reach": 0,
+            "visits": 731
+          },
+          {
+            "week": "7/13-7/19",
+            "followers_new": 195,
+            "interactions": 769,
+            "views": 0,
+            "reach": 0,
+            "visits": 909
+          },
+          {
+            "week": "6/15-6/21",
+            "followers_new": 0,
+            "interactions": 1192,
+            "views": 0,
+            "reach": 0,
+            "visits": 1200
+          },
+          {
+            "week": "6/8-6/14",
+            "followers_new": 492,
+            "interactions": 1679,
+            "views": 0,
+            "reach": 0,
+            "visits": 1582
+          }
+        ],
+        "Facebook": [
+          {
+            "week": "6/29-7/5",
+            "followers_new": 11,
+            "interactions": 27,
+            "views": 6092,
+            "viewers": 4742,
+            "visits": 72
+          },
+          {
+            "week": "6/22-6/28",
+            "followers_new": 9,
+            "interactions": 30,
+            "views": 7001,
+            "viewers": 5361,
+            "visits": 101
+          },
+          {
+            "week": "7/6-7/12",
+            "followers_new": 11,
+            "interactions": 15,
+            "views": 6655,
+            "viewers": 5249,
+            "visits": 73
+          },
+          {
+            "week": "7/27-8/2",
+            "followers_new": 2,
+            "interactions": 19,
+            "views": 4750,
+            "viewers": 3908,
+            "visits": 58
+          },
+          {
+            "week": "7/13-7/19",
+            "followers_new": 9,
+            "interactions": 32,
+            "views": 9563,
+            "viewers": 7270,
+            "visits": 100
+          }
+        ],
+        "YouTube": [
+          {
+            "week": "5/11-5/17",
+            "views": 4661,
+            "likes": 32,
+            "subscribers_new": 4,
+            "interested_views": 1024
+          },
+          {
+            "week": "6/29-7/5",
+            "views": 5261,
+            "likes": 32,
+            "subscribers_new": 1,
+            "interested_views": 1741
+          },
+          {
+            "week": "6/22-6/28",
+            "views": 0,
+            "likes": 84,
+            "subscribers_new": 6,
+            "interested_views": 4120
+          },
+          {
+            "week": "6/15-6/21",
+            "views": 5836,
+            "likes": 41,
+            "subscribers_new": 6,
+            "interested_views": 1809
+          },
+          {
+            "week": "7/6-7/12",
+            "views": 8674,
+            "likes": 29,
+            "subscribers_new": 1,
+            "interested_views": 2746
+          },
+          {
+            "week": "6/8-6/14",
+            "views": 7784,
+            "likes": 37,
+            "subscribers_new": 2,
+            "interested_views": 2423
+          },
+          {
+            "week": "5/25-5/31",
+            "views": 0,
+            "likes": 52,
+            "subscribers_new": 6,
+            "interested_views": 3674
+          },
+          {
+            "week": "7/13-7/19",
+            "views": 9428,
+            "likes": 43,
+            "subscribers_new": 2,
+            "interested_views": 2919
+          },
+          {
+            "week": "6/1-6/7",
+            "views": 0,
+            "likes": 68,
+            "subscribers_new": 5,
+            "interested_views": 5148
+          },
+          {
+            "week": "7/20-7/26",
+            "views": 7306,
+            "likes": 41,
+            "subscribers_new": 3,
+            "interested_views": 2220
+          },
+          {
+            "week": "7/27-8/2",
+            "views": 7326,
+            "likes": 41,
+            "subscribers_new": 4,
+            "interested_views": 2480
+          },
+          {
+            "week": "5/18-5/24",
+            "views": 3406,
+            "likes": 24,
+            "subscribers_new": 2,
+            "interested_views": 973
+          }
+        ],
+        "TikTok (主号)": [
+          {
+            "week": "6/22-6/28",
+            "views": 0,
+            "profile_visits": 44,
+            "followers_total": 63,
+            "likes": 78,
+            "comments": 2
+          },
+          {
+            "week": "6/1-6/7",
+            "views": 0,
+            "profile_visits": 18,
+            "followers_total": 17,
+            "likes": 24,
+            "comments": 2
+          },
+          {
+            "week": "7/6-7/12",
+            "views": 0,
+            "profile_visits": 27,
+            "followers_total": 89,
+            "likes": 54,
+            "comments": 0
+          },
+          {
+            "week": "7/27-8/2",
+            "views": 0,
+            "profile_visits": 48,
+            "followers_total": 112,
+            "likes": 29,
+            "comments": 0
+          },
+          {
+            "week": "7/20-7/26",
+            "views": 0,
+            "profile_visits": 29,
+            "followers_total": 101,
+            "likes": 16,
+            "comments": 0
+          },
+          {
+            "week": "7/13-7/19",
+            "views": 0,
+            "profile_visits": 34,
+            "followers_total": 100,
+            "likes": 36,
+            "comments": 0
+          },
+          {
+            "week": "6/15-6/21",
+            "views": 0,
+            "profile_visits": 40,
+            "followers_total": 30,
+            "likes": 74,
+            "comments": 1
+          },
+          {
+            "week": "6/29-7/5",
+            "views": 0,
+            "profile_visits": 36,
+            "followers_total": 72,
+            "likes": 41,
+            "comments": 1
+          },
+          {
+            "week": "6/8-6/14",
+            "views": 0,
+            "profile_visits": 40,
+            "followers_total": 17,
+            "likes": 42,
+            "comments": 1
+          },
+          {
+            "week": "5/25-5/31",
+            "views": 0,
+            "profile_visits": 9,
+            "followers_total": 9,
+            "likes": 10,
+            "comments": 0
+          }
+        ],
+        "TikTok (OK哥)": [
+          {
+            "week": "6/15-6/21",
+            "views": 0,
+            "profile_visits": 22,
+            "followers_total": 44,
+            "likes": 32,
+            "comments": 0
+          },
+          {
+            "week": "6/8-6/14",
+            "views": 0,
+            "profile_visits": 39,
+            "followers_total": 46,
+            "likes": 30,
+            "comments": 0
+          },
+          {
+            "week": "6/22-6/28",
+            "views": 0,
+            "profile_visits": 3,
+            "followers_total": 41,
+            "likes": 5,
+            "comments": 0
+          }
+        ],
+        "视频号": [
+          {
+            "week": "6/15-6/21",
+            "views": 3947,
+            "likes": 10,
+            "followers_new": 3
+          },
+          {
+            "week": "5/25-5/31",
+            "views": 3000,
+            "likes": 1,
+            "followers_new": 4
+          },
+          {
+            "week": "6/8-6/14",
+            "views": 3846,
+            "likes": 16,
+            "followers_new": 9
+          },
+          {
+            "week": "7/20-7/26",
+            "views": 2496,
+            "likes": 17,
+            "followers_new": 2
+          },
+          {
+            "week": "6/29-7/5",
+            "views": 2865,
+            "likes": 23,
+            "followers_new": 4
+          },
+          {
+            "week": "7/13-7/19",
+            "views": 3102,
+            "likes": 24,
+            "followers_new": 4
+          },
+          {
+            "week": "7/6-7/12",
+            "views": 3214,
+            "likes": 26,
+            "followers_new": 0
+          },
+          {
+            "week": "6/1-6/7",
+            "views": 4182,
+            "likes": 9,
+            "followers_new": 3
+          },
+          {
+            "week": "6/22-6/28",
+            "views": 3081,
+            "likes": 21,
+            "followers_new": 9
+          },
+          {
+            "week": "7/27-8/2",
+            "views": 2011,
+            "likes": 18,
+            "followers_new": 6
+          }
+        ],
+        "LinkedIn": [
+          {
+            "week": "7/13-7/19",
+            "reach": 143,
+            "followers": 35,
+            "impressions": 333
+          },
+          {
+            "week": "7/6-7/12",
+            "reach": 62,
+            "followers": 31,
+            "impressions": 133
+          },
+          {
+            "week": "7/20-7/26",
+            "reach": 79,
+            "followers": 38,
+            "impressions": 221
+          },
+          {
+            "week": "6/8-6/14",
+            "reach": 536,
+            "followers": 16,
+            "impressions": 852
+          },
+          {
+            "week": "6/29-7/5",
+            "reach": 28,
+            "followers": 28,
+            "impressions": 216
+          },
+          {
+            "week": "7/27-8/2",
+            "reach": 51,
+            "followers": 41,
+            "impressions": 206
+          },
+          {
+            "week": "6/22-6/28",
+            "reach": 388,
+            "followers": 28,
+            "impressions": 797
+          },
+          {
+            "week": "6/15-6/21",
+            "reach": 160,
+            "followers": 21,
+            "impressions": 323
+          }
+        ]
+      }
+    }
+  },
+  "team_funnel": {
+    "monthly": [
+      {
+        "month": 1,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 44,
+            "added": 36,
+            "add_rate": 81.8,
+            "crm_count": 11,
+            "crm_rate": 25.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 28,
+            "added": 27,
+            "add_rate": 96.4,
+            "crm_count": 9,
+            "crm_rate": 32.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 25,
+            "added": 20,
+            "add_rate": 80.0,
+            "crm_count": 9,
+            "crm_rate": 36.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 19,
+            "added": 19,
+            "add_rate": 100.0,
+            "crm_count": 3,
+            "crm_rate": 15.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 5,
+            "add_rate": 83.3,
+            "crm_count": 3,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 52,
+            "added": 41,
+            "add_rate": 78.8,
+            "crm_count": 16,
+            "crm_rate": 30.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 40,
+            "added": 33,
+            "add_rate": 82.5,
+            "crm_count": 16,
+            "crm_rate": 40.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 44,
+            "added": 36,
+            "add_rate": 81.8,
+            "crm_count": 11,
+            "crm_rate": 25.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 28,
+            "added": 27,
+            "add_rate": 96.4,
+            "crm_count": 9,
+            "crm_rate": 32.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 25,
+            "added": 20,
+            "add_rate": 80.0,
+            "crm_count": 9,
+            "crm_rate": 36.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 5,
+            "add_rate": 83.3,
+            "crm_count": 3,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 19,
+            "added": 19,
+            "add_rate": 100.0,
+            "crm_count": 3,
+            "crm_rate": 15.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 52,
+            "added": 41,
+            "add_rate": 78.8,
+            "crm_count": 16,
+            "crm_rate": 30.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 40,
+            "added": 33,
+            "add_rate": 82.5,
+            "crm_count": 16,
+            "crm_rate": 40.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 38,
+            "added": 29,
+            "add_rate": 76.3,
+            "crm_count": 3,
+            "crm_rate": 7.9,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 40,
+            "added": 36,
+            "add_rate": 90.0,
+            "crm_count": 3,
+            "crm_rate": 7.5,
+            "conversion_amount": 456.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 116,
+            "added": 99,
+            "add_rate": 85.3,
+            "crm_count": 8,
+            "crm_rate": 6.9,
+            "conversion_amount": 746.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 122,
+            "added": 115,
+            "add_rate": 94.3,
+            "crm_count": 18,
+            "crm_rate": 14.8,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 744,
+          "added": 641,
+          "crm": 166,
+          "conversion_amount": 1202.0
+        }
+      },
+      {
+        "month": 2,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 1,
+            "added": 1,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 100.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 1,
+            "added": 1,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 100.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 2,
+            "add_rate": 66.7,
+            "crm_count": 1,
+            "crm_rate": 33.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 3,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 33.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 10,
+            "added": 7,
+            "add_rate": 70.0,
+            "crm_count": 5,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 8,
+            "added": 7,
+            "add_rate": 87.5,
+            "crm_count": 5,
+            "crm_rate": 62.5,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 5,
+            "add_rate": 83.3,
+            "crm_count": 3,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 5,
+            "added": 4,
+            "add_rate": 80.0,
+            "crm_count": 3,
+            "crm_rate": 60.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 1,
+            "added": 1,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 100.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 1,
+            "added": 1,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 100.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 2,
+            "add_rate": 66.7,
+            "crm_count": 1,
+            "crm_rate": 33.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 10,
+            "added": 7,
+            "add_rate": 70.0,
+            "crm_count": 5,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 3,
+            "add_rate": 100.0,
+            "crm_count": 1,
+            "crm_rate": 33.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 8,
+            "added": 7,
+            "add_rate": 87.5,
+            "crm_count": 5,
+            "crm_rate": 62.5,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 5,
+            "add_rate": 83.3,
+            "crm_count": 3,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 16,
+            "added": 11,
+            "add_rate": 68.8,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 22,
+            "added": 20,
+            "add_rate": 90.9,
+            "crm_count": 1,
+            "crm_rate": 4.5,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 18,
+            "added": 15,
+            "add_rate": 83.3,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 15,
+            "added": 14,
+            "add_rate": 93.3,
+            "crm_count": 2,
+            "crm_rate": 13.3,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 9,
+            "added": 7,
+            "add_rate": 77.8,
+            "crm_count": 7,
+            "crm_rate": 77.8,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 149,
+          "added": 123,
+          "crm": 47,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 3,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 85,
+            "added": 60,
+            "add_rate": 70.6,
+            "crm_count": 32,
+            "crm_rate": 37.6,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 45,
+            "added": 32,
+            "add_rate": 71.1,
+            "crm_count": 11,
+            "crm_rate": 24.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 87,
+            "added": 69,
+            "add_rate": 79.3,
+            "crm_count": 20,
+            "crm_rate": 23.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 2,
+            "add_rate": 66.7,
+            "crm_count": 2,
+            "crm_rate": 66.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 169,
+            "added": 124,
+            "add_rate": 73.4,
+            "crm_count": 76,
+            "crm_rate": 45.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 180,
+            "added": 146,
+            "add_rate": 81.1,
+            "crm_count": 49,
+            "crm_rate": 27.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 74,
+            "added": 48,
+            "add_rate": 64.9,
+            "crm_count": 9,
+            "crm_rate": 12.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 36,
+            "added": 27,
+            "add_rate": 75.0,
+            "crm_count": 4,
+            "crm_rate": 11.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 85,
+            "added": 60,
+            "add_rate": 70.6,
+            "crm_count": 32,
+            "crm_rate": 37.6,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 45,
+            "added": 32,
+            "add_rate": 71.1,
+            "crm_count": 11,
+            "crm_rate": 24.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 87,
+            "added": 69,
+            "add_rate": 79.3,
+            "crm_count": 20,
+            "crm_rate": 23.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 169,
+            "added": 124,
+            "add_rate": 73.4,
+            "crm_count": 76,
+            "crm_rate": 45.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 3,
+            "added": 2,
+            "add_rate": 66.7,
+            "crm_count": 2,
+            "crm_rate": 66.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 180,
+            "added": 146,
+            "add_rate": 81.1,
+            "crm_count": 49,
+            "crm_rate": 27.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 74,
+            "added": 48,
+            "add_rate": 64.9,
+            "crm_count": 9,
+            "crm_rate": 12.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 34,
+            "added": 20,
+            "add_rate": 58.8,
+            "crm_count": 2,
+            "crm_rate": 5.9,
+            "conversion_amount": 1200.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 59,
+            "added": 55,
+            "add_rate": 93.2,
+            "crm_count": 5,
+            "crm_rate": 8.5,
+            "conversion_amount": 33361.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 54,
+            "added": 46,
+            "add_rate": 85.2,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 4595.33
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 225,
+            "added": 208,
+            "add_rate": 92.4,
+            "crm_count": 13,
+            "crm_rate": 5.8,
+            "conversion_amount": 600.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 124,
+            "added": 104,
+            "add_rate": 83.9,
+            "crm_count": 12,
+            "crm_rate": 9.7,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 17,
+            "added": 7,
+            "add_rate": 41.2,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 1835,
+          "added": 1429,
+          "crm": 434,
+          "conversion_amount": 39756.33
+        }
+      },
+      {
+        "month": 4,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 86,
+            "added": 59,
+            "add_rate": 68.6,
+            "crm_count": 45,
+            "crm_rate": 52.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 13,
+            "added": 8,
+            "add_rate": 61.5,
+            "crm_count": 1,
+            "crm_rate": 7.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 53,
+            "added": 47,
+            "add_rate": 88.7,
+            "crm_count": 10,
+            "crm_rate": 18.9,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 133,
+            "added": 94,
+            "add_rate": 70.7,
+            "crm_count": 60,
+            "crm_rate": 45.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 136,
+            "added": 92,
+            "add_rate": 67.6,
+            "crm_count": 33,
+            "crm_rate": 24.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 44,
+            "added": 29,
+            "add_rate": 65.9,
+            "crm_count": 16,
+            "crm_rate": 36.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 110,
+            "added": 97,
+            "add_rate": 88.2,
+            "crm_count": 50,
+            "crm_rate": 45.5,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 86,
+            "added": 59,
+            "add_rate": 68.6,
+            "crm_count": 45,
+            "crm_rate": 52.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 13,
+            "added": 8,
+            "add_rate": 61.5,
+            "crm_count": 1,
+            "crm_rate": 7.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 53,
+            "added": 47,
+            "add_rate": 88.7,
+            "crm_count": 10,
+            "crm_rate": 18.9,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 133,
+            "added": 94,
+            "add_rate": 70.7,
+            "crm_count": 60,
+            "crm_rate": 45.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 58,
+            "added": 38,
+            "add_rate": 65.5,
+            "crm_count": 1,
+            "crm_rate": 1.7,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 68,
+            "added": 56,
+            "add_rate": 82.4,
+            "crm_count": 1,
+            "crm_rate": 1.5,
+            "conversion_amount": 55970.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 59,
+            "added": 51,
+            "add_rate": 86.4,
+            "crm_count": 1,
+            "crm_rate": 1.7,
+            "conversion_amount": 4625.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 106,
+            "added": 102,
+            "add_rate": 96.2,
+            "crm_count": 2,
+            "crm_rate": 1.9,
+            "conversion_amount": 6952.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 113,
+            "added": 112,
+            "add_rate": 99.1,
+            "crm_count": 15,
+            "crm_rate": 13.3,
+            "conversion_amount": 1213.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 134,
+            "added": 99,
+            "add_rate": 73.9,
+            "crm_count": 35,
+            "crm_rate": 26.1,
+            "conversion_amount": 7276.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 1398,
+          "added": 1092,
+          "crm": 386,
+          "conversion_amount": 76036.0
+        }
+      },
+      {
+        "month": 5,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 59,
+            "added": 40,
+            "add_rate": 67.8,
+            "crm_count": 37,
+            "crm_rate": 62.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 9,
+            "added": 4,
+            "add_rate": 44.4,
+            "crm_count": 4,
+            "crm_rate": 44.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 61,
+            "added": 48,
+            "add_rate": 78.7,
+            "crm_count": 8,
+            "crm_rate": 13.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 12,
+            "added": 9,
+            "add_rate": 75.0,
+            "crm_count": 3,
+            "crm_rate": 25.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 44,
+            "added": 29,
+            "add_rate": 65.9,
+            "crm_count": 19,
+            "crm_rate": 43.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 53,
+            "added": 38,
+            "add_rate": 71.7,
+            "crm_count": 12,
+            "crm_rate": 22.6,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 54,
+            "added": 36,
+            "add_rate": 66.7,
+            "crm_count": 25,
+            "crm_rate": 46.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 172,
+            "added": 148,
+            "add_rate": 86.0,
+            "crm_count": 65,
+            "crm_rate": 37.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 10,
+            "added": 9,
+            "add_rate": 90.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 41,
+            "added": 34,
+            "add_rate": 82.9,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 57507.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 48,
+            "added": 41,
+            "add_rate": 85.4,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 40,
+            "added": 38,
+            "add_rate": 95.0,
+            "crm_count": 1,
+            "crm_rate": 2.5,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 131,
+            "added": 130,
+            "add_rate": 99.2,
+            "crm_count": 42,
+            "crm_rate": 32.1,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 109,
+            "added": 77,
+            "add_rate": 70.6,
+            "crm_count": 25,
+            "crm_rate": 22.9,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 843,
+          "added": 681,
+          "crm": 241,
+          "conversion_amount": 57507.0
+        }
+      },
+      {
+        "month": 6,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 54,
+            "added": 37,
+            "add_rate": 68.5,
+            "crm_count": 31,
+            "crm_rate": 57.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 2,
+            "added": 1,
+            "add_rate": 50.0,
+            "crm_count": 1,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 30,
+            "added": 26,
+            "add_rate": 86.7,
+            "crm_count": 6,
+            "crm_rate": 20.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 58,
+            "added": 49,
+            "add_rate": 84.5,
+            "crm_count": 1,
+            "crm_rate": 1.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 41,
+            "added": 31,
+            "add_rate": 75.6,
+            "crm_count": 20,
+            "crm_rate": 48.8,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 97,
+            "added": 81,
+            "add_rate": 83.5,
+            "crm_count": 2,
+            "crm_rate": 2.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 49,
+            "added": 36,
+            "add_rate": 73.5,
+            "crm_count": 2,
+            "crm_rate": 4.1,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 50,
+            "added": 40,
+            "add_rate": 80.0,
+            "crm_count": 1,
+            "crm_rate": 2.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 32,
+            "added": 7,
+            "add_rate": 21.9,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 45,
+            "added": 37,
+            "add_rate": 82.2,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 40,
+            "added": 27,
+            "add_rate": 67.5,
+            "crm_count": 6,
+            "crm_rate": 15.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 498,
+          "added": 372,
+          "crm": 70,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 7,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 17,
+            "added": 11,
+            "add_rate": 64.7,
+            "crm_count": 3,
+            "crm_rate": 17.6,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 13,
+            "added": 3,
+            "add_rate": 23.1,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 7,
+            "added": 1,
+            "add_rate": 14.3,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 1,
+            "add_rate": 16.7,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 18,
+            "added": 10,
+            "add_rate": 55.6,
+            "crm_count": 2,
+            "crm_rate": 11.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 17,
+            "added": 12,
+            "add_rate": 70.6,
+            "crm_count": 1,
+            "crm_rate": 5.9,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 4,
+            "added": 1,
+            "add_rate": 25.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 17,
+            "added": 2,
+            "add_rate": 11.8,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 3,
+            "added": 2,
+            "add_rate": 66.7,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 13,
+            "added": 1,
+            "add_rate": 7.7,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 115,
+          "added": 44,
+          "crm": 6,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 8,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 2,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 2,
+            "added": 2,
+            "add_rate": 100.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 2,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 4,
+            "added": 3,
+            "add_rate": 75.0,
+            "crm_count": 2,
+            "crm_rate": 50.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 1,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@何祥澄",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 11,
+          "added": 5,
+          "crm": 2,
+          "conversion_amount": 0.0
+        }
+      }
+    ],
+    "yearly_total": {
+      "assigned": 5593,
+      "added": 4387,
+      "crm": 1352,
+      "conversion_amount": 174501.33
+    }
+  }
+}
