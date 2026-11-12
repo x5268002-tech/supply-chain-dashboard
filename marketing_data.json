@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-12 14:00",
-  "month": 8,
+  "updated_at": "2026-11-12 14:00",
+  "month": 11,
   "year": 2026,
   "marketing_plan": {
     "1": [
@@ -1776,8 +1776,8 @@
           "avg_cost": 45.05,
           "total_spend": 44828.6,
           "recharge": 15000.0,
-          "performance_new": 329749.11,
-          "performance_old": 632908.55
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       },
       {
@@ -1968,8 +1968,8 @@
           "avg_cost": 31.97,
           "total_spend": 7064.76,
           "recharge": 0.0,
-          "performance_new": 13485.78,
-          "performance_old": 131769.59
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       },
       {
@@ -2177,8 +2177,8 @@
           "avg_cost": 36.89,
           "total_spend": 62825.93,
           "recharge": 63000.0,
-          "performance_new": 120157.53,
-          "performance_old": 828539.9
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       },
       {
@@ -2380,8 +2380,8 @@
           "avg_cost": 37.94,
           "total_spend": 59952.37,
           "recharge": 90000.0,
-          "performance_new": 336721.41,
-          "performance_old": 795348.45
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       },
       {
@@ -2589,8 +2589,8 @@
           "avg_cost": 43.77,
           "total_spend": 53971.57,
           "recharge": 30000.0,
-          "performance_new": 210572.09,
-          "performance_old": 670762.02
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       },
       {
@@ -2794,224 +2794,15 @@
           "avg_cost": 40.79,
           "total_spend": 24798.45,
           "recharge": 35000.0,
-          "performance_new": 128318.1,
-          "performance_old": 351361.46
-        }
-      },
-      {
-        "month": "26.08",
-        "daily": [
-          {
-            "date": "2026-08-01",
-            "leads": 3,
-            "cost": 65.34,
-            "spend": 196.01
-          },
-          {
-            "date": "2026-08-02",
-            "leads": 2,
-            "cost": 141.45,
-            "spend": 282.9
-          },
-          {
-            "date": "2026-08-03",
-            "leads": 6,
-            "cost": 43.49,
-            "spend": 260.95
-          },
-          {
-            "date": "2026-08-04",
-            "leads": 3,
-            "cost": 82.85,
-            "spend": 248.55
-          },
-          {
-            "date": "2026-08-05",
-            "leads": 5,
-            "cost": 53.98,
-            "spend": 269.89
-          },
-          {
-            "date": "2026-08-06",
-            "leads": 6,
-            "cost": 115.28,
-            "spend": 691.69
-          },
-          {
-            "date": "2026-08-07",
-            "leads": 2,
-            "cost": 73.75,
-            "spend": 147.51
-          },
-          {
-            "date": "2026-08-08",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.01
-          },
-          {
-            "date": "2026-08-09",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-10",
-            "leads": 1,
-            "cost": 0.0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-11",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-12",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-13",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-14",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-15",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-16",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-17",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-18",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-19",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-20",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-21",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-22",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-23",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-24",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-25",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-26",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-27",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-28",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-29",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-30",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          },
-          {
-            "date": "2026-08-31",
-            "leads": 0,
-            "cost": 0,
-            "spend": 0.0
-          }
-        ],
-        "channels": {
-          "腾讯广告": 649.08,
-          "红书代工": 1448.43
-        },
-        "channel_leads": {
-          "抖音大号": 7,
-          "腾讯广告": 2,
-          "红书代工": 19,
-          "海外": 42
-        },
-        "kpi": {
-          "total_leads": 28,
-          "avg_cost": 74.91,
-          "total_spend": 2097.51,
-          "recharge": 0.0,
-          "performance_new": 85197.06,
-          "performance_old": 173047.25
+          "performance_new": 0.0,
+          "performance_old": 0.0
         }
       }
     ],
     "yearly_total": {
-      "total_leads": 6368,
-      "total_spend": 255539.19,
-      "avg_cost": 40.13
+      "total_leads": 6340,
+      "total_spend": 253441.68,
+      "avg_cost": 39.98
     }
   },
   "overseas": {
@@ -3245,18 +3036,19 @@
       {
         "month": 8,
         "kpi": {
-          "total_inquiries": 48,
-          "distributed": 0,
-          "distribution_rate": 0.0
+          "total_inquiries": 113,
+          "distributed": 113,
+          "distribution_rate": 100.0
         },
         "regions": {
-          "北美洲": 10,
-          "中东": 12,
-          "欧洲": 9,
-          "非洲": 1,
-          "未知": 9,
-          "亚洲": 6,
-          "大洋洲": 1
+          "北美洲": 18,
+          "中东": 17,
+          "欧洲": 27,
+          "非洲": 7,
+          "未知": 23,
+          "亚洲": 16,
+          "大洋洲": 4,
+          "东南亚": 1
         },
         "daily_trend": [
           {
@@ -3290,58 +3082,261 @@
           {
             "date": "2026-08-11",
             "count": 5
+          },
+          {
+            "date": "2026-08-12",
+            "count": 6
+          },
+          {
+            "date": "2026-08-13",
+            "count": 4
+          },
+          {
+            "date": "2026-08-14",
+            "count": 6
+          },
+          {
+            "date": "2026-08-15",
+            "count": 5
+          },
+          {
+            "date": "2026-08-17",
+            "count": 7
+          },
+          {
+            "date": "2026-08-18",
+            "count": 5
+          },
+          {
+            "date": "2026-08-19",
+            "count": 3
+          },
+          {
+            "date": "2026-08-21",
+            "count": 6
+          },
+          {
+            "date": "2026-08-24",
+            "count": 2
+          },
+          {
+            "date": "2026-08-25",
+            "count": 4
+          },
+          {
+            "date": "2026-08-26",
+            "count": 5
+          },
+          {
+            "date": "2026-08-27",
+            "count": 3
+          },
+          {
+            "date": "2026-08-28",
+            "count": 2
+          },
+          {
+            "date": "2026-08-29",
+            "count": 3
+          },
+          {
+            "date": "2026-08-31",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "month": 9,
+        "kpi": {
+          "total_inquiries": 80,
+          "distributed": 80,
+          "distribution_rate": 100.0
+        },
+        "regions": {
+          "东南亚": 3,
+          "亚洲": 13,
+          "北美洲": 11,
+          "欧洲": 18,
+          "中东": 7,
+          "非洲": 6,
+          "大洋洲": 7,
+          "未知": 13,
+          "南美洲": 2
+        },
+        "daily_trend": [
+          {
+            "date": "2026-09-01",
+            "count": 5
+          },
+          {
+            "date": "2026-09-02",
+            "count": 2
+          },
+          {
+            "date": "2026-09-03",
+            "count": 5
+          },
+          {
+            "date": "2026-09-04",
+            "count": 3
+          },
+          {
+            "date": "2026-09-05",
+            "count": 2
+          },
+          {
+            "date": "2026-09-07",
+            "count": 5
+          },
+          {
+            "date": "2026-09-08",
+            "count": 2
+          },
+          {
+            "date": "2026-09-09",
+            "count": 5
+          },
+          {
+            "date": "2026-09-10",
+            "count": 4
+          },
+          {
+            "date": "2026-09-14",
+            "count": 7
+          },
+          {
+            "date": "2026-09-15",
+            "count": 4
+          },
+          {
+            "date": "2026-09-16",
+            "count": 6
+          },
+          {
+            "date": "2026-09-18",
+            "count": 5
+          },
+          {
+            "date": "2026-09-21",
+            "count": 5
+          },
+          {
+            "date": "2026-09-23",
+            "count": 4
+          },
+          {
+            "date": "2026-09-24",
+            "count": 2
+          },
+          {
+            "date": "2026-09-28",
+            "count": 6
+          },
+          {
+            "date": "2026-09-29",
+            "count": 4
+          },
+          {
+            "date": "2026-09-30",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "month": 10,
+        "kpi": {
+          "total_inquiries": 68,
+          "distributed": 68,
+          "distribution_rate": 100.0
+        },
+        "regions": {
+          "未知": 18,
+          "北美洲": 9,
+          "东南亚": 2,
+          "亚洲": 6,
+          "欧洲": 21,
+          "北非": 1,
+          "南美": 1,
+          "大洋洲": 3,
+          "南美洲": 2,
+          "中东": 4,
+          "非洲": 1
+        },
+        "daily_trend": [
+          {
+            "date": "2026-10-07",
+            "count": 9
+          },
+          {
+            "date": "2026-10-08",
+            "count": 2
+          },
+          {
+            "date": "2026-10-09",
+            "count": 4
+          },
+          {
+            "date": "2026-10-10",
+            "count": 1
+          },
+          {
+            "date": "2026-10-12",
+            "count": 3
+          },
+          {
+            "date": "2026-10-14",
+            "count": 6
+          },
+          {
+            "date": "2026-10-16",
+            "count": 5
+          },
+          {
+            "date": "2026-10-19",
+            "count": 1
+          },
+          {
+            "date": "2026-10-20",
+            "count": 3
+          },
+          {
+            "date": "2026-10-21",
+            "count": 4
+          },
+          {
+            "date": "2026-10-23",
+            "count": 5
+          },
+          {
+            "date": "2026-10-24",
+            "count": 4
+          },
+          {
+            "date": "2026-10-26",
+            "count": 8
+          },
+          {
+            "date": "2026-10-27",
+            "count": 6
+          },
+          {
+            "date": "2026-10-28",
+            "count": 6
+          },
+          {
+            "date": "2026-10-29",
+            "count": 1
           }
         ]
       }
     ],
     "kpi": {
-      "total_inquiries": 48,
-      "distributed": 48,
-      "distribution_rate": 100.0
+      "total_inquiries": 0,
+      "distributed": 0,
+      "distribution_rate": 0
     },
-    "regions": {
-      "北美洲": 10,
-      "中东": 12,
-      "欧洲": 9,
-      "非洲": 1,
-      "未知": 9,
-      "亚洲": 6,
-      "大洋洲": 1
-    },
-    "daily_trend": [
-      {
-        "date": "2026-08-01",
-        "count": 2
-      },
-      {
-        "date": "2026-08-03",
-        "count": 8
-      },
-      {
-        "date": "2026-08-04",
-        "count": 9
-      },
-      {
-        "date": "2026-08-05",
-        "count": 8
-      },
-      {
-        "date": "2026-08-06",
-        "count": 3
-      },
-      {
-        "date": "2026-08-07",
-        "count": 5
-      },
-      {
-        "date": "2026-08-10",
-        "count": 8
-      },
-      {
-        "date": "2026-08-11",
-        "count": 5
-      }
-    ],
+    "regions": {},
+    "daily_trend": [],
     "accounts": {
       "platforms": {
         "Instagram": [
@@ -3902,8 +3897,8 @@
             "name": "@朱家豪",
             "team": "蓝队",
             "assigned": 40,
-            "added": 33,
-            "add_rate": 82.5,
+            "added": 34,
+            "add_rate": 85.0,
             "crm_count": 16,
             "crm_rate": 40.0,
             "conversion_amount": 0
@@ -4022,8 +4017,8 @@
             "name": "@朱家豪",
             "team": "蓝队",
             "assigned": 40,
-            "added": 33,
-            "add_rate": 82.5,
+            "added": 34,
+            "add_rate": 85.0,
             "crm_count": 16,
             "crm_rate": 40.0,
             "conversion_amount": 0
@@ -4041,11 +4036,11 @@
           {
             "name": "@张玉珠",
             "team": "橙队",
-            "assigned": 40,
-            "added": 36,
-            "add_rate": 90.0,
+            "assigned": 63,
+            "added": 54,
+            "add_rate": 85.7,
             "crm_count": 3,
-            "crm_rate": 7.5,
+            "crm_rate": 4.8,
             "conversion_amount": 456.0
           },
           {
@@ -4061,11 +4056,11 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 122,
-            "added": 115,
-            "add_rate": 94.3,
+            "assigned": 99,
+            "added": 97,
+            "add_rate": 98.0,
             "crm_count": 18,
-            "crm_rate": 14.8,
+            "crm_rate": 18.2,
             "conversion_amount": 0.0
           },
           {
@@ -4111,7 +4106,7 @@
         ],
         "funnel": {
           "assigned": 744,
-          "added": 641,
+          "added": 643,
           "crm": 166,
           "conversion_amount": 1202.0
         }
@@ -4352,21 +4347,21 @@
           {
             "name": "@邓正瑶",
             "team": "橙队",
-            "assigned": 16,
-            "added": 11,
-            "add_rate": 68.8,
-            "crm_count": 0,
-            "crm_rate": 0.0,
+            "assigned": 25,
+            "added": 19,
+            "add_rate": 76.0,
+            "crm_count": 8,
+            "crm_rate": 32.0,
             "conversion_amount": 0.0
           },
           {
             "name": "@张玉珠",
             "team": "橙队",
-            "assigned": 22,
-            "added": 20,
-            "add_rate": 90.9,
+            "assigned": 25,
+            "added": 22,
+            "add_rate": 88.0,
             "crm_count": 1,
-            "crm_rate": 4.5,
+            "crm_rate": 4.0,
             "conversion_amount": 0.0
           },
           {
@@ -4382,11 +4377,11 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 15,
-            "added": 14,
-            "add_rate": 93.3,
+            "assigned": 12,
+            "added": 12,
+            "add_rate": 100.0,
             "crm_count": 2,
-            "crm_rate": 13.3,
+            "crm_rate": 16.7,
             "conversion_amount": 0.0
           },
           {
@@ -4431,9 +4426,9 @@
           }
         ],
         "funnel": {
-          "assigned": 149,
-          "added": 123,
-          "crm": 47,
+          "assigned": 158,
+          "added": 131,
+          "crm": 55,
           "conversion_amount": 0.0
         }
       },
@@ -4516,8 +4511,8 @@
             "assigned": 169,
             "added": 124,
             "add_rate": 73.4,
-            "crm_count": 76,
-            "crm_rate": 45.0,
+            "crm_count": 77,
+            "crm_rate": 45.6,
             "conversion_amount": 0
           },
           {
@@ -4606,8 +4601,8 @@
             "assigned": 169,
             "added": 124,
             "add_rate": 73.4,
-            "crm_count": 76,
-            "crm_rate": 45.0,
+            "crm_count": 77,
+            "crm_rate": 45.6,
             "conversion_amount": 0
           },
           {
@@ -4673,11 +4668,11 @@
           {
             "name": "@邓正瑶",
             "team": "橙队",
-            "assigned": 34,
-            "added": 20,
-            "add_rate": 58.8,
+            "assigned": 51,
+            "added": 29,
+            "add_rate": 56.9,
             "crm_count": 2,
-            "crm_rate": 5.9,
+            "crm_rate": 3.9,
             "conversion_amount": 1200.0
           },
           {
@@ -4703,11 +4698,11 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 225,
-            "added": 208,
-            "add_rate": 92.4,
+            "assigned": 198,
+            "added": 190,
+            "add_rate": 96.0,
             "crm_count": 13,
-            "crm_rate": 5.8,
+            "crm_rate": 6.6,
             "conversion_amount": 600.0
           },
           {
@@ -4733,28 +4728,28 @@
           {
             "name": "@谢鼎鑫",
             "team": "橙队",
-            "assigned": 124,
-            "added": 104,
-            "add_rate": 83.9,
+            "assigned": 110,
+            "added": 102,
+            "add_rate": 92.7,
             "crm_count": 12,
-            "crm_rate": 9.7,
+            "crm_rate": 10.9,
             "conversion_amount": 0.0
           },
           {
             "name": "@何祥澄",
             "team": "橙队",
-            "assigned": 17,
-            "added": 7,
-            "add_rate": 41.2,
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
           }
         ],
         "funnel": {
-          "assigned": 1835,
-          "added": 1429,
-          "crm": 434,
+          "assigned": 1794,
+          "added": 1411,
+          "crm": 436,
           "conversion_amount": 39756.33
         }
       },
@@ -4934,9 +4929,9 @@
           {
             "name": "@邓正瑶",
             "team": "橙队",
-            "assigned": 58,
-            "added": 38,
-            "add_rate": 65.5,
+            "assigned": 60,
+            "added": 40,
+            "add_rate": 66.7,
             "crm_count": 1,
             "crm_rate": 1.7,
             "conversion_amount": 0.0
@@ -4944,11 +4939,11 @@
           {
             "name": "@张玉珠",
             "team": "橙队",
-            "assigned": 68,
-            "added": 56,
-            "add_rate": 82.4,
+            "assigned": 152,
+            "added": 129,
+            "add_rate": 84.9,
             "crm_count": 1,
-            "crm_rate": 1.5,
+            "crm_rate": 0.7,
             "conversion_amount": 55970.0
           },
           {
@@ -4964,29 +4959,29 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 106,
-            "added": 102,
-            "add_rate": 96.2,
+            "assigned": 78,
+            "added": 78,
+            "add_rate": 100.0,
             "crm_count": 2,
-            "crm_rate": 1.9,
+            "crm_rate": 2.6,
             "conversion_amount": 6952.0
           },
           {
             "name": "@邱雨轩",
             "team": "橙队",
-            "assigned": 113,
-            "added": 112,
-            "add_rate": 99.1,
+            "assigned": 18,
+            "added": 18,
+            "add_rate": 100.0,
             "crm_count": 15,
-            "crm_rate": 13.3,
+            "crm_rate": 83.3,
             "conversion_amount": 1213.0
           },
           {
             "name": "@曹志行",
             "team": "橙队",
             "assigned": 134,
-            "added": 99,
-            "add_rate": 73.9,
+            "added": 100,
+            "add_rate": 74.6,
             "crm_count": 35,
             "crm_rate": 26.1,
             "conversion_amount": 7276.0
@@ -5013,8 +5008,8 @@
           }
         ],
         "funnel": {
-          "assigned": 1398,
-          "added": 1092,
+          "assigned": 1361,
+          "added": 1050,
           "crm": 386,
           "conversion_amount": 76036.0
         }
@@ -5155,9 +5150,9 @@
           {
             "name": "@张玉珠",
             "team": "橙队",
-            "assigned": 41,
-            "added": 34,
-            "add_rate": 82.9,
+            "assigned": 54,
+            "added": 45,
+            "add_rate": 83.3,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 57507.0
@@ -5175,21 +5170,21 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 40,
-            "added": 38,
-            "add_rate": 95.0,
+            "assigned": 27,
+            "added": 27,
+            "add_rate": 100.0,
             "crm_count": 1,
-            "crm_rate": 2.5,
+            "crm_rate": 3.7,
             "conversion_amount": 0.0
           },
           {
             "name": "@邱雨轩",
             "team": "橙队",
-            "assigned": 131,
-            "added": 130,
-            "add_rate": 99.2,
+            "assigned": 44,
+            "added": 44,
+            "add_rate": 100.0,
             "crm_count": 42,
-            "crm_rate": 32.1,
+            "crm_rate": 95.5,
             "conversion_amount": 0.0
           },
           {
@@ -5224,8 +5219,8 @@
           }
         ],
         "funnel": {
-          "assigned": 843,
-          "added": 681,
+          "assigned": 756,
+          "added": 595,
           "crm": 241,
           "conversion_amount": 57507.0
         }
@@ -5357,8 +5352,8 @@
             "name": "@邓正瑶",
             "team": "橙队",
             "assigned": 49,
-            "added": 36,
-            "add_rate": 73.5,
+            "added": 37,
+            "add_rate": 75.5,
             "crm_count": 2,
             "crm_rate": 4.1,
             "conversion_amount": 0.0
@@ -5366,19 +5361,19 @@
           {
             "name": "@张玉珠",
             "team": "橙队",
-            "assigned": 50,
-            "added": 40,
-            "add_rate": 80.0,
+            "assigned": 57,
+            "added": 43,
+            "add_rate": 75.4,
             "crm_count": 1,
-            "crm_rate": 2.0,
+            "crm_rate": 1.8,
             "conversion_amount": 0.0
           },
           {
             "name": "@周乐",
             "team": "橙队",
             "assigned": 32,
-            "added": 7,
-            "add_rate": 21.9,
+            "added": 9,
+            "add_rate": 28.1,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
@@ -5386,9 +5381,9 @@
           {
             "name": "@余昊芯",
             "team": "橙队",
-            "assigned": 45,
+            "assigned": 38,
             "added": 37,
-            "add_rate": 82.2,
+            "add_rate": 97.4,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
@@ -5407,8 +5402,8 @@
             "name": "@曹志行",
             "team": "橙队",
             "assigned": 40,
-            "added": 27,
-            "add_rate": 67.5,
+            "added": 33,
+            "add_rate": 82.5,
             "crm_count": 6,
             "crm_rate": 15.0,
             "conversion_amount": 0.0
@@ -5436,7 +5431,7 @@
         ],
         "funnel": {
           "assigned": 498,
-          "added": 372,
+          "added": 384,
           "crm": 70,
           "conversion_amount": 0.0
         }
@@ -5447,11 +5442,11 @@
           {
             "name": "@刘晓霞",
             "team": "蓝队",
-            "assigned": 17,
-            "added": 11,
-            "add_rate": 64.7,
+            "assigned": 18,
+            "added": 12,
+            "add_rate": 66.7,
             "crm_count": 3,
-            "crm_rate": 17.6,
+            "crm_rate": 16.7,
             "conversion_amount": 0
           },
           {
@@ -5508,8 +5503,8 @@
             "name": "@潘嘉瑜(大俞)",
             "team": "蓝队",
             "assigned": 6,
-            "added": 1,
-            "add_rate": 16.7,
+            "added": 5,
+            "add_rate": 83.3,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5558,8 +5553,8 @@
             "name": "@林梓仪",
             "team": "蓝队",
             "assigned": 4,
-            "added": 1,
-            "add_rate": 25.0,
+            "added": 4,
+            "add_rate": 100.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5568,8 +5563,8 @@
             "name": "@邓正瑶",
             "team": "橙队",
             "assigned": 17,
-            "added": 2,
-            "add_rate": 11.8,
+            "added": 7,
+            "add_rate": 41.2,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
@@ -5578,8 +5573,8 @@
             "name": "@张玉珠",
             "team": "橙队",
             "assigned": 3,
-            "added": 2,
-            "add_rate": 66.7,
+            "added": 3,
+            "add_rate": 100.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
@@ -5588,8 +5583,8 @@
             "name": "@周乐",
             "team": "橙队",
             "assigned": 13,
-            "added": 1,
-            "add_rate": 7.7,
+            "added": 9,
+            "add_rate": 69.2,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0.0
@@ -5646,8 +5641,8 @@
           }
         ],
         "funnel": {
-          "assigned": 115,
-          "added": 46,
+          "assigned": 116,
+          "added": 68,
           "crm": 6,
           "conversion_amount": 0.0
         }
@@ -5658,9 +5653,9 @@
           {
             "name": "@刘晓霞",
             "team": "蓝队",
-            "assigned": 3,
-            "added": 1,
-            "add_rate": 33.3,
+            "assigned": 16,
+            "added": 13,
+            "add_rate": 81.2,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5668,11 +5663,11 @@
           {
             "name": "@敬健浩",
             "team": "蓝队",
-            "assigned": 5,
-            "added": 4,
-            "add_rate": 80.0,
-            "crm_count": 0,
-            "crm_rate": 0.0,
+            "assigned": 14,
+            "added": 9,
+            "add_rate": 64.3,
+            "crm_count": 4,
+            "crm_rate": 28.6,
             "conversion_amount": 0
           },
           {
@@ -5689,8 +5684,8 @@
             "name": "@刘胜楠",
             "team": "蓝队",
             "assigned": 1,
-            "added": 0,
-            "add_rate": 0.0,
+            "added": 1,
+            "add_rate": 100.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5718,9 +5713,9 @@
           {
             "name": "@潘嘉瑜(大俞)",
             "team": "蓝队",
-            "assigned": 4,
-            "added": 2,
-            "add_rate": 50.0,
+            "assigned": 6,
+            "added": 6,
+            "add_rate": 100.0,
             "crm_count": 0,
             "crm_rate": 0.0,
             "conversion_amount": 0
@@ -5738,11 +5733,11 @@
           {
             "name": "@刘江滔",
             "team": "蓝队",
-            "assigned": 7,
-            "added": 4,
-            "add_rate": 57.1,
-            "crm_count": 2,
-            "crm_rate": 28.6,
+            "assigned": 19,
+            "added": 14,
+            "add_rate": 73.7,
+            "crm_count": 4,
+            "crm_rate": 21.1,
             "conversion_amount": 0
           },
           {
@@ -5758,11 +5753,11 @@
           {
             "name": "@朱家豪",
             "team": "蓝队",
-            "assigned": 5,
-            "added": 1,
-            "add_rate": 20.0,
-            "crm_count": 0,
-            "crm_rate": 0.0,
+            "assigned": 14,
+            "added": 11,
+            "add_rate": 78.6,
+            "crm_count": 10,
+            "crm_rate": 71.4,
             "conversion_amount": 0
           },
           {
@@ -5857,17 +5852,620 @@
           }
         ],
         "funnel": {
-          "assigned": 25,
-          "added": 12,
-          "crm": 2,
+          "assigned": 70,
+          "added": 54,
+          "crm": 18,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 9,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 13,
+            "added": 4,
+            "add_rate": 30.8,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 17,
+            "added": 12,
+            "add_rate": 70.6,
+            "crm_count": 5,
+            "crm_rate": 29.4,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 2,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 14,
+            "added": 1,
+            "add_rate": 7.1,
+            "crm_count": 1,
+            "crm_rate": 7.1,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 13,
+            "added": 7,
+            "add_rate": 53.8,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 18,
+            "added": 10,
+            "add_rate": 55.6,
+            "crm_count": 3,
+            "crm_rate": 16.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 8,
+            "added": 6,
+            "add_rate": 75.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 11,
+            "added": 7,
+            "add_rate": 63.6,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 9,
+            "added": 5,
+            "add_rate": 55.6,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 4,
+            "added": 1,
+            "add_rate": 25.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 109,
+          "added": 53,
+          "crm": 9,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 10,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 11,
+            "added": 6,
+            "add_rate": 54.5,
+            "crm_count": 3,
+            "crm_rate": 27.3,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 3,
+            "add_rate": 50.0,
+            "crm_count": 1,
+            "crm_rate": 16.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 6,
+            "add_rate": 100.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 8,
+            "added": 6,
+            "add_rate": 75.0,
+            "crm_count": 2,
+            "crm_rate": 25.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 6,
+            "added": 4,
+            "add_rate": 66.7,
+            "crm_count": 4,
+            "crm_rate": 66.7,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 18,
+            "added": 16,
+            "add_rate": 88.9,
+            "crm_count": 13,
+            "crm_rate": 72.2,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 16,
+            "added": 9,
+            "add_rate": 56.2,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 5,
+            "added": 3,
+            "add_rate": 60.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 76,
+          "added": 53,
+          "crm": 23,
+          "conversion_amount": 0.0
+        }
+      },
+      {
+        "month": 11,
+        "members": [
+          {
+            "name": "@刘晓霞",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@敬健浩",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@庄晓玲",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘胜楠",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@苏芷萱",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林海杏",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘嘉瑜(大俞)",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@许凤婷",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@刘江滔",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@潘洁",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@朱家豪",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@林梓仪",
+            "team": "蓝队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0
+          },
+          {
+            "name": "@邓正瑶",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@张玉珠",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@周乐",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@余昊芯",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@邱雨轩",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@曹志行",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          },
+          {
+            "name": "@谢鼎鑫",
+            "team": "橙队",
+            "assigned": 0,
+            "added": 0,
+            "add_rate": 0.0,
+            "crm_count": 0,
+            "crm_rate": 0.0,
+            "conversion_amount": 0.0
+          }
+        ],
+        "funnel": {
+          "assigned": 0,
+          "added": 0,
+          "crm": 0,
           "conversion_amount": 0.0
         }
       }
     ],
     "yearly_total": {
-      "assigned": 5607,
-      "added": 4396,
-      "crm": 1352,
+      "assigned": 5682,
+      "added": 4442,
+      "crm": 1410,
       "conversion_amount": 174501.33
     }
   }
